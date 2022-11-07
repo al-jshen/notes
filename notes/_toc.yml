@@ -4,5 +4,7 @@
 format: jb-book
 root: intro
 chapters:
-- file: markdown
-- file: notebooks
+  - file: content/sampling/intro
+    sections:
+      - file: content/sampling/mcmc
+      - file: content/sampling/vi
