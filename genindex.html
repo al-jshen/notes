@@ -106,20 +106,32 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="nav bd-sidenav bd-sidenav__home-link">
             <li class="toctree-l1">
                 <a class="reference internal" href="intro.html">
-                    Welcome to your Jupyter Book
+                    Overview
                 </a>
             </li>
         </ul>
         <ul class="nav bd-sidenav">
- <li class="toctree-l1">
-  <a class="reference internal" href="markdown.html">
-   Markdown Files
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="content/sampling/intro.html">
+   Sampling
   </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="notebooks.html">
-   Content with notebooks
-  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/sampling/mcmc.html">
+     Markov chain Monte Carlo
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="content/sampling/vi.html">
+     Variational inference
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
