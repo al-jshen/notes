@@ -8,3 +8,4 @@ chapters:
     sections:
       - file: content/sampling/mcmc
       - file: content/sampling/vi
+  - file: content/algorithms/intro
