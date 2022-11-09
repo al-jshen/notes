@@ -2383,6 +2383,26 @@
   file = {/Users/js5013/Zotero/storage/C822EBQC/slz092.pdf}
 }
 
+@misc{Grathwohl2018,
+  title = {{{FFJORD}}: {{Free-form Continuous Dynamics}} for {{Scalable Reversible Generative Models}}},
+  shorttitle = {{{FFJORD}}},
+  author = {Grathwohl, Will and Chen, Ricky T. Q. and Bettencourt, Jesse and Sutskever, Ilya and Duvenaud, David},
+  year = {2018},
+  month = oct,
+  number = {arXiv:1810.01367},
+  eprint = {1810.01367},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/1810.01367},
+  urldate = {2022-11-07},
+  abstract = {A promising class of generative models maps points from a simple distribution to a complex distribution through an invertible neural network. Likelihood-based training of these models requires restricting their architectures to allow cheap computation of Jacobian determinants. Alternatively, the Jacobian trace can be used if the transformation is specified by an ordinary differential equation. In this paper, we use Hutchinson's trace estimator to give a scalable unbiased estimate of the log-density. The result is a continuous-time invertible generative model with unbiased density estimation and one-pass sampling, while allowing unrestricted neural network architectures. We demonstrate our approach on high-dimensional density estimation, image generation, and variational inference, achieving the state-of-the-art among exact likelihood methods with efficient sampling.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Machine Learning,Statistics - Machine Learning},
+  file = {/Users/js5013/Zotero/storage/JP3BIMED/Grathwohl et al. - 2018 - FFJORD Free-form Continuous Dynamics for Scalable.pdf}
+}
+
 @article{Green2021,
   title = {Data-Driven {{Stellar Models}}},
   author = {Green, Gregory M. and Rix, Hans-Walter and Tschesche, Leon and Finkbeiner, Douglas and Zucker, Catherine and Schlafly, Edward F. and Rybizki, Jan and Fouesneau, Morgan and Andrae, Ren{\'e} and Speagle, Joshua},
@@ -2395,6 +2415,25 @@
   doi = {10.3847/1538-4357/abd1dd},
   abstract = {We develop a data-driven model to map stellar parameters (effective temperature, surface gravity and metallicity) accurately and precisely to broad-band stellar photometry. This model must, and does, simultaneously constrain the passband-specific dust reddening vector in the Milky Way. The model uses a neural network to learn the (de-reddened) absolute magnitude in one band and colors across many bands, given stellar parameters from spectroscopic surveys and parallax constraints from Gaia. To demonstrate the effectiveness of this approach, we train our model on a dataset with spectroscopic parameters from LAMOST, APOGEE and GALAH, Gaia parallaxes, and optical and near-infrared photometry from Gaia, Pan-STARRS\textasciitilde 1, 2MASS and WISE. Testing the model on these datasets leads to an excellent fit and a precise - and by construction accurate - prediction of the color-magnitude diagrams in many bands. This flexible approach rigorously links spectroscopic and photometric surveys, and also results in an improved, stellar-temperature-dependent reddening vector. As such, it provides a simple and accurate method for predicting photometry in stellar evolutionary models. Our model will form a basis to infer stellar properties, distances and dust extinction from photometric data, which should be of great use in 3D mapping of the Milky Way. Our trained model may be obtained at https://doi.org/10.5281/zenodo.3902382.},
   file = {/Users/js5013/Zotero/storage/L3ZJDHBP/2006.16258.pdf}
+}
+
+@misc{Guo2020,
+  title = {Accelerating {{Large-Scale Inference}} with {{Anisotropic Vector Quantization}}},
+  author = {Guo, Ruiqi and Sun, Philip and Lindgren, Erik and Geng, Quan and Simcha, David and Chern, Felix and Kumar, Sanjiv},
+  year = {2020},
+  month = dec,
+  number = {arXiv:1908.10396},
+  eprint = {1908.10396},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/1908.10396},
+  urldate = {2022-11-09},
+  abstract = {Quantization based techniques are the current stateof-the-art for scaling maximum inner product search to massive databases. Traditional approaches to quantization aim to minimize the reconstruction error of the database points. Based on the observation that for a given query, the database points that have the largest inner products are more relevant, we develop a family of anisotropic quantization loss functions. Under natural statistical assumptions, we show that quantization with these loss functions leads to a new variant of vector quantization that more greatly penalizes the parallel component of a datapoint's residual relative to its orthogonal component. The proposed approach, whose implementation is opensource, achieves state-of-the-art results on the public benchmarks available at ann-benchmarks.com.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Machine Learning,Statistics - Machine Learning},
+  file = {/Users/js5013/Zotero/storage/5ZYNVI54/Guo et al. - 2020 - Accelerating Large-Scale Inference with Anisotropi.pdf}
 }
 
 @article{Hardin2018,
@@ -2533,6 +2572,25 @@
   url = {http://arxiv.org/abs/2004.00934},
   abstract = {The Atacama Large Millimetre/submillimetre Array (ALMA) is currently in the process of transforming our view of star-forming galaxies in the distant (\$z\textbackslash gtrsim1\$) universe. Before ALMA, most of what we knew about dust-obscured star formation in distant galaxies was limited to the brightest submillimetre sources -- the so-called submillimetre galaxies (SMGs) -- and even the information on those sources was sparse, with resolved (i.e., sub-galactic) observations of the obscured star formation and gas reservoirs typically restricted to the most extreme and/or strongly lensed sources. Starting with the beginning of early science operations in 2011, the last nine years of ALMA observations have ushered in a new era for studies of high-redshift star formation. With its long baselines, ALMA has allowed observations of distant dust-obscured star formation with angular resolutions comparable to -- or even far surpassing -- the best current optical telescopes. With its bandwidth and frequency coverage, it has provided an unprecedented look at the associated molecular and atomic gas in these distant galaxies through targeted follow-up and serendipitous detections/blind line scans. Finally, with its leap in sensitivity compared to previous (sub-)millimetre arrays, it has enabled the detection of these powerful dust/gas tracers much further down the luminosity function through both statistical studies of color/mass-selected galaxy populations and dedicated deep fields. We review the main advances ALMA has helped bring about in our understanding of the dust and gas properties of high-redshift (\$z\textbackslash gtrsim1\$) star-forming galaxies during these first nine years of its science operations, and we highlight the interesting questions that may be answered by ALMA in the years to come.},
   file = {/Users/js5013/Zotero/storage/97SC9EZ9/2004.00934.pdf}
+}
+
+@misc{Hodgkinson2020a,
+  title = {Stochastic {{Normalizing Flows}}},
+  author = {Hodgkinson, Liam and {van der Heide}, Chris and Roosta, Fred and Mahoney, Michael W.},
+  year = {2020},
+  month = feb,
+  number = {arXiv:2002.09547},
+  eprint = {2002.09547},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2002.09547},
+  urldate = {2022-11-07},
+  abstract = {We introduce stochastic normalizing flows, an extension of continuous normalizing flows for maximum likelihood estimation and variational inference (VI) using stochastic differential equations (SDEs). Using the theory of rough paths, the underlying Brownian motion is treated as a latent variable and approximated, enabling efficient training of neural SDEs as random neural ordinary differential equations. These SDEs can be used for constructing efficient Markov chains to sample from the underlying distribution of a given dataset. Furthermore, by considering families of targeted SDEs with prescribed stationary distribution, we can apply VI to the optimization of hyperparameters in stochastic MCMC.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Machine Learning,Statistics - Machine Learning},
+  file = {/Users/js5013/Zotero/storage/J7NWGR4I/Hodgkinson et al. - 2020 - Stochastic Normalizing Flows.pdf}
 }
 
 @article{Hoffman2014,
@@ -2752,6 +2810,25 @@
   file = {/Users/js5013/Zotero/storage/LCAKFVJG/2006.10700.pdf}
 }
 
+@misc{Jia2020,
+  title = {Neural {{Jump Stochastic Differential Equations}}},
+  author = {Jia, Junteng and Benson, Austin R.},
+  year = {2020},
+  month = jan,
+  number = {arXiv:1905.10403},
+  eprint = {1905.10403},
+  eprinttype = {arxiv},
+  primaryclass = {cs, stat},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/1905.10403},
+  urldate = {2022-11-07},
+  abstract = {Many time series are effectively generated by a combination of deterministic continuous flows along with discrete jumps sparked by stochastic events. However, we usually do not have the equation of motion describing the flows, or how they are affected by jumps. To this end, we introduce Neural Jump Stochastic Differential Equations that provide a data-driven approach to learn continuous and discrete dynamic behavior, i.e., hybrid systems that both flow and jump. Our approach extends the framework of Neural Ordinary Differential Equations with a stochastic process term that models discrete events. We then model temporal point processes with a piecewise-continuous latent trajectory, where the discontinuities are caused by stochastic events whose conditional intensity depends on the latent state. We demonstrate the predictive capabilities of our model on a range of synthetic and real-world marked point process datasets, including classical point processes (such as Hawkes processes), awards on Stack Overflow, medical records, and earthquake monitoring.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Machine Learning,Statistics - Machine Learning},
+  file = {/Users/js5013/Zotero/storage/ZAT48PZN/Jia and Benson - 2020 - Neural Jump Stochastic Differential Equations.pdf}
+}
+
 @article{Johansson2012,
   title = {Molecular Gas and Dust in the Highly Magnified z = 2.8 Galaxy behind the {{Bullet Cluster}}},
   author = {Johansson, Daniel and Horellou, Cathy and {Lopez-Cruz}, Omar and Muller, Sebastien and Birkinshaw, Mark and Black, John H. and Bremer, Malcolm N. and Wall, William F. and Bertoldi, Frank and Castillo, Edgar and {Ibarra-Medel}, Hector Javier},
@@ -2766,6 +2843,25 @@
   abstract = {The gravitational magnification provided by massive galaxy clusters makes it possible to probe the physical conditions in distant galaxies that are of lower luminosity than those in blank fields and likely more representative of the bulk of the high-redshift galaxy population. We aim to constrain the basic properties of molecular gas in a strongly magnified submm galaxy located behind the massive Bullet Cluster. This galaxy (SMM J0658) is split into three images, with a total magnification factor of almost 100. We used the Australia Telescope Compact Array (ATCA) to search for \{12\}CO(1--0) and \{12\}CO(3--2) line emission from SMM J0658. We also used the SABOCA bolometer camera on the Atacama Pathfinder EXperiment (APEX) telescope to measure the continuum emission at 350 micron. CO(1--0) and CO(3--2) are detected at 6.8 sigma and 7.5 sigma significance when the spectra toward the two brightest images of the galaxy are combined. From the CO(1-0) luminosity we derive a mass of cold molecular gas of (1.8 \textbackslash pm 0.3) * 10\^9 Msun, using the CO to H\_2 conversion factor commonly used for luminous infrared galaxies. This is 45 \textbackslash pm 25 \% of the stellar mass. From the width of the CO lines we derive a dynamical mass within the CO-emitting region L of (1.3 \textbackslash pm 0.4) * 10\^10 (L/1 kpc) Msun. We refine the redshift determination of SMM J0658 to z=2.7793 \textbackslash pm 0.0003. Continuum emission at 350 micron from SMM J0658 was detected with SABOCA at a signal-to-noise ratio of 3.6. We study the spectral energy distribution of SMM J0658 and derive a dust temperature of 33\textbackslash pm 5 K and a dust mass of 1.1*10\^7 Msun. SMM J0658 is one of the least massive submm galaxies discovered so far. As a likely representative of the bulk of the submm galaxy population, it is a prime target for future observations.},
   keywords = {Cosmology: observations,Gravitational lensing: strong,Infrared: galaxies,Submillimeter: galaxies},
   file = {/Users/js5013/Zotero/storage/SACTIQXC/full-text.pdf}
+}
+
+@misc{Johnson2017,
+  title = {Billion-Scale Similarity Search with {{GPUs}}},
+  author = {Johnson, Jeff and Douze, Matthijs and J{\'e}gou, Herv{\'e}},
+  year = {2017},
+  month = feb,
+  number = {arXiv:1702.08734},
+  eprint = {1702.08734},
+  eprinttype = {arxiv},
+  primaryclass = {cs},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/1702.08734},
+  urldate = {2022-11-09},
+  abstract = {Similarity search finds application in specialized database systems handling complex data such as images or videos, which are typically represented by high-dimensional features and require specific indexing structures. This paper tackles the problem of better utilizing GPUs for this task. While GPUs excel at data-parallel tasks, prior approaches are bottlenecked by algorithms that expose less parallelism, such as k-min selection, or make poor use of the memory hierarchy. We propose a design for k-selection that operates at up to 55\% of theoretical peak performance, enabling a nearest neighbor implementation that is 8.5\texttimes{} faster than prior GPU state of the art. We apply it in different similarity search scenarios, by proposing optimized design for brute-force, approximate and compressed-domain search based on product quantization. In all these setups, we outperform the state of the art by large margins. Our implementation enables the construction of a high accuracy k-NN graph on 95 million images from the Yfcc100M dataset in 35 minutes, and of a graph connecting 1 billion vectors in less than 12 hours on 4 Maxwell Titan X GPUs. We have open-sourced our approach1 for the sake of comparison and reproducibility.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Computer Science - Computer Vision and Pattern Recognition,Computer Science - Data Structures and Algorithms,Computer Science - Databases,Computer Science - Information Retrieval},
+  file = {/Users/js5013/Zotero/storage/UFITK5KE/Johnson et al. - 2017 - Billion-scale similarity search with GPUs.pdf}
 }
 
 @article{Johnson2020,
@@ -3499,6 +3595,24 @@
   abstract = {The M4 competition is the continuation of three previous competitions started more than 45 years ago whose purpose was to learn how to improve forecasting accuracy, and how such learning can be applied to advance the theory and practice of forecasting. The purpose of M4 was to replicate the results of the previous ones and extend them into three directions: First significantly increase the number of series, second include Machine Learning (ML) forecasting methods, and third evaluate both point forecasts and prediction intervals. The five major findings of the M4 Competitions are: 1. Out Of the 17 most accurate methods, 12 were ``combinations'' of mostly statistical approaches. 2. The biggest surprise was a ``hybrid'' approach that utilized both statistical and ML features. This method's average sMAPE was close to 10\% more accurate than the combination benchmark used to compare the submitted methods. 3. The second most accurate method was a combination of seven statistical methods and one ML one, with the weights for the averaging being calculated by a ML algorithm that was trained to minimize the forecasting. 4. The two most accurate methods also achieved an amazing success in specifying the 95\% prediction intervals correctly. 5. The six pure ML methods performed poorly, with none of them being more accurate than the combination benchmark and only one being more accurate than Na\"ive2. This paper presents some initial results of M4, its major findings and a logical conclusion. Finally, it outlines what the authors consider to be the way forward for the field of forecasting.},
   keywords = {Benchmarking methods,Forecasting accuracy,Forecasting competitions,M Competitions,Machine Learning (ML) methods,Practice of forecasting,Prediction intervals (PIs),Time series methods},
   file = {/Users/js5013/Zotero/storage/WE79UWRE/makridakis2018.pdf}
+}
+
+@article{Malkov2020,
+  title = {Efficient and {{Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs}}},
+  author = {Malkov, Yu A. and Yashunin, D. A.},
+  year = {2020},
+  month = apr,
+  journal = {IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  volume = {42},
+  number = {4},
+  pages = {824--836},
+  issn = {0162-8828, 2160-9292, 1939-3539},
+  doi = {10.1109/TPAMI.2018.2889473},
+  url = {https://ieeexplore.ieee.org/document/8594636/},
+  urldate = {2022-11-09},
+  abstract = {We present a new approach for the approximate K-nearest neighbor search based on navigable small world graphs with controllable hierarchy (Hierarchical NSW, HNSW). The proposed solution is fully graph-based, without any need for additional search structures, which are typically used at the coarse search stage of the most proximity graph techniques. Hierarchical NSW incrementally builds a multi-layer structure consisting from hierarchical set of proximity graphs (layers) for nested subsets of the stored elements. The maximum layer in which an element is present is selected randomly with an exponentially decaying probability distribution. This allows producing graphs similar to the previously studied Navigable Small World (NSW) structures while additionally having the links separated by their characteristic distance scales. Starting search from the upper layer together with utilizing the scale separation boosts the performance compared to NSW and allows a logarithmic complexity scaling. Additional employment of a heuristic for selecting proximity graph neighbors significantly increases performance at high recall and in case of highly clustered data. Performance evaluation has demonstrated that the proposed general metric space search index is able to strongly outperform previous opensource state-of-the-art vector-only approaches. Similarity of the algorithm to the skip list structure allows straightforward balanced distributed implementation.},
+  langid = {english},
+  file = {/Users/js5013/Zotero/storage/MLVGB4LU/Malkov and Yashunin - 2020 - Efficient and Robust Approximate Nearest Neighbor .pdf}
 }
 
 @article{Man2018a,
