@@ -16,7 +16,12 @@ Creates Markov chains with samples that are eventually drawn from the exact post
       - reparameterizing Euclidean HMC is equivalent to running Riemannian HMC
       - expensive to calculate Hessian in high dimensions ($n^2$ memory requirement)
         - quasi-Newton approximation (a la L-BFGS) possible?
+  - applying continuous mappings to transform MCMC proposals to more complex proposals
+    - NeuTra HMC from {cite:t}`Hoffman2019` uses inverse autoregressive flows {cite:p}`Kingma2017` to learn the posterior geometry, then passes HMC samples (from a Gaussian) through the flow
+      - they show that the dynamics of this method are equivalent to Riemannian HMC
+
+## References
 
 ```{bibliography}
-
+  :filter: docname in docnames
 ```
