@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Sampling &#8212; notes</title>
+    <title>Algorithms &#8212; notes</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,8 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Markov chain Monte Carlo" href="mcmc.html" />
-    <link rel="prev" title="Overview" href="../../intro.html" />
+    <link rel="prev" title="Variational inference" href="../sampling/vi.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -114,30 +113,30 @@ const thebe_selector_output = ".output, .cell_output"
             </li>
         </ul>
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 current active has-children">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../sampling/intro.html">
    Sampling
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="mcmc.html">
+    <a class="reference internal" href="../sampling/mcmc.html">
      Markov chain Monte Carlo
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="vi.html">
+    <a class="reference internal" href="../sampling/vi.html">
      Variational inference
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../algorithms/intro.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Algorithms
   </a>
  </li>
@@ -231,7 +230,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/al-jshen/notes/issues/new?title=Issue%20on%20page%20%2Fcontent/sampling/intro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/al-jshen/notes/issues/new?title=Issue%20on%20page%20%2Fcontent/algorithms/intro.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -259,7 +258,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/content/sampling/intro.md"
+        <a href="../../_sources/content/algorithms/intro.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -296,23 +295,60 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hierarchical-navigable-small-worlds-hnsw">
+   Hierarchical Navigable Small Worlds (HNSW)
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Sampling</h1>
+                <h1>Algorithms</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hierarchical-navigable-small-worlds-hnsw">
+   Hierarchical Navigable Small Worlds (HNSW)
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -320,12 +356,26 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="sampling">
-<h1>Sampling<a class="headerlink" href="#sampling" title="Permalink to this headline">#</a></h1>
-<p>Problem: Given a known probability distribution, how do you draw samples from it?</p>
-<p>Motivation: probability distributions can be hard to work with. But if you have samples from the distribution, you can easily calculate expectation values involving that distribution (e.g., means, marginal likelihoods, etc.) using those samples. You can also use those samples to run simulations (generative modelling).</p>
-<div class="toctree-wrapper compound">
+  <section class="tex2jax_ignore mathjax_ignore" id="algorithms">
+<h1>Algorithms<a class="headerlink" href="#algorithms" title="Permalink to this headline">#</a></h1>
+<p>Things that I find interesting and/or useful.</p>
+<section id="hierarchical-navigable-small-worlds-hnsw">
+<h2>Hierarchical Navigable Small Worlds (HNSW)<a class="headerlink" href="#hierarchical-navigable-small-worlds-hnsw" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>extremely fast vector similarity search ((approximate) nearest neighbor) algorithm</p></li>
+<li><p>paper: <span id="id1">Malkov and Yashunin [<a class="reference internal" href="#id237" title="Yu A. Malkov and D. A. Yashunin. Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs. IEEE Transactions on Pattern Analysis and Machine Intelligence, 42(4):824–836, April 2020. URL: https://ieeexplore.ieee.org/document/8594636/ (visited on 2022-11-09), doi:10.1109/TPAMI.2018.2889473.">2020</a>]</span>, FAISS: <span id="id2">Johnson <em>et al.</em> [<a class="reference internal" href="#id190" title="Jeff Johnson, Matthijs Douze, and Hervé Jégou. Billion-scale similarity search with GPUs. February 2017. URL: http://arxiv.org/abs/1702.08734 (visited on 2022-11-09), arXiv:1702.08734.">2017</a>]</span>, <a class="reference external" href="https://www.pinecone.io/learn/hnsw">https://www.pinecone.io/learn/hnsw</a></p></li>
+</ul>
+<div class="docutils container" id="id3">
+<dl class="citation">
+<dt class="label" id="id190"><span class="brackets"><a class="fn-backref" href="#id2">JDJegou17</a></span></dt>
+<dd><p>Jeff Johnson, Matthijs Douze, and Hervé Jégou. Billion-scale similarity search with GPUs. February 2017. URL: <a class="reference external" href="http://arxiv.org/abs/1702.08734">http://arxiv.org/abs/1702.08734</a> (visited on 2022-11-09), <a class="reference external" href="https://arxiv.org/abs/1702.08734">arXiv:1702.08734</a>.</p>
+</dd>
+<dt class="label" id="id237"><span class="brackets"><a class="fn-backref" href="#id1">MY20</a></span></dt>
+<dd><p>Yu A. Malkov and D. A. Yashunin. Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs. <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em>, 42(4):824–836, April 2020. URL: <a class="reference external" href="https://ieeexplore.ieee.org/document/8594636/">https://ieeexplore.ieee.org/document/8594636/</a> (visited on 2022-11-09), <a class="reference external" href="https://doi.org/10.1109/TPAMI.2018.2889473">doi:10.1109/TPAMI.2018.2889473</a>.</p>
+</dd>
+</dl>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -341,7 +391,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content/sampling"
+            path: "./content/algorithms"
         },
         predefinedOutput: true
     }
@@ -355,19 +405,12 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../../intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../sampling/vi.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Overview</p>
+            <p class="prev-next-title">Variational inference</p>
         </div>
-    </a>
-    <a class='right-next' id="next-link" href="mcmc.html" title="next page">
-    <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Markov chain Monte Carlo</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

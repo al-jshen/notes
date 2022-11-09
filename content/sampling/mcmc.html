@@ -96,7 +96,7 @@ const thebe_selector_output = ".output, .cell_output"
         
       
       
-      <img src="../../_static/logo.png" class="logo" alt="logo">
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">notes</h1>
@@ -137,6 +137,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../algorithms/intro.html">
+   Algorithms
+  </a>
  </li>
 </ul>
 
@@ -320,6 +325,11 @@ title="Print to PDF"
    Problems
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -344,6 +354,11 @@ title="Print to PDF"
    Problems
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -364,12 +379,12 @@ title="Print to PDF"
 <li><p>How do you reach the stationary distribution quickly?</p></li>
 <li><p>How can you pool information across multiple chains to speed up the above process?</p>
 <ul>
-<li><p>ensemble chain adaptation <span id="id1">[<a class="reference internal" href="#id172" title="Matthew D Hoffman and Pavel Sountsov. Tuning-Free Generalized Hamiltonian Monte Carlo. 2022. URL: https://proceedings.mlr.press/v151/hoffman22a.html.">Hoffman and Sountsov, 2022</a>]</span></p></li>
+<li><p>ensemble chain adaptation <span id="id1">[<a class="reference internal" href="#id177" title="Matthew D Hoffman and Pavel Sountsov. Tuning-Free Generalized Hamiltonian Monte Carlo. 2022. URL: https://proceedings.mlr.press/v151/hoffman22a.html.">Hoffman and Sountsov, 2022</a>]</span></p></li>
 </ul>
 </li>
 <li><p>How can you deal with problematic geometry (ill-conditioned problems)?</p>
 <ul>
-<li><p><strong>Riemannian HMC</strong> <span id="id2">[<a class="reference internal" href="#id152" title="Mark Girolami and Ben Calderhead. Riemann manifold Langevin and Hamiltonian Monte Carlo methods: Riemann Manifold Langevin and Hamiltonian Monte Carlo Methods. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 73(2):123–214, March 2011. URL: https://onlinelibrary.wiley.com/doi/10.1111/j.1467-9868.2010.00765.x (visited on 2022-07-25), doi:10.1111/j.1467-9868.2010.00765.x.">Girolami and Calderhead, 2011</a>]</span>: use a local geometry (i.e., empirical Fisher matrix) to define the mass matrix</p>
+<li><p><strong>Riemannian HMC</strong> <span id="id2">[<a class="reference internal" href="#id154" title="Mark Girolami and Ben Calderhead. Riemann manifold Langevin and Hamiltonian Monte Carlo methods: Riemann Manifold Langevin and Hamiltonian Monte Carlo Methods. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 73(2):123–214, March 2011. URL: https://onlinelibrary.wiley.com/doi/10.1111/j.1467-9868.2010.00765.x (visited on 2022-07-25), doi:10.1111/j.1467-9868.2010.00765.x.">Girolami and Calderhead, 2011</a>]</span>: use a local geometry (i.e., empirical Fisher matrix) to define the mass matrix</p>
 <ul>
 <li><p>has some problems (see https://discourse.mc-stan.org/t/riemann-manifold-hmc-in-stan/19466/5)</p>
 <ul>
@@ -384,16 +399,34 @@ title="Print to PDF"
 </li>
 </ul>
 </li>
+<li><p>applying continuous mappings to transform MCMC proposals to more complex proposals</p>
+<ul>
+<li><p>NeuTra HMC from <span id="id3">Hoffman <em>et al.</em> [<a class="reference internal" href="#id176" title="Matthew Hoffman, Pavel Sountsov, Joshua V. Dillon, Ian Langmore, Dustin Tran, and Srinivas Vasudevan. NeuTra-lizing Bad Geometry in Hamiltonian Monte Carlo Using Neural Transport. March 2019. URL: http://arxiv.org/abs/1903.03704 (visited on 2022-11-04), arXiv:1903.03704.">2019</a>]</span> uses inverse autoregressive flows <span id="id4">[<a class="reference internal" href="#id203" title="Diederik P. Kingma, Tim Salimans, Rafal Jozefowicz, Xi Chen, Ilya Sutskever, and Max Welling. Improving Variational Inference with Inverse Autoregressive Flow. arXiv:1606.04934 [cs, stat], January 2017. URL: http://arxiv.org/abs/1606.04934 (visited on 2021-10-20), arXiv:1606.04934.">Kingma <em>et al.</em>, 2017</a>]</span> to learn the posterior geometry, then passes HMC samples (from a Gaussian) through the flow</p>
+<ul>
+<li><p>they show that the dynamics of this method are equivalent to Riemannian HMC</p></li>
 </ul>
 </li>
 </ul>
-<div class="docutils container" id="id3">
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<div class="docutils container" id="id5">
 <dl class="citation">
-<dt class="label" id="id152"><span class="brackets"><a class="fn-backref" href="#id2">GC11</a></span></dt>
+<dt class="label" id="id154"><span class="brackets"><a class="fn-backref" href="#id2">GC11</a></span></dt>
 <dd><p>Mark Girolami and Ben Calderhead. Riemann manifold Langevin and Hamiltonian Monte Carlo methods: Riemann Manifold Langevin and Hamiltonian Monte Carlo Methods. <em>Journal of the Royal Statistical Society: Series B (Statistical Methodology)</em>, 73(2):123–214, March 2011. URL: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-9868.2010.00765.x">https://onlinelibrary.wiley.com/doi/10.1111/j.1467-9868.2010.00765.x</a> (visited on 2022-07-25), <a class="reference external" href="https://doi.org/10.1111/j.1467-9868.2010.00765.x">doi:10.1111/j.1467-9868.2010.00765.x</a>.</p>
 </dd>
-<dt class="label" id="id172"><span class="brackets"><a class="fn-backref" href="#id1">HS22</a></span></dt>
+<dt class="label" id="id176"><span class="brackets"><a class="fn-backref" href="#id3">HSD+19</a></span></dt>
+<dd><p>Matthew Hoffman, Pavel Sountsov, Joshua V. Dillon, Ian Langmore, Dustin Tran, and Srinivas Vasudevan. NeuTra-lizing Bad Geometry in Hamiltonian Monte Carlo Using Neural Transport. March 2019. URL: <a class="reference external" href="http://arxiv.org/abs/1903.03704">http://arxiv.org/abs/1903.03704</a> (visited on 2022-11-04), <a class="reference external" href="https://arxiv.org/abs/1903.03704">arXiv:1903.03704</a>.</p>
+</dd>
+<dt class="label" id="id177"><span class="brackets"><a class="fn-backref" href="#id1">HS22</a></span></dt>
 <dd><p>Matthew D Hoffman and Pavel Sountsov. Tuning-Free Generalized Hamiltonian Monte Carlo. 2022. URL: <a class="reference external" href="https://proceedings.mlr.press/v151/hoffman22a.html">https://proceedings.mlr.press/v151/hoffman22a.html</a>.</p>
+</dd>
+<dt class="label" id="id203"><span class="brackets"><a class="fn-backref" href="#id4">KSJ+17</a></span></dt>
+<dd><p>Diederik P. Kingma, Tim Salimans, Rafal Jozefowicz, Xi Chen, Ilya Sutskever, and Max Welling. Improving Variational Inference with Inverse Autoregressive Flow. <em>arXiv:1606.04934 [cs, stat]</em>, January 2017. URL: <a class="reference external" href="http://arxiv.org/abs/1606.04934">http://arxiv.org/abs/1606.04934</a> (visited on 2021-10-20), <a class="reference external" href="https://arxiv.org/abs/1606.04934">arXiv:1606.04934</a>.</p>
 </dd>
 </dl>
 </div>

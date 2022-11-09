@@ -17,3 +17,9 @@ q(z) = \prod_i q_i(z_i)
 - (relative) simplicity of the mean-field family of approximating distributions makes optimization easy (i.e., can apply it to large problems)
 - does not model dependencies between latent variables
 - tends to underestimates variances of parameters
+
+## References
+
+```{bibliography}
+  :filter: docname in docnames
+```
