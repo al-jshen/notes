@@ -2077,6 +2077,24 @@
   file = {/Users/js5013/Zotero/storage/7MRLK6S9/Gabrié et al. - 2021 - Efficient Bayesian Sampling Using Normalizing Flow.pdf}
 }
 
+@article{Gabrie2022,
+  title = {Adaptive {{Monte Carlo}} Augmented with Normalizing Flows},
+  author = {Gabri{\'e}, Marylou and Rotskoff, Grant M. and {Vanden-Eijnden}, Eric},
+  year = {2022},
+  month = mar,
+  journal = {Proceedings of the National Academy of Sciences},
+  volume = {119},
+  number = {10},
+  pages = {e2109420119},
+  issn = {0027-8424, 1091-6490},
+  doi = {10.1073/pnas.2109420119},
+  url = {https://pnas.org/doi/full/10.1073/pnas.2109420119},
+  urldate = {2022-11-09},
+  abstract = {Significance             Monte Carlo methods, tools for sampling data from probability distributions, are widely used in the physical sciences, applied mathematics, and Bayesian statistics. Nevertheless, there are many situations in which it is computationally prohibitive to use Monte Carlo due to slow ``mixing'' between modes of a distribution unless hand-tuned algorithms are used to accelerate the scheme. Machine learning techniques based on generative models offer a compelling alternative to the challenge of designing efficient schemes for a specific system. Here, we formalize Monte Carlo augmented with normalizing flows and show that, with limited prior data and a physically inspired algorithm, we can substantially accelerate sampling with generative models.           ,              Many problems in the physical sciences, machine learning, and statistical inference necessitate sampling from a high-dimensional, multimodal probability distribution. Markov Chain Monte Carlo (MCMC) algorithms, the ubiquitous tool for this task, typically rely on random local updates to propagate configurations of a given system in a way that ensures that generated configurations will be distributed according to a target probability distribution asymptotically. In high-dimensional settings with multiple relevant metastable basins, local approaches require either immense computational effort or intricately designed importance sampling strategies to capture information about, for example, the relative populations of such basins. Here, we analyze an adaptive MCMC, which augments MCMC sampling with nonlocal transition kernels parameterized with generative models known as normalizing flows. We focus on a setting where there are no preexisting data, as is commonly the case for problems in which MCMC is used. Our method uses 1) an MCMC strategy that blends local moves obtained from any standard transition kernel with those from a generative model to accelerate the sampling and 2) the data generated this way to adapt the generative model and improve its efficacy in the MCMC algorithm. We provide a theoretical analysis of the convergence properties of this algorithm and investigate numerically its efficiency, in particular in terms of its propensity to equilibrate fast between metastable modes whose rough location is known a priori but respective probability weight is not. We show that our algorithm can sample effectively across large free energy barriers, providing dramatic accelerations relative to traditional MCMC algorithms.},
+  langid = {english},
+  file = {/Users/js5013/Zotero/storage/I3GR88UN/Gabrié et al. - 2022 - Adaptive Monte Carlo augmented with normalizing fl.pdf}
+}
+
 @article{Gabry2018,
   title = {Visualization in {{Bayesian}} Workflow},
   author = {Gabry, Jonah and Simpson, Daniel and Vehtari, Aki and Betancourt, Michael and Gelman, Andrew},
@@ -2623,6 +2641,18 @@
   langid = {english},
   keywords = {Statistics - Computation,Statistics - Machine Learning},
   file = {/Users/js5013/Zotero/storage/2L48FD4G/Hoffman et al. - 2019 - NeuTra-lizing Bad Geometry in Hamiltonian Monte Ca.pdf}
+}
+
+@article{Hoffman2021,
+  title = {An {{Adaptive MCMC Scheme}} for {{Setting Trajectory Lengths}} in {{Hamiltonian Monte Carlo}}},
+  author = {Hoffman, Matthew D and Radul, Alexey and Sountsov, Pavel},
+  year = {2021},
+  journal = {PMLR},
+  volume = {130},
+  pages = {10},
+  url = {http://proceedings.mlr.press/v130/hoffman21a/hoffman21a.pdf},
+  langid = {english},
+  file = {/Users/js5013/Zotero/storage/6WK4ZNYD/Hoﬀman et al. - An Adaptive MCMC Scheme for Setting Trajectory Len.pdf}
 }
 
 @misc{Hoffman2022,

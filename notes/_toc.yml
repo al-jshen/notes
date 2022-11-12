@@ -9,3 +9,4 @@ chapters:
       - file: content/sampling/mcmc
       - file: content/sampling/vi
   - file: content/algorithms/intro
+  - file: content/talks/index
