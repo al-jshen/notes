@@ -336,6 +336,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normalizing-flows">
+   Normalizing Flows
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -370,6 +375,11 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normalizing-flows">
+   Normalizing Flows
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -394,14 +404,34 @@ title="Print to PDF"
 <section id="mean-field-approximation">
 <h2>Mean-field approximation<a class="headerlink" href="#mean-field-approximation" title="Permalink to this headline">#</a></h2>
 <p>Makes the assumption that latent variables are mutually independent, so that we can factorize the likelihood as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3c741e15-b664-401e-a63d-2deda6c0435e">
-<span class="eqno">(1)<a class="headerlink" href="#equation-3c741e15-b664-401e-a63d-2deda6c0435e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-49e9e0f9-fa52-4338-98b4-531cb275f123">
+<span class="eqno">(2)<a class="headerlink" href="#equation-49e9e0f9-fa52-4338-98b4-531cb275f123" title="Permalink to this equation">#</a></span>\[\begin{align}
 q(z) = \prod_i q_i(z_i)
 \end{align}\]</div>
 <ul class="simple">
 <li><p>(relative) simplicity of the mean-field family of approximating distributions makes optimization easy (i.e., can apply it to large problems)</p></li>
 <li><p>does not model dependencies between latent variables</p></li>
 <li><p>tends to underestimates variances of parameters</p></li>
+</ul>
+</section>
+<section id="normalizing-flows">
+<h2>Normalizing Flows<a class="headerlink" href="#normalizing-flows" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>learn a flexible, bijective transformation from a simple base distribution that you can sample from and have an exact likelihood for to your target distribution</p></li>
+<li><p>for some invertible mapping <span class="math notranslate nohighlight">\(f\)</span>, random variable <span class="math notranslate nohighlight">\(z\)</span> with base distribution <span class="math notranslate nohighlight">\(z \sim p_z(z)\)</span>, and some sample <span class="math notranslate nohighlight">\(x\)</span> from the target distrbution <span class="math notranslate nohighlight">\(x \sim \pi(x)\)</span> such that <span class="math notranslate nohighlight">\(x = f(z)\)</span> and <span class="math notranslate nohighlight">\(z = f^{-1}(x)\)</span>, we have</p>
+<div class="amsmath math notranslate nohighlight" id="equation-8560e2d8-343a-4343-bd22-d8c944797f23">
+<span class="eqno">(3)<a class="headerlink" href="#equation-8560e2d8-343a-4343-bd22-d8c944797f23" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \pi(x) \approx p_x(x) = p_z(f^{-1}(x)) \left|\textrm{det}(\frac{\partial f^{-1}(x)}{\partial x})\right| = p_z(z) \left|\textrm{det}(\frac{\partial f(z)}{\partial z})\right|^{-1}
+  \end{align}\]</div>
+</li>
+<li><p>we can parameterize the mapping <span class="math notranslate nohighlight">\(f\)</span> with a neural network, under the conditions that</p>
+<ol class="simple">
+<li><p>the mapping must be bijective (i.e., input and output dimensions are the same, and the mapping is invertible)</p></li>
+<li><p>the determinant of the Jacobian must be efficient and invertible</p></li>
+</ol>
+</li>
+<li><p>to learn the target density given some samples, we simply maximize the likelihood of the data under our model likelihood by transforming the data samples to our base distribution, then calculating the likelihood</p></li>
+<li><p>to generate samples from a given target distribution, we generate samples from our base distribution, push them through our mapping into our approximate target distribution, then use a Monte Carlo estimate of the ELBO to make our variational distribution a good approximation for the target distribution</p></li>
 </ul>
 </section>
 <section id="references">

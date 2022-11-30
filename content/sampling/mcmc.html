@@ -331,6 +331,21 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#temperature-based-methods">
+   Temperature based methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#to-read">
+   To Read
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#misc">
+   Misc
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -360,6 +375,21 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#temperature-based-methods">
+   Temperature based methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#to-read">
+   To Read
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#misc">
+   Misc
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#references">
    References
   </a>
@@ -382,35 +412,39 @@ title="Print to PDF"
 <section id="problems">
 <h2>Problems<a class="headerlink" href="#problems" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>How do you reach the stationary distribution quickly?</p></li>
+<li><p>How do you reach the stationary distribution quickly (i.e., become unbiased)?</p></li>
 <li><p>How can you pool information across multiple chains to speed up the above process?</p>
 <ul>
-<li><p>ensemble chain adaptation <span id="id1">[<a class="reference internal" href="#id179" title="Matthew D Hoffman, Alexey Radul, and Pavel Sountsov. An Adaptive MCMC Scheme for Setting Trajectory Lengths in Hamiltonian Monte Carlo. PMLR, 130:10, 2021. URL: http://proceedings.mlr.press/v130/hoffman21a/hoffman21a.pdf.">Hoffman <em>et al.</em>, 2021</a>, <a class="reference internal" href="#id180" title="Matthew D Hoffman and Pavel Sountsov. Tuning-Free Generalized Hamiltonian Monte Carlo. 2022. URL: https://proceedings.mlr.press/v151/hoffman22a.html.">Hoffman and Sountsov, 2022</a>]</span></p></li>
-<li><p><span id="id2">[<a class="reference internal" href="#id142" title="Marylou Gabrié, Grant M. Rotskoff, and Eric Vanden-Eijnden. Adaptive Monte Carlo augmented with normalizing flows. Proceedings of the National Academy of Sciences, 119(10):e2109420119, March 2022. URL: https://pnas.org/doi/full/10.1073/pnas.2109420119 (visited on 2022-11-09), doi:10.1073/pnas.2109420119.">Gabrié <em>et al.</em>, 2022</a>]</span></p></li>
+<li><p>ensemble chain adaptation <span id="id1">[<a class="reference internal" href="#id188" title="Matthew D Hoffman, Alexey Radul, and Pavel Sountsov. An Adaptive MCMC Scheme for Setting Trajectory Lengths in Hamiltonian Monte Carlo. PMLR, 130:10, 2021. URL: http://proceedings.mlr.press/v130/hoffman21a/hoffman21a.pdf.">Hoffman <em>et al.</em>, 2021</a>, <a class="reference internal" href="#id189" title="Matthew D Hoffman and Pavel Sountsov. Tuning-Free Generalized Hamiltonian Monte Carlo. 2022. URL: https://proceedings.mlr.press/v151/hoffman22a.html.">Hoffman and Sountsov, 2022</a>]</span></p></li>
 </ul>
 </li>
 <li><p>How can you deal with problematic geometry (ill-conditioned problems)?</p>
 <ul>
-<li><p><strong>Riemannian HMC</strong> <span id="id3">[<a class="reference internal" href="#id156" title="Mark Girolami and Ben Calderhead. Riemann manifold Langevin and Hamiltonian Monte Carlo methods: Riemann Manifold Langevin and Hamiltonian Monte Carlo Methods. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 73(2):123–214, March 2011. URL: https://onlinelibrary.wiley.com/doi/10.1111/j.1467-9868.2010.00765.x (visited on 2022-07-25), doi:10.1111/j.1467-9868.2010.00765.x.">Girolami and Calderhead, 2011</a>]</span>: use a local geometry (i.e., empirical Fisher matrix) to define the mass matrix</p>
+<li><p><strong>Riemannian HMC</strong> <span id="id2">[<a class="reference internal" href="#id165" title="Mark Girolami and Ben Calderhead. Riemann manifold Langevin and Hamiltonian Monte Carlo methods: Riemann Manifold Langevin and Hamiltonian Monte Carlo Methods. Journal of the Royal Statistical Society: Series B (Statistical Methodology), 73(2):123–214, March 2011. URL: https://onlinelibrary.wiley.com/doi/10.1111/j.1467-9868.2010.00765.x (visited on 2022-07-25), doi:10.1111/j.1467-9868.2010.00765.x.">Girolami and Calderhead, 2011</a>]</span> uses a local geometry (i.e., empirical Fisher matrix) to define the mass matrix</p>
 <ul>
-<li><p>has some problems (see https://discourse.mc-stan.org/t/riemann-manifold-hmc-in-stan/19466/5)</p>
+<li><p>has some problems (see <a class="reference external" href="https://discourse.mc-stan.org/t/riemann-manifold-hmc-in-stan/19466/5">discussion</a>)</p>
 <ul>
 <li><p>numerical integrator can be unstable due to implementation and also due to geometry, fragility means that it requires hand-tuning by user</p></li>
 <li><p>reparameterizing Euclidean HMC is equivalent to running Riemannian HMC</p></li>
 <li><p>expensive to calculate Hessian in high dimensions (<span class="math notranslate nohighlight">\(n^2\)</span> memory requirement)</p>
 <ul>
-<li><p>quasi-Newton approximation (a la L-BFGS) possible?</p></li>
+<li><p>quasi-Newton approximation methods <span id="id3">[<a class="reference internal" href="#id414" title="Yichuan Zhang and Charles A Sutton. Quasi-Newton Methods for Markov Chain Monte Carlo. NeurIPS, pages 9, 2022. URL: https://papers.nips.cc/paper/2011/file/e702e51da2c0f5be4dd354bb3e295d37-Paper.pdf.">Zhang and Sutton, 2022</a>]</span></p></li>
 </ul>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>applying continuous mappings to transform MCMC proposals to more complex proposals</p>
+<li><p>applying continuous mappings (transport map, normalizing flow) to transform MCMC proposals to more complex proposals</p>
 <ul>
-<li><p>NeuTra HMC from <span id="id4">Hoffman <em>et al.</em> [<a class="reference internal" href="#id178" title="Matthew Hoffman, Pavel Sountsov, Joshua V. Dillon, Ian Langmore, Dustin Tran, and Srinivas Vasudevan. NeuTra-lizing Bad Geometry in Hamiltonian Monte Carlo Using Neural Transport. March 2019. URL: http://arxiv.org/abs/1903.03704 (visited on 2022-11-04), arXiv:1903.03704.">2019</a>]</span> uses inverse autoregressive flows <span id="id5">[<a class="reference internal" href="#id206" title="Diederik P. Kingma, Tim Salimans, Rafal Jozefowicz, Xi Chen, Ilya Sutskever, and Max Welling. Improving Variational Inference with Inverse Autoregressive Flow. arXiv:1606.04934 [cs, stat], January 2017. URL: http://arxiv.org/abs/1606.04934 (visited on 2021-10-20), arXiv:1606.04934.">Kingma <em>et al.</em>, 2017</a>]</span> to learn the posterior geometry, then passes HMC samples (from a Gaussian) through the flow</p>
+<li><p>NeuTra HMC from <span id="id4">Hoffman <em>et al.</em> [<a class="reference internal" href="#id187" title="Matthew Hoffman, Pavel Sountsov, Joshua V. Dillon, Ian Langmore, Dustin Tran, and Srinivas Vasudevan. NeuTra-lizing Bad Geometry in Hamiltonian Monte Carlo Using Neural Transport. March 2019. URL: http://arxiv.org/abs/1903.03704 (visited on 2022-11-04), arXiv:1903.03704.">2019</a>]</span> uses inverse autoregressive flows <span id="id5">[<a class="reference internal" href="#id217" title="Diederik P. Kingma, Tim Salimans, Rafal Jozefowicz, Xi Chen, Ilya Sutskever, and Max Welling. Improving Variational Inference with Inverse Autoregressive Flow. arXiv:1606.04934 [cs, stat], January 2017. URL: http://arxiv.org/abs/1606.04934 (visited on 2021-10-20), arXiv:1606.04934.">Kingma <em>et al.</em>, 2017</a>]</span> to learn the posterior geometry, then passes HMC samples (from a Gaussian) through the flow</p>
 <ul>
 <li><p>they show that the dynamics of this method are equivalent to Riemannian HMC</p></li>
+</ul>
+</li>
+<li><p>can train a flow in conjunction with an MCMC sampler <span id="id6">[<a class="reference internal" href="#id151" title="Marylou Gabrié, Grant M. Rotskoff, and Eric Vanden-Eijnden. Adaptive Monte Carlo augmented with normalizing flows. Proceedings of the National Academy of Sciences, 119(10):e2109420119, March 2022. URL: https://pnas.org/doi/full/10.1073/pnas.2109420119 (visited on 2022-11-09), doi:10.1073/pnas.2109420119.">Gabrié <em>et al.</em>, 2022</a>, <a class="reference internal" href="#id415" title="Liyi Zhang, David M. Blei, and Christian A. Naesseth. Transport Score Climbing: Variational Inference Using Forward KL and Adaptive Neural Transport. September 2022. URL: http://arxiv.org/abs/2202.01841 (visited on 2022-11-29), arXiv:2202.01841.">Zhang <em>et al.</em>, 2022</a>]</span></p>
+<ul>
+<li><p>flow is trained with samples from MCMC and forward KLD (to avoid mode collapse), and the trained flow is used to warp space to improve MCMC proposals</p></li>
 </ul>
 </li>
 </ul>
@@ -419,27 +453,100 @@ title="Print to PDF"
 </li>
 </ul>
 </section>
+<section id="temperature-based-methods">
+<h2>Temperature based methods<a class="headerlink" href="#temperature-based-methods" title="Permalink to this headline">#</a></h2>
+<ul>
+<li><p>parameterizes the posterior with some temperature <span class="math notranslate nohighlight">\(T\)</span> as follows:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b12ef7eb-403b-44a9-8a24-1e724204773e">
+<span class="eqno">(1)<a class="headerlink" href="#equation-b12ef7eb-403b-44a9-8a24-1e724204773e" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \pi_T(\mathbf{x}) = [L(\mathbf{x})]^{1/T} \, p(\mathbf{x}),
+  \end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\pi_T\)</span> is the temperature-dependent modified posterior, <span class="math notranslate nohighlight">\(L\)</span> is the likelihood, and <span class="math notranslate nohighlight">\(p\)</span> is the prior</p>
+</li>
+<li><p>at high temperatures (“hot chains”), the likelihood is flattened more, so low-density regions of the posterior can be explored more easily, and at low temperatures (“cold chains”), peaks in the likelihood/posterior are sampled more easily</p></li>
+<li><p><strong>simulated annealing</strong> samples from a series of distributions of decreasing temperature, with the final temperature corresponding to the target distribution (i.e., <span class="math notranslate nohighlight">\(T=1\)</span>)</p>
+<ul class="simple">
+<li><p>has no convergence guarantees unless we use infinite compute time</p></li>
+</ul>
+</li>
+<li><p><strong>simulated tempering</strong> is like simulated annealing, but the temperature is chosen randomly rather than systematically</p>
+<ul class="simple">
+<li><p>need to define a joint distribution over the original parameter space and over temperature space, such that the joint distribution conditional on <span class="math notranslate nohighlight">\(T=1\)</span> is the target distribution, and that the marginal distribution for <span class="math notranslate nohighlight">\(T\)</span> is roughly uniform</p></li>
+</ul>
+</li>
+<li><p><strong>parallel tempering</strong> samples multiple modified posteriors in parallel, and then proposes swaps between chains so that states from hot chains inform cold chains</p>
+<ul class="simple">
+<li><p>detailed balance is maintained by using a Metropolis-Hastings step to determine whether the swap is performed</p></li>
+<li><p>swaps are usually done between adjacent chains to ensure that the acceptance probability is not tiny</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="to-read">
+<h2>To Read<a class="headerlink" href="#to-read" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>parallel tempering <a class="reference external" href="https://darrenjw.wordpress.com/2013/09/29/parallel-tempering-and-metropolis-coupled-mcmc/">1</a>, <a class="reference external" href="https://emcee.readthedocs.io/en/v2.2.1/user/pt/">2</a> <span id="id7">[<a class="reference internal" href="#id276" title="Radford M. Neal. Sampling from multimodal distributions using tempered transitions. Statistics and Computing, 6(4):353–366, December 1996. URL: http://link.springer.com/10.1007/BF00143556 (visited on 2022-07-29), doi:10.1007/BF00143556.">Neal, 1996</a>]</span></p></li>
+<li><p>simulated annealing and annealed importance sampling <span id="id8">[<a class="reference internal" href="#id264" title="Laurence Illing Midgley, Vincent Stimper, Gregor N. C. Simm, Bernhard Schölkopf, and José Miguel Hernández-Lobato. Flow Annealed Importance Sampling Bootstrap. August 2022. URL: http://arxiv.org/abs/2208.01893 (visited on 2022-11-29), arXiv:2208.01893.">Midgley <em>et al.</em>, 2022</a>, <a class="reference internal" href="#id277" title="Radford M. Neal. Annealed Importance Sampling. September 1998. URL: http://arxiv.org/abs/physics/9803008 (visited on 2022-11-29), arXiv:physics/9803008.">Neal, 1998</a>]</span></p></li>
+<li><p><a class="reference external" href="https://darrenjw.wordpress.com/2019/12/12/unbiased-mcmc-with-couplings/">Unbiased MCMC with couplings</a> <span id="id9">[<a class="reference internal" href="#id201" title="Pierre E. Jacob, John O'Leary, and Yves F. Atchadé. Unbiased Markov chain Monte Carlo with couplings. July 2019. URL: http://arxiv.org/abs/1708.03625 (visited on 2022-11-29), arXiv:1708.03625.">Jacob <em>et al.</em>, 2019</a>]</span></p></li>
+<li><p>avoiding detailed balance <span id="id10">[<a class="reference internal" href="#id352" title="Jascha Sohl-Dickstein, Mayur Mudigonda, and Michael R. DeWeese. Hamiltonian Monte Carlo Without Detailed Balance. March 2016. URL: http://arxiv.org/abs/1409.5191 (visited on 2022-11-29), arXiv:1409.5191.">Sohl-Dickstein <em>et al.</em>, 2016</a>]</span></p></li>
+</ul>
+</section>
+<section id="misc">
+<h2>Misc<a class="headerlink" href="#misc" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><strong>shadow Hamiltonian</strong> models the errors of the numerical integration scheme; exact trajectory of the shadow Hamiltonian is the same as the approximate trajectory (approximate due to numerical errors) of the regular Hamiltonian</p></li>
+<li><p><strong>preconditioned Crank-Nicolson algorithm</strong> has acceptance rate which is independent of the dimension, can use it to sample from infinite dimensional spaces <span id="id11">[<a class="reference internal" href="#id193" title="Zixi Hu, Zhewei Yao, and Jinglai Li. On an adaptive preconditioned Crank-Nicolson MCMC algorithm for infinite dimensional Bayesian inferences. April 2016. URL: http://arxiv.org/abs/1511.05838 (visited on 2022-11-29), arXiv:1511.05838.">Hu <em>et al.</em>, 2016</a>]</span></p></li>
+<li><p>MCMC on Hilbert spaces <span id="id12">[<a class="reference internal" href="#id32" title="A. Beskos, F.J. Pinski, J.M. Sanz-Serna, and A.M. Stuart. Hybrid Monte Carlo on Hilbert spaces. Stochastic Processes and their Applications, 121(10):2201–2230, October 2011. URL: https://linkinghub.elsevier.com/retrieve/pii/S0304414911001396 (visited on 2022-11-29), doi:10.1016/j.spa.2011.06.003.">Beskos <em>et al.</em>, 2011</a>]</span></p></li>
+</ul>
+</section>
 <section id="references">
 <h2>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
-<div class="docutils container" id="id6">
+<div class="docutils container" id="id13">
 <dl class="citation">
-<dt class="label" id="id142"><span class="brackets"><a class="fn-backref" href="#id2">GabrieRVandenEijnden22</a></span></dt>
+<dt class="label" id="id32"><span class="brackets"><a class="fn-backref" href="#id12">BPSanzSernaS11</a></span></dt>
+<dd><p>A. Beskos, F.J. Pinski, J.M. Sanz-Serna, and A.M. Stuart. Hybrid Monte Carlo on Hilbert spaces. <em>Stochastic Processes and their Applications</em>, 121(10):2201–2230, October 2011. URL: <a class="reference external" href="https://linkinghub.elsevier.com/retrieve/pii/S0304414911001396">https://linkinghub.elsevier.com/retrieve/pii/S0304414911001396</a> (visited on 2022-11-29), <a class="reference external" href="https://doi.org/10.1016/j.spa.2011.06.003">doi:10.1016/j.spa.2011.06.003</a>.</p>
+</dd>
+<dt class="label" id="id151"><span class="brackets"><a class="fn-backref" href="#id6">GabrieRVandenEijnden22</a></span></dt>
 <dd><p>Marylou Gabrié, Grant M. Rotskoff, and Eric Vanden-Eijnden. Adaptive Monte Carlo augmented with normalizing flows. <em>Proceedings of the National Academy of Sciences</em>, 119(10):e2109420119, March 2022. URL: <a class="reference external" href="https://pnas.org/doi/full/10.1073/pnas.2109420119">https://pnas.org/doi/full/10.1073/pnas.2109420119</a> (visited on 2022-11-09), <a class="reference external" href="https://doi.org/10.1073/pnas.2109420119">doi:10.1073/pnas.2109420119</a>.</p>
 </dd>
-<dt class="label" id="id156"><span class="brackets"><a class="fn-backref" href="#id3">GC11</a></span></dt>
+<dt class="label" id="id165"><span class="brackets"><a class="fn-backref" href="#id2">GC11</a></span></dt>
 <dd><p>Mark Girolami and Ben Calderhead. Riemann manifold Langevin and Hamiltonian Monte Carlo methods: Riemann Manifold Langevin and Hamiltonian Monte Carlo Methods. <em>Journal of the Royal Statistical Society: Series B (Statistical Methodology)</em>, 73(2):123–214, March 2011. URL: <a class="reference external" href="https://onlinelibrary.wiley.com/doi/10.1111/j.1467-9868.2010.00765.x">https://onlinelibrary.wiley.com/doi/10.1111/j.1467-9868.2010.00765.x</a> (visited on 2022-07-25), <a class="reference external" href="https://doi.org/10.1111/j.1467-9868.2010.00765.x">doi:10.1111/j.1467-9868.2010.00765.x</a>.</p>
 </dd>
-<dt class="label" id="id178"><span class="brackets"><a class="fn-backref" href="#id4">HSD+19</a></span></dt>
+<dt class="label" id="id187"><span class="brackets"><a class="fn-backref" href="#id4">HSD+19</a></span></dt>
 <dd><p>Matthew Hoffman, Pavel Sountsov, Joshua V. Dillon, Ian Langmore, Dustin Tran, and Srinivas Vasudevan. NeuTra-lizing Bad Geometry in Hamiltonian Monte Carlo Using Neural Transport. March 2019. URL: <a class="reference external" href="http://arxiv.org/abs/1903.03704">http://arxiv.org/abs/1903.03704</a> (visited on 2022-11-04), <a class="reference external" href="https://arxiv.org/abs/1903.03704">arXiv:1903.03704</a>.</p>
 </dd>
-<dt class="label" id="id179"><span class="brackets"><a class="fn-backref" href="#id1">HRS21</a></span></dt>
+<dt class="label" id="id188"><span class="brackets"><a class="fn-backref" href="#id1">HRS21</a></span></dt>
 <dd><p>Matthew D Hoffman, Alexey Radul, and Pavel Sountsov. An Adaptive MCMC Scheme for Setting Trajectory Lengths in Hamiltonian Monte Carlo. <em>PMLR</em>, 130:10, 2021. URL: <a class="reference external" href="http://proceedings.mlr.press/v130/hoffman21a/hoffman21a.pdf">http://proceedings.mlr.press/v130/hoffman21a/hoffman21a.pdf</a>.</p>
 </dd>
-<dt class="label" id="id180"><span class="brackets"><a class="fn-backref" href="#id1">HS22</a></span></dt>
+<dt class="label" id="id189"><span class="brackets"><a class="fn-backref" href="#id1">HS22</a></span></dt>
 <dd><p>Matthew D Hoffman and Pavel Sountsov. Tuning-Free Generalized Hamiltonian Monte Carlo. 2022. URL: <a class="reference external" href="https://proceedings.mlr.press/v151/hoffman22a.html">https://proceedings.mlr.press/v151/hoffman22a.html</a>.</p>
 </dd>
-<dt class="label" id="id206"><span class="brackets"><a class="fn-backref" href="#id5">KSJ+17</a></span></dt>
+<dt class="label" id="id193"><span class="brackets"><a class="fn-backref" href="#id11">HYL16</a></span></dt>
+<dd><p>Zixi Hu, Zhewei Yao, and Jinglai Li. On an adaptive preconditioned Crank-Nicolson MCMC algorithm for infinite dimensional Bayesian inferences. April 2016. URL: <a class="reference external" href="http://arxiv.org/abs/1511.05838">http://arxiv.org/abs/1511.05838</a> (visited on 2022-11-29), <a class="reference external" href="https://arxiv.org/abs/1511.05838">arXiv:1511.05838</a>.</p>
+</dd>
+<dt class="label" id="id201"><span class="brackets"><a class="fn-backref" href="#id9">JOLearyAtchade19</a></span></dt>
+<dd><p>Pierre E. Jacob, John O'Leary, and Yves F. Atchadé. Unbiased Markov chain Monte Carlo with couplings. July 2019. URL: <a class="reference external" href="http://arxiv.org/abs/1708.03625">http://arxiv.org/abs/1708.03625</a> (visited on 2022-11-29), <a class="reference external" href="https://arxiv.org/abs/1708.03625">arXiv:1708.03625</a>.</p>
+</dd>
+<dt class="label" id="id217"><span class="brackets"><a class="fn-backref" href="#id5">KSJ+17</a></span></dt>
 <dd><p>Diederik P. Kingma, Tim Salimans, Rafal Jozefowicz, Xi Chen, Ilya Sutskever, and Max Welling. Improving Variational Inference with Inverse Autoregressive Flow. <em>arXiv:1606.04934 [cs, stat]</em>, January 2017. URL: <a class="reference external" href="http://arxiv.org/abs/1606.04934">http://arxiv.org/abs/1606.04934</a> (visited on 2021-10-20), <a class="reference external" href="https://arxiv.org/abs/1606.04934">arXiv:1606.04934</a>.</p>
+</dd>
+<dt class="label" id="id264"><span class="brackets"><a class="fn-backref" href="#id8">MSS+22</a></span></dt>
+<dd><p>Laurence Illing Midgley, Vincent Stimper, Gregor N. C. Simm, Bernhard Schölkopf, and José Miguel Hernández-Lobato. Flow Annealed Importance Sampling Bootstrap. August 2022. URL: <a class="reference external" href="http://arxiv.org/abs/2208.01893">http://arxiv.org/abs/2208.01893</a> (visited on 2022-11-29), <a class="reference external" href="https://arxiv.org/abs/2208.01893">arXiv:2208.01893</a>.</p>
+</dd>
+<dt class="label" id="id276"><span class="brackets"><a class="fn-backref" href="#id7">Nea96</a></span></dt>
+<dd><p>Radford M. Neal. Sampling from multimodal distributions using tempered transitions. <em>Statistics and Computing</em>, 6(4):353–366, December 1996. URL: <a class="reference external" href="http://link.springer.com/10.1007/BF00143556">http://link.springer.com/10.1007/BF00143556</a> (visited on 2022-07-29), <a class="reference external" href="https://doi.org/10.1007/BF00143556">doi:10.1007/BF00143556</a>.</p>
+</dd>
+<dt class="label" id="id277"><span class="brackets"><a class="fn-backref" href="#id8">Nea98</a></span></dt>
+<dd><p>Radford M. Neal. Annealed Importance Sampling. September 1998. URL: <a class="reference external" href="http://arxiv.org/abs/physics/9803008">http://arxiv.org/abs/physics/9803008</a> (visited on 2022-11-29), <a class="reference external" href="https://arxiv.org/abs/physics/9803008">arXiv:physics/9803008</a>.</p>
+</dd>
+<dt class="label" id="id415"><span class="brackets"><a class="fn-backref" href="#id6">ZBN22</a></span></dt>
+<dd><p>Liyi Zhang, David M. Blei, and Christian A. Naesseth. Transport Score Climbing: Variational Inference Using Forward KL and Adaptive Neural Transport. September 2022. URL: <a class="reference external" href="http://arxiv.org/abs/2202.01841">http://arxiv.org/abs/2202.01841</a> (visited on 2022-11-29), <a class="reference external" href="https://arxiv.org/abs/2202.01841">arXiv:2202.01841</a>.</p>
+</dd>
+<dt class="label" id="id414"><span class="brackets"><a class="fn-backref" href="#id3">ZS22</a></span></dt>
+<dd><p>Yichuan Zhang and Charles A Sutton. Quasi-Newton Methods for Markov Chain Monte Carlo. <em>NeurIPS</em>, pages 9, 2022. URL: <a class="reference external" href="https://papers.nips.cc/paper/2011/file/e702e51da2c0f5be4dd354bb3e295d37-Paper.pdf">https://papers.nips.cc/paper/2011/file/e702e51da2c0f5be4dd354bb3e295d37-Paper.pdf</a>.</p>
+</dd>
+<dt class="label" id="id352"><span class="brackets"><a class="fn-backref" href="#id10">SohlDicksteinMD16</a></span></dt>
+<dd><p>Jascha Sohl-Dickstein, Mayur Mudigonda, and Michael R. DeWeese. Hamiltonian Monte Carlo Without Detailed Balance. March 2016. URL: <a class="reference external" href="http://arxiv.org/abs/1409.5191">http://arxiv.org/abs/1409.5191</a> (visited on 2022-11-29), <a class="reference external" href="https://arxiv.org/abs/1409.5191">arXiv:1409.5191</a>.</p>
 </dd>
 </dl>
 </div>
