@@ -6,53 +6,56 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Overview &#8212; notes</title>
+    <title>INLA (integrated nested Laplace approximation) &#8212; notes</title>
     
   <!-- Loaded before other Sphinx assets -->
-  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
 
     
   <link rel="stylesheet"
-    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
   <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
-    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
-    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
     
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
 
-    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-    <script src="_static/jquery.js"></script>
-    <script src="_static/underscore.js"></script>
-    <script src="_static/doctools.js"></script>
-    <script src="_static/clipboard.min.js"></script>
-    <script src="_static/copybutton.js"></script>
-    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="_static/sphinx-thebe.js"></script>
-    <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Inference/sampling" href="content/inference/intro.html" />
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Algorithms" href="../algorithms/intro.html" />
+    <link rel="prev" title="Variational inference" href="vi.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -87,66 +90,66 @@ const thebe_selector_output = ".output, .cell_output"
 <div class="bd-sidebar noprint" id="site-navigation">
     <div class="bd-sidebar__content">
         <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="index.html">
+    <a class="navbar-brand text-wrap" href="../../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="_static/logo.svg" class="logo" alt="logo">
+      <img src="../../_static/logo.svg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">notes</h1>
       
     </a>
-</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1 current active">
-                <a class="reference internal" href="#">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
                     Overview
                 </a>
             </li>
         </ul>
-        <ul class="nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="content/inference/intro.html">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
    Inference/sampling
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="content/inference/mcmc.html">
+    <a class="reference internal" href="mcmc.html">
      Markov chain Monte Carlo
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="content/inference/vi.html">
+    <a class="reference internal" href="vi.html">
      Variational inference
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="content/inference/inla.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      INLA (integrated nested Laplace approximation)
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="content/algorithms/intro.html">
+  <a class="reference internal" href="../algorithms/intro.html">
    Algorithms
   </a>
  </li>
  <li class="toctree-l1">
-  <a class="reference internal" href="content/talks/index.html">
+  <a class="reference internal" href="../talks/index.html">
    Talks
   </a>
  </li>
@@ -240,7 +243,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/al-jshen/notes/issues/new?title=Issue%20on%20page%20%2Fintro.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/al-jshen/notes/issues/new?title=Issue%20on%20page%20%2Fcontent/inference/inla.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -268,7 +271,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="_sources/intro.md"
+        <a href="../../_sources/content/inference/inla.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -317,7 +320,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Overview</h1>
+                <h1>INLA (integrated nested Laplace approximation)</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -329,12 +332,42 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="overview">
-<h1>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">#</a></h1>
-<p>Notes on things I’ve learned during my PhD.</p>
-<p>Contact: shenjeff [at] princeton.edu</p>
-<div class="toctree-wrapper compound">
-</div>
+  <section class="tex2jax_ignore mathjax_ignore" id="inla-integrated-nested-laplace-approximation">
+<h1>INLA (integrated nested Laplace approximation)<a class="headerlink" href="#inla-integrated-nested-laplace-approximation" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>used to do approximate inference for latent Gaussian models (LGM; models with a latent Gaussian random field)</p>
+<ul>
+<li><p>includes a broad range of models, including GLMs and spatio-temporal models</p></li>
+</ul>
+</li>
+<li><p>approximates the marginals of the posterior rather than the full joint posterior distribution</p></li>
+<li><p>marginals are often almost-normal, so a Laplace approximation (Taylor expansion around the mode) can be very good</p></li>
+<li><p>very fast and accurate (see <a class="reference external" href="https://www.martinmodrak.cz/2018/02/02/a-gentle-stan-vs.-inla-comparison/">this comparison to Stan</a>)</p></li>
+</ul>
+<!-- prettier-ignore -->
+<p>The setup of a LGM consists of three parts:</p>
+<div class="amsmath math notranslate nohighlight" id="equation-baca0f9a-8ddc-4deb-956c-87cf29ef8648">
+<span class="eqno">(4)<a class="headerlink" href="#equation-baca0f9a-8ddc-4deb-956c-87cf29ef8648" title="Permalink to this equation">#</a></span>\[\begin{align}
+&amp;\textrm{Hyperparameters} &amp;\quad &amp;\boldsymbol{\theta} \sim \pi_\theta(\boldsymbol{\theta}) \\
+&amp;\textrm{Latent Gaussian field} &amp;\quad &amp;\boldsymbol{x} | \boldsymbol{\theta} \sim \mathcal{N}(\boldsymbol{\mu(\theta}), \boldsymbol{Q(\theta)}^{-1}) \\
+&amp;\textrm{Observations} &amp;\quad &amp;y_i | x_i, \boldsymbol{\theta} \sim \pi_y(y_i | x_i, \boldsymbol{\theta}),\,i=1, \ldots, n \\
+\end{align}\]</div>
+<p>INLA calculates the posterior marginals.
+For the hyperparameters, this is</p>
+<!-- prettier-ignore -->
+<div class="amsmath math notranslate nohighlight" id="equation-76ddafa9-2884-48cd-8dc4-fc8907a4206c">
+<span class="eqno">(5)<a class="headerlink" href="#equation-76ddafa9-2884-48cd-8dc4-fc8907a4206c" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \pi(x_i | \boldsymbol{y}) = \int \pi(x_i | \boldsymbol{y, \theta}) \pi(\boldsymbol{\theta} | \boldsymbol{y}) d\boldsymbol{\theta},
+\end{align}\]</div>
+<p>and for the latent field <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span>, this is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f819ab85-b3c8-4086-8075-c75911de8176">
+<span class="eqno">(6)<a class="headerlink" href="#equation-f819ab85-b3c8-4086-8075-c75911de8176" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \pi(\theta_j | \boldsymbol{y}) = \int \pi(\boldsymbol{\theta} | \boldsymbol{y}) d\boldsymbol{\theta}_{-j}.
+\end{align}\]</div>
+<p>Note that you need to calculate the posterior marginals of the hyperparameters before you can calcuate the posterior marginals of the latent field (nested!).</p>
+<ul class="simple">
+<li><p>try to keep the dimensionality of the hyperparameters small since INLA does a grid integration</p></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">
@@ -350,7 +383,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./."
+            path: "./content/inference"
         },
         predefinedOutput: true
     }
@@ -364,10 +397,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='right-next' id="next-link" href="content/inference/intro.html" title="next page">
+    <a class='left-prev' id="prev-link" href="vi.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Variational inference</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="../algorithms/intro.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Inference/sampling</p>
+        <p class="prev-next-title">Algorithms</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
@@ -392,7 +432,7 @@ title="Print to PDF"
     </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
 
 
   </body>
