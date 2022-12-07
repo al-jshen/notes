@@ -4,9 +4,10 @@
 format: jb-book
 root: intro
 chapters:
-  - file: content/sampling/intro
+  - file: content/inference/intro
     sections:
-      - file: content/sampling/mcmc
-      - file: content/sampling/vi
+      - file: content/inference/mcmc
+      - file: content/inference/vi
+      - file: content/inference/inla
   - file: content/algorithms/intro
   - file: content/talks/index
