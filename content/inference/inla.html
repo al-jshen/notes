@@ -308,12 +308,41 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   INLA (integrated nested Laplace approximation)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   Resources
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -325,6 +354,24 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   INLA (integrated nested Laplace approximation)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   Resources
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -346,27 +393,41 @@ title="Print to PDF"
 </ul>
 <!-- prettier-ignore -->
 <p>The setup of a LGM consists of three parts:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-baca0f9a-8ddc-4deb-956c-87cf29ef8648">
-<span class="eqno">(4)<a class="headerlink" href="#equation-baca0f9a-8ddc-4deb-956c-87cf29ef8648" title="Permalink to this equation">#</a></span>\[\begin{align}
-&amp;\textrm{Hyperparameters} &amp;\quad &amp;\boldsymbol{\theta} \sim \pi_\theta(\boldsymbol{\theta}) \\
-&amp;\textrm{Latent Gaussian field} &amp;\quad &amp;\boldsymbol{x} | \boldsymbol{\theta} \sim \mathcal{N}(\boldsymbol{\mu(\theta}), \boldsymbol{Q(\theta)}^{-1}) \\
-&amp;\textrm{Observations} &amp;\quad &amp;y_i | x_i, \boldsymbol{\theta} \sim \pi_y(y_i | x_i, \boldsymbol{\theta}),\,i=1, \ldots, n \\
+<div class="amsmath math notranslate nohighlight" id="equation-24f3335f-5fb4-4ce2-af19-1e14f1f5c55c">
+<span class="eqno">(4)<a class="headerlink" href="#equation-24f3335f-5fb4-4ce2-af19-1e14f1f5c55c" title="Permalink to this equation">#</a></span>\[\begin{align}
+&amp;\textrm{Hyperparameters} &amp;\quad &amp;\boldsymbol{\theta} \sim \pi_\theta(\boldsymbol{\theta}),\,\boldsymbol{theta}=(\boldsymbol{\theta_1, \theta_2}) \\
+&amp;\textrm{Latent Gaussian field} &amp;\quad &amp;\boldsymbol{x} | \boldsymbol{\theta_2} \sim \mathcal{N}(\boldsymbol{\mu(\theta_2}), \boldsymbol{Q(\theta_2)}^{-1}) \\
+&amp;\textrm{Observations} &amp;\quad &amp;\boldsymbol{y} | \boldsymbol{x, \theta_1} \sim \prod_{i=1}^{N} \pi_y(y_i | x_i, \boldsymbol{\theta_1}),\,i=1, \ldots, n \\
 \end{align}\]</div>
-<p>INLA calculates the posterior marginals.
-For the hyperparameters, this is</p>
 <!-- prettier-ignore -->
-<div class="amsmath math notranslate nohighlight" id="equation-76ddafa9-2884-48cd-8dc4-fc8907a4206c">
-<span class="eqno">(5)<a class="headerlink" href="#equation-76ddafa9-2884-48cd-8dc4-fc8907a4206c" title="Permalink to this equation">#</a></span>\[\begin{align}
-  \pi(x_i | \boldsymbol{y}) = \int \pi(x_i | \boldsymbol{y, \theta}) \pi(\boldsymbol{\theta} | \boldsymbol{y}) d\boldsymbol{\theta},
+<p>The joint posterior for the latent field and the hyperparameters is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b845d699-21d3-4510-89da-1af768912c65">
+<span class="eqno">(5)<a class="headerlink" href="#equation-b845d699-21d3-4510-89da-1af768912c65" title="Permalink to this equation">#</a></span>\[\begin{align}
+\pi({\boldsymbol{x, \theta} | \boldsymbol{y}}) \propto \pi(\boldsymbol{y} | \boldsymbol{x, \theta}) \pi(\boldsymbol{x, \theta}) \propto \prod_{i=1}^N \pi(y_i | x_i, \boldsymbol{\theta}) \pi(\boldsymbol{x} | \boldsymbol{\theta}) \pi(\boldsymbol{\theta}).
+\end{align}\]</div>
+<!-- prettier-ignore -->
+<p>INLA calculates the posterior marginals. For the hyperparameters, this is</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f3b4ce7d-c700-478d-ab0c-ab73fdf69a68">
+<span class="eqno">(6)<a class="headerlink" href="#equation-f3b4ce7d-c700-478d-ab0c-ab73fdf69a68" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \pi(\theta_j | \boldsymbol{y}) = \int \pi(\boldsymbol{\theta} | \boldsymbol{y}) d\boldsymbol{\theta}_{-j}, \; j=1, \ldots, m
 \end{align}\]</div>
 <p>and for the latent field <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span>, this is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f819ab85-b3c8-4086-8075-c75911de8176">
-<span class="eqno">(6)<a class="headerlink" href="#equation-f819ab85-b3c8-4086-8075-c75911de8176" title="Permalink to this equation">#</a></span>\[\begin{align}
-  \pi(\theta_j | \boldsymbol{y}) = \int \pi(\boldsymbol{\theta} | \boldsymbol{y}) d\boldsymbol{\theta}_{-j}.
+<div class="amsmath math notranslate nohighlight" id="equation-80edbd8d-e39b-4d33-855c-8309dea226f9">
+<span class="eqno">(7)<a class="headerlink" href="#equation-80edbd8d-e39b-4d33-855c-8309dea226f9" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \pi(x_i | \boldsymbol{y}) = \int \pi(x_i | \boldsymbol{y, \theta}) \pi(\boldsymbol{\theta} | \boldsymbol{y}) d\boldsymbol{\theta},\,i=1,\ldots,n.
 \end{align}\]</div>
 <p>Note that you need to calculate the posterior marginals of the hyperparameters before you can calcuate the posterior marginals of the latent field (nested!).</p>
 <ul class="simple">
-<li><p>try to keep the dimensionality of the hyperparameters small since INLA does a grid integration</p></li>
+<li><p>try to keep the dimensionality of the hyperparameters <span class="math notranslate nohighlight">\(\boldsymbol{\theta}\)</span> small since INLA does a grid integration</p></li>
+<li><p>dimension of the latent field can be extremely large (<span class="math notranslate nohighlight">\(10^6\)</span>)</p></li>
+<li><p>approximations are exact if the observation probability <span class="math notranslate nohighlight">\(\pi(\boldsymbol{y} | \boldsymbol{x, \theta})\)</span> is Gaussian</p></li>
+</ul>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="resources">
+<h1>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h1>
+<ul class="simple">
+<li><p>https://www.precision-analytics.ca/articles/a-gentle-inla-tutorial/</p></li>
+<li><p>https://faculty.washington.edu/jonno/SISMIDmaterial/2-RINLA.pdf</p></li>
 </ul>
 </section>
 

@@ -333,6 +333,11 @@ title="Print to PDF"
    Hierarchical Navigable Small Worlds (HNSW)
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dynamic-time-warping-dtw">
+   Dynamic time warping (DTW)
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -355,6 +360,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#hierarchical-navigable-small-worlds-hnsw">
    Hierarchical Navigable Small Worlds (HNSW)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dynamic-time-warping-dtw">
+   Dynamic time warping (DTW)
   </a>
  </li>
 </ul>
@@ -389,6 +399,17 @@ title="Print to PDF"
 <li><p>HNSW use the layer structure of probability skip lists, and in each layer there is a NSW</p></li>
 <li><p><img alt="hnsw" src="../../_images/hnsw.png" /></p></li>
 <li><p>paper: <span id="id1">Malkov and Yashunin [<a class="reference internal" href="#id244" title="Yu A. Malkov and D. A. Yashunin. Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs. IEEE Transactions on Pattern Analysis and Machine Intelligence, 42(4):824–836, April 2020. URL: https://ieeexplore.ieee.org/document/8594636/ (visited on 2022-11-09), doi:10.1109/TPAMI.2018.2889473.">2020</a>]</span>, FAISS: <span id="id2">Johnson <em>et al.</em> [<a class="reference internal" href="#id197" title="Jeff Johnson, Matthijs Douze, and Hervé Jégou. Billion-scale similarity search with GPUs. February 2017. URL: http://arxiv.org/abs/1702.08734 (visited on 2022-11-09), arXiv:1702.08734.">2017</a>]</span>, <a class="reference external" href="https://www.pinecone.io/learn/hnsw">https://www.pinecone.io/learn/hnsw</a></p></li>
+</ul>
+</section>
+<section id="dynamic-time-warping-dtw">
+<h2>Dynamic time warping (DTW)<a class="headerlink" href="#dynamic-time-warping-dtw" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>distance metric between time series that allows for non-linear warping</p></li>
+<li><p>does a local (in a window) warping (shrink/stretch) of one time series to best fit the other</p></li>
+<li><p>to make a DTW alignment, need to calculate all pairwise Euclidean distances between observations in the two time series, and then find the path in this matrix with the lowest total cost</p></li>
+<li><p><img alt="dtw" src="../../_images/dtw.png" /></p></li>
+<li><p>the solid white line in the figure above shows the DTW alignment path, the dashed white line down the diagonal shows the Euclidean alignment path (1-1 index-wise mapping), and the dotted dashed lines around the diagnoals show a 20% warping window constraint (which helps ensure realistic alignments by preventing e.g., one particular point at the beginning of one time series being matched with a point at the very end of the other time series, or a point in one time series being matched to multiple points in the other time series)</p></li>
+<li><p><a class="reference external" href="https://www.informs.org/Publications/OR-MS-Tomorrow/A-measure-of-distance-between-time-series-Dynamic-Time-Warping">https://www.informs.org/Publications/OR-MS-Tomorrow/A-measure-of-distance-between-time-series-Dynamic-Time-Warping</a></p></li>
 </ul>
 <div class="docutils container" id="id3">
 <dl class="citation">

@@ -409,8 +409,8 @@ title="Print to PDF"
 <section id="mean-field-approximation">
 <h2>Mean-field approximation<a class="headerlink" href="#mean-field-approximation" title="Permalink to this headline">#</a></h2>
 <p>Makes the assumption that latent variables are mutually independent, so that we can factorize the likelihood as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-79142512-a949-43b0-97d5-4dfca035b311">
-<span class="eqno">(2)<a class="headerlink" href="#equation-79142512-a949-43b0-97d5-4dfca035b311" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-7b01d8ea-1f60-49a9-9ada-91a6bf157f22">
+<span class="eqno">(2)<a class="headerlink" href="#equation-7b01d8ea-1f60-49a9-9ada-91a6bf157f22" title="Permalink to this equation">#</a></span>\[\begin{align}
 q(z) = \prod_i q_i(z_i)
 \end{align}\]</div>
 <ul class="simple">
@@ -424,8 +424,8 @@ q(z) = \prod_i q_i(z_i)
 <ul>
 <li><p>learn a flexible, bijective transformation from a simple base distribution that you can sample from and have an exact likelihood for to your target distribution</p></li>
 <li><p>for some invertible mapping <span class="math notranslate nohighlight">\(f\)</span>, random variable <span class="math notranslate nohighlight">\(z\)</span> with base distribution <span class="math notranslate nohighlight">\(z \sim p_z(z)\)</span>, and some sample <span class="math notranslate nohighlight">\(x\)</span> from the target distrbution <span class="math notranslate nohighlight">\(x \sim \pi(x)\)</span> such that <span class="math notranslate nohighlight">\(x = f(z)\)</span> and <span class="math notranslate nohighlight">\(z = f^{-1}(x)\)</span>, we have</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0b87bbde-1841-47fe-841f-380f297ddb3d">
-<span class="eqno">(3)<a class="headerlink" href="#equation-0b87bbde-1841-47fe-841f-380f297ddb3d" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-97b753a5-1b4b-448b-bdde-410f01d3dc15">
+<span class="eqno">(3)<a class="headerlink" href="#equation-97b753a5-1b4b-448b-bdde-410f01d3dc15" title="Permalink to this equation">#</a></span>\[\begin{align}
   \pi(x) \approx p_x(x) = p_z(f^{-1}(x)) \left|\textrm{det}(\frac{\partial f^{-1}(x)}{\partial x})\right| = p_z(z) \left|\textrm{det}(\frac{\partial f(z)}{\partial z})\right|^{-1}
   \end{align}\]</div>
 </li>
