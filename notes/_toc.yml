@@ -10,4 +10,7 @@ chapters:
       - file: content/inference/vi
       - file: content/inference/inla
   - file: content/algorithms/intro
+  - file: content/notebooks/index
+    sections:
+      - file: content/notebooks/bayesboot
   - file: content/talks/index
