@@ -13,4 +13,5 @@ chapters:
   - file: content/notebooks/index
     sections:
       - file: content/notebooks/bayesboot
+  - file: content/astrophysics/comments.md
   - file: content/talks/index
