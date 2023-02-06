@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Talks &#8212; notes</title>
+    <title>Astrophysics &#8212; notes</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="prev" title="Astrophysics" href="../astrophysics/comments.html" />
+    <link rel="next" title="Talks" href="../talks/index.html" />
+    <link rel="prev" title="Bayesian Bootstrapping" href="../notebooks/bayesboot.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -162,13 +163,13 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../astrophysics/comments.html">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
    Astrophysics
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../talks/index.html">
    Talks
   </a>
  </li>
@@ -262,7 +263,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/al-jshen/notes/issues/new?title=Issue%20on%20page%20%2Fcontent/talks/index.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/al-jshen/notes/issues/new?title=Issue%20on%20page%20%2Fcontent/astrophysics/comments.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -290,7 +291,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/content/talks/index.md"
+        <a href="../../_sources/content/astrophysics/comments.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -350,8 +351,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nov-2022-charles-margossian-columbia">
-   9 Nov 2022 - Charles Margossian @ Columbia
+  <a class="reference internal nav-link" href="#survey-details">
+   Survey details
   </a>
  </li>
 </ul>
@@ -363,7 +364,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Talks</h1>
+                <h1>Astrophysics</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -374,8 +375,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#nov-2022-charles-margossian-columbia">
-   9 Nov 2022 - Charles Margossian @ Columbia
+  <a class="reference internal nav-link" href="#survey-details">
+   Survey details
   </a>
  </li>
 </ul>
@@ -388,45 +389,40 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="talks">
-<h1>Talks<a class="headerlink" href="#talks" title="Permalink to this headline">#</a></h1>
-<section id="nov-2022-charles-margossian-columbia">
-<h2>9 Nov 2022 - Charles Margossian &#64; Columbia<a class="headerlink" href="#nov-2022-charles-margossian-columbia" title="Permalink to this headline">#</a></h2>
+  <section class="tex2jax_ignore mathjax_ignore" id="astrophysics">
+<h1>Astrophysics<a class="headerlink" href="#astrophysics" title="Permalink to this headline">#</a></h1>
 <ul class="simple">
-<li><p>continuous time approximation: MCMC approximates Langevin diffusion process</p></li>
-<li><p>warmup phase serves to decrease bias</p>
-<ul>
-<li><p>first few samples are drawn from prior distribution instead of target distribution and are thus heavily biased, so we throw them away</p></li>
+<li><p>A redshift operation is a multiplication by (1+z), which stretches your wavelengths out. If you instead take log wavelength, with your points being evenly spaced in log space, then a redshift operation is simply a shift in pixel space.</p></li>
 </ul>
-</li>
-<li><p>sampling phase serves to decrease variance of Monte Carlo estimators by increasing effective sample size</p></li>
-<li><p>can run thousands of chains in parallel with modern hardware, if algorithm is GPU-friendly</p></li>
-<li><p>R-hat compares within-chain variance to between-chain variance</p></li>
-<li><p>if you run many chains in parallel, then the number of chains sets a lower bound on your effective sample size, so in theory you can take just a single sample per chain during the sampling phase</p></li>
-<li><p>how do you diagnose convergence in this many-chains regime?</p></li>
-<li><p>R-hat gives a diagnostic for a single chain in the limit of infinite length, but doesn’t say anything about having multiple chains</p></li>
-<li><p><strong>nested R-hat</strong> generalizes R-hat</p>
-<ul>
-<li><p>group chains into size K “superchains”</p>
-<ul>
-<li><p>for K=1 groups, we recover classical R-hat</p></li>
-</ul>
-</li>
-<li><p>have the same initialization for all chains within a superchain to avoid the problem that when you have all independent chains, nested R-hat can be made arbitrarily close to 1 by increasing K</p></li>
-<li><p>can decompose nested R-hat measurement into two terms</p>
-<ol class="simple">
-<li><p>violation of stationarity, which is the variance of the conditional expectation, which measures how well chains have forgotten where they started from and goes to 0 if the expected value of the chain does not depend on the initialization</p></li>
-<li><p>persistent variance, which is the expected conditional variance, which is independent of whether your chains are stationary, but goes to 0 as you increase the the number chains</p></li>
-</ol>
-</li>
-<li><p><img alt="nrhat" src="../../_images/nrhat.png" /></p></li>
-<li><p>violation is a proxy for squared bias, since they both decay with warmup at the same rate</p></li>
-<li><p>larger K (and using fewer superchains/initializations) has higher variance before reaching stationarity</p></li>
-</ul>
-</li>
-<li><p>benefit of running many chains is to achieve target precision more quickly (not just achieve precision that is as small as possible)</p></li>
-</ul>
-<span class="target" id="id1"></span></section>
+<section id="survey-details">
+<h2>Survey details<a class="headerlink" href="#survey-details" title="Permalink to this headline">#</a></h2>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Survey</p></th>
+<th class="head"><p>Gaia BP/RP</p></th>
+<th class="head"><p>SDSS</p></th>
+<th class="head"><p>APOGEE</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Wavelength</p></td>
+<td><p>330-680nm (BP), 640-1050nm (RP)</p></td>
+<td><p>380-920nm</p></td>
+<td><p>1514-1696nm</p></td>
+</tr>
+<tr class="row-odd"><td><p>Spectral resolution</p></td>
+<td><p>R ~ 100-30 (BP), R ~ 100-70 (RP) over the range</p></td>
+<td><p>R ~ 1500-2500 over the range</p></td>
+<td><p>R ~ 22,500</p></td>
+</tr>
+<tr class="row-even"><td><p>Magnitude</p></td>
+<td><p>G &lt; 21.43, but mostly G &lt; 17.65</p></td>
+<td><p>r &lt; 17.77</p></td>
+<td><p>H &lt; 12.2</p></td>
+</tr>
+</tbody>
+</table>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -442,7 +438,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./content/talks"
+            path: "./content/astrophysics"
         },
         predefinedOutput: true
     }
@@ -456,12 +452,19 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../astrophysics/comments.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="../notebooks/bayesboot.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Astrophysics</p>
+            <p class="prev-next-title">Bayesian Bootstrapping</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="../talks/index.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Talks</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>
