@@ -1,6 +1,6 @@
 # Astrophysics
 
-- A redshift operation is a multiplication by (1+z), which stretches your wavelengths out. If you instead take log wavelength, with your points being evenly spaced in log space, then a redshift operation is simply a shift in pixel space.
+- A redshift operation is a multiplication by $1+z$, which stretches your wavelengths out. If you instead take log wavelength, with your points being evenly spaced in log space, then a redshift operation is simply a shift in pixel space.
 
 ## Survey details
 
