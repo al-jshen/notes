@@ -4,7 +4,7 @@
 
 A stochastic process is a collection of random variables, given by
 \begin{align}
-\{X_t(\omega) | t \in T, \omega \in \Omega\},
+X = \{X_t(\omega) \mid t \in T, \omega \in \Omega\},
 \end{align}
 where $T$ is the **index set** and $\Omega$ is the **sample space**. Each time/index-dependent random variable $X_t(\omega)$ may also be written as $X(t, \omega)$ to make clear that it is a function of two variables $t$ and $\omega$.
 
@@ -14,6 +14,98 @@ X(\cdot, \omega): T \rightarrow S
 \end{align}
 that maps points from the index set $T$ (e.g., time) to the sample space $S$ (e.g., $\mathbb{R}^n$).
 
-```{admonition} Gaussian Processes
+```{admonition} Gaussian processes
 If the distributions of all the $X_t$ are multivariate Gaussian, then the stochastic process is called a Gaussian process.
 ```
+
+<!-- prettier-ignore -->
+A stochastic process $X$ is called **stationary** all $X_t$ have the same distribution. That is,
+\begin{align}
+X_i \overset{d}{=} X_j \text{ for all } i, j \in T.
+\end{align}
+Similarly, $X$ has **stationary increments** if
+\begin{align}
+X_i - X_j \overset{d}{=} X_{i+h}, X_{j+h} \text{ for all } i, j \in T \text{ and $h$, with } i+h, j+h \in T.
+\end{align}
+
+<!-- prettier-ignore -->
+A stochastic process $X$ has **independent increments** (and is called **homogeneous**) if for all $i \in T$,
+\begin{align}
+X_2 - X_1, \ldots, X_n - X_{n - 1}
+\end{align}
+are independent random variables.
+
+```{admonition} Poisson processes
+A stochastic process $(X_t, t \in [0, \infty))$ is a (homogeneous) Poisson process with rate $\lambda > 0$ if it satisfies the following conditions:
+- it has stationary, independent increments
+- $X_0 = 0$
+- $X_t \sim \mathrm{Poisson}(\lambda t) \text{ for } t > 0$
+```
+
+<!-- prettier-ignore -->
+A stochastic process is said to be **self-similar of index $\gamma$** if it satisfies the following condition:
+
+```{margin}
+Self-similar processes are nowhere differentiable.
+```
+
+\begin{align}
+\forall a \ge 0, \exists \gamma \ge 0 \text{ s.t. } (X\_{at}, t \ge 0) \overset{d}{=} (a^\gamma X_t, t \ge 0)
+\end{align}
+
+## Brownian Motion
+
+<!-- prettier-ignore -->
+A stochastic process $W = (W_t, t \in [0, \infty])$ is called a **Wiener process** or **Brownian motion** if it satisfies the following conditions:
+
+```{margin}
+Note that $W$ is a Gaussian process.
+```
+
+- it has stationary, independent increments
+- $W_0 = 0$
+- it has Gaussian increments: $W_t \sim \mathcal{N}(0, t) \text{ for } t > 0$, or equivalently, $W_{t+s} - W_{t} \sim \mathcal{N}(0, s)$
+- it has continuous sample paths (no jumps): $W_t$ is continuous in $t$
+
+A Wiener process has the following properties:
+
+- mean: $\mathbb{E}[W_t] = \mathbb{E}[W] = 0 \text{ for } t \ge 0$
+- variance: $\mathrm{Var}(W_t) = t$
+- covariance: $\mathrm{cov}(W_s, W_t) = \mathrm{min}(s, t)$
+- correlation: $\mathrm{corr}(W_s, W_t) = \sqrt{\frac{\mathrm{min}(s, t)}{\mathrm{max}(s, t)}}$
+
+A Wiener process is 0.5-self-similar, which also implies that it has sample paths that are nowhere differentiable. This property means that to simulate Brownian motion on some interval $[0, T]$, you can simulate Brownian motion $B_t$ on $[0, 1]$ and then stretch it out with $W_t = \sqrt{T} B_{t / T}$ for $t \in [0, T]$.
+
+<!-- prettier-ignore -->
+Brownian motion sample paths have infinite (unbounded) 2-variation. This means that for some finite interval $[0, T]$, taking the supremum over all possible partitions of that interval $\tau = t_0 < \ldots < t_n = T$, we have
+\begin{align}
+  \underset{\tau}{\mathrm{sup}} \sum_{i=1}^{n} \left| W_{t_i} - W_{t_{i - 1}}\right| = \infty.
+\end{align}
+
+```{margin}
+Remember that a Wiener process can be stretched out arbitrarily, so this actually generalizes to any interval $[0, T]$.
+```
+
+### Variants
+
+Brownian Bridge
+: a Wiener process $(W_t, t \in [0, 1])$ with the extra condition that $W(1) = 0$
+
+Brownian motion with linear drift
+: $X_t = \mu t + \sigma W_t$ for $t \ge 0$
+
+```{margin}
+This is also a Gaussian process since we are just rescaling and shifting the W, which is itself Gaussian.
+```
+
+Geometric Brownian Motion
+: $X_t = \exp{(\mu t + \sigma W_t)}$ for $t \ge 0$
+
+```{note}
+For a standard normal random variable $Z$, we have $\mathbb{E}[e^{\lambda Z}] = e^{\lambda^2 / 2}$ for $\lambda \in \mathbb{R}$.
+```
+
+## Resources
+
+- _Elementary Stochastic Calculus_ by Thomas Mikosch
+- [A brief introduction to self-similar processes by J.C. Pardo](https://www.cimat.mx/~jcpardo/ssp1.pdf)
