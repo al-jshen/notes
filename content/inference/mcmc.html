@@ -148,12 +148,34 @@ const thebe_selector_output = ".output, .cell_output"
    Algorithms
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../astrophysics/comments.html">
+   Astrophysics
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../statistics/intro.html">
+   Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/stochastic.html">
+     Stochastic Calculus
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../notebooks/index.html">
    Notebooks
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -164,11 +186,6 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../astrophysics/comments.html">
-   Astrophysics
-  </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../talks/index.html">
@@ -484,8 +501,8 @@ title="Print to PDF"
 <h2>Temperature based methods<a class="headerlink" href="#temperature-based-methods" title="Permalink to this headline">#</a></h2>
 <ul>
 <li><p>parameterizes the posterior with some temperature <span class="math notranslate nohighlight">\(T\)</span> as follows:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f143d02e-08c4-4738-8a32-7446ce33b12a">
-<span class="eqno">(1)<a class="headerlink" href="#equation-f143d02e-08c4-4738-8a32-7446ce33b12a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-05fb7cec-8048-490c-b200-9c01b1d6204f">
+<span class="eqno">(1)<a class="headerlink" href="#equation-05fb7cec-8048-490c-b200-9c01b1d6204f" title="Permalink to this equation">#</a></span>\[\begin{align}
   \pi_T(\mathbf{x}) = [L(\mathbf{x})]^{1/T} \, p(\mathbf{x}),
   \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(\pi_T\)</span> is the temperature-dependent modified posterior, <span class="math notranslate nohighlight">\(L\)</span> is the likelihood, and <span class="math notranslate nohighlight">\(p\)</span> is the prior</p>
@@ -592,7 +609,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./content/inference"
         },
         predefinedOutput: true
@@ -630,7 +647,7 @@ title="Print to PDF"
   
     By Jeff Shen<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2022-2023.<br/>
 </p>
         </footer>
     </div>

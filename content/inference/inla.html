@@ -148,12 +148,34 @@ const thebe_selector_output = ".output, .cell_output"
    Algorithms
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../astrophysics/comments.html">
+   Astrophysics
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../statistics/intro.html">
+   Statistics
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/stochastic.html">
+     Stochastic Calculus
+    </a>
+   </li>
+  </ul>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="../notebooks/index.html">
    Notebooks
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -164,11 +186,6 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="../astrophysics/comments.html">
-   Astrophysics
-  </a>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="../talks/index.html">
@@ -415,27 +432,27 @@ title="Print to PDF"
 </ul>
 <!-- prettier-ignore -->
 <p>The setup of a LGM consists of three parts:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9619f996-6351-4487-b122-d8f25cf5c87e">
-<span class="eqno">(4)<a class="headerlink" href="#equation-9619f996-6351-4487-b122-d8f25cf5c87e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3814f6ba-dae2-4f7e-8a32-faf35071c202">
+<span class="eqno">(4)<a class="headerlink" href="#equation-3814f6ba-dae2-4f7e-8a32-faf35071c202" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\textrm{Hyperparameters} &amp;\quad &amp;\boldsymbol{\theta} \sim \pi_\theta(\boldsymbol{\theta}),\,\boldsymbol{theta}=(\boldsymbol{\theta_1, \theta_2}) \\
 &amp;\textrm{Latent Gaussian field} &amp;\quad &amp;\boldsymbol{x} | \boldsymbol{\theta_2} \sim \mathcal{N}(\boldsymbol{\mu(\theta_2}), \boldsymbol{Q(\theta_2)}^{-1}) \\
 &amp;\textrm{Observations} &amp;\quad &amp;\boldsymbol{y} | \boldsymbol{x, \theta_1} \sim \prod_{i=1}^{N} \pi_y(y_i | x_i, \boldsymbol{\theta_1}),\,i=1, \ldots, n \\
 \end{align}\]</div>
 <!-- prettier-ignore -->
 <p>The joint posterior for the latent field and the hyperparameters is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-8682d65f-4f7b-40ea-9e8d-63e3e7fc1a0f">
-<span class="eqno">(5)<a class="headerlink" href="#equation-8682d65f-4f7b-40ea-9e8d-63e3e7fc1a0f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d5e32ca8-22b4-4335-bb8f-8b35a1b13586">
+<span class="eqno">(5)<a class="headerlink" href="#equation-d5e32ca8-22b4-4335-bb8f-8b35a1b13586" title="Permalink to this equation">#</a></span>\[\begin{align}
 \pi({\boldsymbol{x, \theta} | \boldsymbol{y}}) \propto \pi(\boldsymbol{y} | \boldsymbol{x, \theta}) \pi(\boldsymbol{x, \theta}) \propto \prod_{i=1}^N \pi(y_i | x_i, \boldsymbol{\theta}) \pi(\boldsymbol{x} | \boldsymbol{\theta}) \pi(\boldsymbol{\theta}).
 \end{align}\]</div>
 <!-- prettier-ignore -->
 <p>INLA calculates the posterior marginals. For the hyperparameters, this is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d32f1fb8-c162-4b1e-b27e-60b6a36cf6ac">
-<span class="eqno">(6)<a class="headerlink" href="#equation-d32f1fb8-c162-4b1e-b27e-60b6a36cf6ac" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0f949a89-8575-4f60-912d-e50afa391690">
+<span class="eqno">(6)<a class="headerlink" href="#equation-0f949a89-8575-4f60-912d-e50afa391690" title="Permalink to this equation">#</a></span>\[\begin{align}
   \pi(\theta_j | \boldsymbol{y}) = \int \pi(\boldsymbol{\theta} | \boldsymbol{y}) d\boldsymbol{\theta}_{-j}, \; j=1, \ldots, m
 \end{align}\]</div>
 <p>and for the latent field <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span>, this is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0d9e1712-7953-454b-a1ee-6866fdb50d7f">
-<span class="eqno">(7)<a class="headerlink" href="#equation-0d9e1712-7953-454b-a1ee-6866fdb50d7f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b838673f-ec2e-4912-a68d-2247cb9b13b4">
+<span class="eqno">(7)<a class="headerlink" href="#equation-b838673f-ec2e-4912-a68d-2247cb9b13b4" title="Permalink to this equation">#</a></span>\[\begin{align}
   \pi(x_i | \boldsymbol{y}) = \int \pi(x_i | \boldsymbol{y, \theta}) \pi(\boldsymbol{\theta} | \boldsymbol{y}) d\boldsymbol{\theta},\,i=1,\ldots,n.
 \end{align}\]</div>
 <p>Note that you need to calculate the posterior marginals of the hyperparameters before you can calcuate the posterior marginals of the latent field (nested!).</p>
@@ -465,7 +482,7 @@ title="Print to PDF"
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./content/inference"
         },
         predefinedOutput: true
@@ -503,7 +520,7 @@ title="Print to PDF"
   
     By Jeff Shen<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2022-2023.<br/>
 </p>
         </footer>
     </div>

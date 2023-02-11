@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Astrophysics &#8212; notes</title>
+    <title>Stochastic Calculus &#8212; notes</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -54,8 +54,8 @@ const thebe_selector_output = ".output, .cell_output"
     <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Statistics" href="../statistics/intro.html" />
-    <link rel="prev" title="Algorithms" href="../algorithms/intro.html" />
+    <link rel="next" title="Notebooks" href="../notebooks/index.html" />
+    <link rel="prev" title="Statistics" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -148,23 +148,23 @@ const thebe_selector_output = ".output, .cell_output"
    Algorithms
   </a>
  </li>
- <li class="toctree-l1 current active">
-  <a class="current reference internal" href="#">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../astrophysics/comments.html">
    Astrophysics
   </a>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../statistics/intro.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
    Statistics
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../statistics/stochastic.html">
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      Stochastic Calculus
     </a>
    </li>
@@ -282,7 +282,7 @@ title="Source repository"
       </li>
       
       <li>
-        <a href="https://github.com/al-jshen/notes/issues/new?title=Issue%20on%20page%20%2Fcontent/astrophysics/comments.html&body=Your%20issue%20content%20here."
+        <a href="https://github.com/al-jshen/notes/issues/new?title=Issue%20on%20page%20%2Fcontent/statistics/stochastic.html&body=Your%20issue%20content%20here."
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -310,7 +310,7 @@ title="Open an issue"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/content/astrophysics/comments.md"
+        <a href="../../_sources/content/statistics/stochastic.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -370,8 +370,25 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#survey-details">
-   Survey details
+  <a class="reference internal nav-link" href="#stochastic-processes">
+   Stochastic Processes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#brownian-motion">
+   Brownian Motion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variants">
+     Variants
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   Resources
   </a>
  </li>
 </ul>
@@ -383,7 +400,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Astrophysics</h1>
+                <h1>Stochastic Calculus</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -394,8 +411,25 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#survey-details">
-   Survey details
+  <a class="reference internal nav-link" href="#stochastic-processes">
+   Stochastic Processes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#brownian-motion">
+   Brownian Motion
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#variants">
+     Variants
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   Resources
   </a>
  </li>
 </ul>
@@ -408,39 +442,124 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="astrophysics">
-<h1>Astrophysics<a class="headerlink" href="#astrophysics" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="stochastic-calculus">
+<h1>Stochastic Calculus<a class="headerlink" href="#stochastic-calculus" title="Permalink to this headline">#</a></h1>
+<section id="stochastic-processes">
+<h2>Stochastic Processes<a class="headerlink" href="#stochastic-processes" title="Permalink to this headline">#</a></h2>
+<p>A stochastic process is a collection of random variables, given by</p>
+<div class="amsmath math notranslate nohighlight" id="equation-0d1565e2-3a88-48a8-a1fc-0eef006bacdd">
+<span class="eqno">(8)<a class="headerlink" href="#equation-0d1565e2-3a88-48a8-a1fc-0eef006bacdd" title="Permalink to this equation">#</a></span>\[\begin{align}
+X = \{X_t(\omega) \mid t \in T, \omega \in \Omega\},
+\end{align}\]</div>
+<p>where <span class="math notranslate nohighlight">\(T\)</span> is the <strong>index set</strong> and <span class="math notranslate nohighlight">\(\Omega\)</span> is the <strong>sample space</strong>. Each time/index-dependent random variable <span class="math notranslate nohighlight">\(X_t(\omega)\)</span> may also be written as <span class="math notranslate nohighlight">\(X(t, \omega)\)</span> to make clear that it is a function of two variables <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span>.</p>
+<p>For a fixed point <span class="math notranslate nohighlight">\(t \in T\)</span>, you have a random variable <span class="math notranslate nohighlight">\(X_t = X_t(\omega)\)</span>. For a fixed point <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>, you take a single point for every <span class="math notranslate nohighlight">\(X_t\)</span> in the stochastic process, and then you have a sample function (also called a sample path or a trajectory)</p>
+<div class="amsmath math notranslate nohighlight" id="equation-730edd15-c2e5-4c77-befe-2e6660171571">
+<span class="eqno">(9)<a class="headerlink" href="#equation-730edd15-c2e5-4c77-befe-2e6660171571" title="Permalink to this equation">#</a></span>\[\begin{align}
+X(\cdot, \omega): T \rightarrow S
+\end{align}\]</div>
+<p>that maps points from the index set <span class="math notranslate nohighlight">\(T\)</span> (e.g., time) to the sample space <span class="math notranslate nohighlight">\(S\)</span> (e.g., <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>).</p>
+<div class="admonition-gaussian-processes admonition">
+<p class="admonition-title">Gaussian processes</p>
+<p>If the distributions of all the <span class="math notranslate nohighlight">\(X_t\)</span> are multivariate Gaussian, then the stochastic process is called a Gaussian process.</p>
+</div>
+<!-- prettier-ignore -->
+<p>A stochastic process <span class="math notranslate nohighlight">\(X\)</span> is called <strong>stationary</strong> all <span class="math notranslate nohighlight">\(X_t\)</span> have the same distribution. That is,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-10f0fd07-55cb-4242-9ce2-11bc5a9d5b0a">
+<span class="eqno">(10)<a class="headerlink" href="#equation-10f0fd07-55cb-4242-9ce2-11bc5a9d5b0a" title="Permalink to this equation">#</a></span>\[\begin{align}
+X_i \overset{d}{=} X_j \text{ for all } i, j \in T.
+\end{align}\]</div>
+<p>Similarly, <span class="math notranslate nohighlight">\(X\)</span> has <strong>stationary increments</strong> if</p>
+<div class="amsmath math notranslate nohighlight" id="equation-56023dda-8cd5-41b3-9573-5c5e83454d0e">
+<span class="eqno">(11)<a class="headerlink" href="#equation-56023dda-8cd5-41b3-9573-5c5e83454d0e" title="Permalink to this equation">#</a></span>\[\begin{align}
+X_i - X_j \overset{d}{=} X_{i+h}, X_{j+h} \text{ for all } i, j \in T \text{ and $h$, with } i+h, j+h \in T.
+\end{align}\]</div>
+<!-- prettier-ignore -->
+<p>A stochastic process <span class="math notranslate nohighlight">\(X\)</span> has <strong>independent increments</strong> (and is called <strong>homogeneous</strong>) if for all <span class="math notranslate nohighlight">\(i \in T\)</span>,</p>
+<div class="amsmath math notranslate nohighlight" id="equation-6395ec7a-f388-4b7c-9d83-cc434203edf9">
+<span class="eqno">(12)<a class="headerlink" href="#equation-6395ec7a-f388-4b7c-9d83-cc434203edf9" title="Permalink to this equation">#</a></span>\[\begin{align}
+X_2 - X_1, \ldots, X_n - X_{n - 1}
+\end{align}\]</div>
+<p>are independent random variables.</p>
+<div class="admonition-poisson-processes admonition">
+<p class="admonition-title">Poisson processes</p>
+<p>A stochastic process <span class="math notranslate nohighlight">\((X_t, t \in [0, \infty))\)</span> is a (homogeneous) Poisson process with rate <span class="math notranslate nohighlight">\(\lambda &gt; 0\)</span> if it satisfies the following conditions:</p>
 <ul class="simple">
-<li><p>A redshift operation is a multiplication by <span class="math notranslate nohighlight">\(1+z\)</span>, which stretches your wavelengths out. If you instead take log wavelength, with your points being evenly spaced in log space, then a redshift operation is simply a shift in pixel space.</p></li>
+<li><p>it has stationary, independent increments</p></li>
+<li><p><span class="math notranslate nohighlight">\(X_0 = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(X_t \sim \mathrm{Poisson}(\lambda t) \text{ for } t &gt; 0\)</span></p></li>
 </ul>
-<section id="survey-details">
-<h2>Survey details<a class="headerlink" href="#survey-details" title="Permalink to this headline">#</a></h2>
-<table class="colwidths-auto table">
-<thead>
-<tr class="row-odd"><th class="head"><p>Survey</p></th>
-<th class="head"><p>Gaia BP/RP</p></th>
-<th class="head"><p>SDSS</p></th>
-<th class="head"><p>APOGEE</p></th>
-</tr>
-</thead>
-<tbody>
-<tr class="row-even"><td><p>Wavelength</p></td>
-<td><p>330-680nm (BP), 640-1050nm (RP)</p></td>
-<td><p>380-920nm</p></td>
-<td><p>1514-1696nm</p></td>
-</tr>
-<tr class="row-odd"><td><p>Spectral resolution</p></td>
-<td><p>R ~ 100-30 (BP), R ~ 100-70 (RP) over the range</p></td>
-<td><p>R ~ 1500-2500 over the range</p></td>
-<td><p>R ~ 22,500</p></td>
-</tr>
-<tr class="row-even"><td><p>Magnitude</p></td>
-<td><p>G &lt; 21.43, but mostly G &lt; 17.65</p></td>
-<td><p>r &lt; 17.77</p></td>
-<td><p>H &lt; 12.2</p></td>
-</tr>
-</tbody>
-</table>
+</div>
+<!-- prettier-ignore -->
+<p>A stochastic process is said to be <strong>self-similar of index <span class="math notranslate nohighlight">\(\gamma\)</span></strong> if it satisfies the following condition:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Self-similar processes are nowhere differentiable.</p>
+</aside>
+<div class="amsmath math notranslate nohighlight" id="equation-751d3b43-cd3f-4e2f-b28e-e445f8834b02">
+<span class="eqno">(13)<a class="headerlink" href="#equation-751d3b43-cd3f-4e2f-b28e-e445f8834b02" title="Permalink to this equation">#</a></span>\[\begin{align}
+\forall a \ge 0, \exists \gamma \ge 0 \text{ s.t. } (X\_{at}, t \ge 0) \overset{d}{=} (a^\gamma X_t, t \ge 0)
+\end{align}\]</div>
+</section>
+<section id="brownian-motion">
+<h2>Brownian Motion<a class="headerlink" href="#brownian-motion" title="Permalink to this headline">#</a></h2>
+<!-- prettier-ignore -->
+<p>A stochastic process <span class="math notranslate nohighlight">\(W = (W_t, t \in [0, \infty])\)</span> is called a <strong>Wiener process</strong> or <strong>Brownian motion</strong> if it satisfies the following conditions:</p>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Note that <span class="math notranslate nohighlight">\(W\)</span> is a Gaussian process.</p>
+</aside>
+<ul class="simple">
+<li><p>it has stationary, independent increments</p></li>
+<li><p><span class="math notranslate nohighlight">\(W_0 = 0\)</span></p></li>
+<li><p>it has Gaussian increments: <span class="math notranslate nohighlight">\(W_t \sim \mathcal{N}(0, t) \text{ for } t &gt; 0\)</span>, or equivalently, <span class="math notranslate nohighlight">\(W_{t+s} - W_{t} \sim \mathcal{N}(0, s)\)</span></p></li>
+<li><p>it has continuous sample paths (no jumps): <span class="math notranslate nohighlight">\(W_t\)</span> is continuous in <span class="math notranslate nohighlight">\(t\)</span></p></li>
+</ul>
+<p>A Wiener process has the following properties:</p>
+<ul class="simple">
+<li><p>mean: <span class="math notranslate nohighlight">\(\mathbb{E}[W_t] = \mathbb{E}[W] = 0 \text{ for } t \ge 0\)</span></p></li>
+<li><p>variance: <span class="math notranslate nohighlight">\(\mathrm{Var}(W_t) = t\)</span></p></li>
+<li><p>covariance: <span class="math notranslate nohighlight">\(\mathrm{cov}(W_s, W_t) = \mathrm{min}(s, t)\)</span></p></li>
+<li><p>correlation: <span class="math notranslate nohighlight">\(\mathrm{corr}(W_s, W_t) = \sqrt{\frac{\mathrm{min}(s, t)}{\mathrm{max}(s, t)}}\)</span></p></li>
+</ul>
+<p>A Wiener process is 0.5-self-similar, which also implies that it has sample paths that are nowhere differentiable. This property means that to simulate Brownian motion on some interval <span class="math notranslate nohighlight">\([0, T]\)</span>, you can simulate Brownian motion <span class="math notranslate nohighlight">\(B_t\)</span> on <span class="math notranslate nohighlight">\([0, 1]\)</span> and then stretch it out with <span class="math notranslate nohighlight">\(W_t = \sqrt{T} B_{t / T}\)</span> for <span class="math notranslate nohighlight">\(t \in [0, T]\)</span>.</p>
+<!-- prettier-ignore -->
+<p>Brownian motion sample paths have infinite (unbounded) 2-variation. This means that for some finite interval <span class="math notranslate nohighlight">\([0, T]\)</span>, taking the supremum over all possible partitions of that interval <span class="math notranslate nohighlight">\(\tau = t_0 &lt; \ldots &lt; t_n = T\)</span>, we have</p>
+<div class="amsmath math notranslate nohighlight" id="equation-b57f9356-748c-442d-a3c4-39aa669bad03">
+<span class="eqno">(14)<a class="headerlink" href="#equation-b57f9356-748c-442d-a3c4-39aa669bad03" title="Permalink to this equation">#</a></span>\[\begin{align}
+  \underset{\tau}{\mathrm{sup}} \sum_{i=1}^{n} \left| W_{t_i} - W_{t_{i - 1}}\right| = \infty.
+\end{align}\]</div>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>Remember that a Wiener process can be stretched out arbitrarily, so this actually generalizes to any interval <span class="math notranslate nohighlight">\([0, T]\)</span>.</p>
+</aside>
+<section id="variants">
+<h3>Variants<a class="headerlink" href="#variants" title="Permalink to this headline">#</a></h3>
+<dl class="simple myst">
+<dt>Brownian Bridge</dt><dd><p>a Wiener process <span class="math notranslate nohighlight">\((W_t, t \in [0, 1])\)</span> with the extra condition that <span class="math notranslate nohighlight">\(W(1) = 0\)</span></p>
+</dd>
+<dt>Brownian motion with linear drift</dt><dd><p><span class="math notranslate nohighlight">\(X_t = \mu t + \sigma W_t\)</span> for <span class="math notranslate nohighlight">\(t \ge 0\)</span></p>
+</dd>
+</dl>
+<aside class="margin sidebar">
+<p class="sidebar-title"></p>
+<p>This is also a Gaussian process since we are just rescaling and shifting the W, which is itself Gaussian.</p>
+</aside>
+<dl class="simple myst">
+<dt>Geometric Brownian Motion</dt><dd><p><span class="math notranslate nohighlight">\(X_t = \exp{(\mu t + \sigma W_t)}\)</span> for <span class="math notranslate nohighlight">\(t \ge 0\)</span></p>
+</dd>
+</dl>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>For a standard normal random variable <span class="math notranslate nohighlight">\(Z\)</span>, we have <span class="math notranslate nohighlight">\(\mathbb{E}[e^{\lambda Z}] = e^{\lambda^2 / 2}\)</span> for <span class="math notranslate nohighlight">\(\lambda \in \mathbb{R}\)</span>.</p>
+</div>
+</section>
+</section>
+<section id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><em>Elementary Stochastic Calculus</em> by Thomas Mikosch</p></li>
+<li><p><a class="reference external" href="https://www.cimat.mx/~jcpardo/ssp1.pdf">A brief introduction to self-similar processes by J.C. Pardo</a></p></li>
+</ul>
 </section>
 </section>
 
@@ -457,7 +576,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             name: "python3",
-            path: "./content/astrophysics"
+            path: "./content/statistics"
         },
         predefinedOutput: true
     }
@@ -471,17 +590,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="../algorithms/intro.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="intro.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">Algorithms</p>
+            <p class="prev-next-title">Statistics</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="../statistics/intro.html" title="next page">
+    <a class='right-next' id="next-link" href="../notebooks/index.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Statistics</p>
+        <p class="prev-next-title">Notebooks</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
