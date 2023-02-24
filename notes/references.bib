@@ -540,6 +540,30 @@
   file = {/Users/js5013/Zotero/storage/LS4E5RFG/1606.04838.pdf}
 }
 
+@article{Bovy2015,
+  title = {Galpy: {{A Python Library}} for {{Galactic Dynamics}}},
+  shorttitle = {Galpy},
+  author = {Bovy, Jo},
+  year = {2015},
+  month = feb,
+  journal = {The Astrophysical Journal Supplement Series},
+  volume = {216},
+  number = {2},
+  eprint = {1412.3451},
+  eprinttype = {arxiv},
+  primaryclass = {astro-ph},
+  pages = {29},
+  issn = {1538-4365},
+  doi = {10.1088/0067-0049/216/2/29},
+  url = {http://arxiv.org/abs/1412.3451},
+  urldate = {2023-02-13},
+  abstract = {I describe the design, implementation, and usage of galpy, a python package for galactic-dynamics calculations. At its core, galpy consists of a general framework for representing galactic potentials both in python and in C (for accelerated computations); galpy functions, objects, and methods can generally take arbitrary combinations of these as arguments. Numerical orbit integration is supported with a variety of Runge-Kutta-type and symplectic integrators. For planar orbits, integration of the phase-space volume is also possible. galpy supports the calculation of action-angle coordinates and orbital frequencies for a given phase-space point for general spherical potentials, using state-of-the-art numerical approximations for axisymmetric potentials, and making use of a recent general approximation for any static potential. A number of different distribution functions (DFs) are also included in the current release; currently these consist of two-dimensional axisymmetric and non-axisymmetric disk DFs, a three-dimensional disk DF, and a DF framework for tidal streams. I provide several examples to illustrate the use of the code. I present a simple model for the Milky Way's gravitational potential consistent with the latest observations. I also numerically calculate the Oort functions for different tracer populations of stars and compare it to a new analytical approximation. Additionally, I characterize the response of a kinematically-warm disk to an elliptical m = 2 perturbation in detail. Overall, galpy consists of about 54,000 lines, including 23,000 lines of code in the module, 11,000 lines of test code, and about 20,000 lines of documentation. The test suite covers 99.6 \% of the code. galpy is available at http://github.com/jobovy/galpy with extensive documentation available at http://galpy.readthedocs.org/en/latest .},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Astrophysics - Astrophysics of Galaxies,Astrophysics - Instrumentation and Methods for Astrophysics},
+  file = {/Users/js5013/Zotero/storage/TLBD57YA/Bovy - 2015 - galpy A Python Library for Galactic Dynamics.pdf}
+}
+
 @article{Boylan-Kolchin2011,
   title = {Too Big to Fail? {{The}} Puzzling Darkness of Massive {{Milky Way}} Subhaloes},
   author = {{Boylan-Kolchin}, Michael and Bullock, James S. and Kaplinghat, Manoj},
@@ -863,6 +887,23 @@
   abstract = {Stan is a probabilistic programming language for specifying statistical models. A Stan program imperatively defines a log probability function over parameters conditioned on specified data and constants. As of version 2.14.0, Stan provides full Bayesian inference for continuous-variable models through Markov chain Monte Carlo methods such as the No-U-Turn sampler, an adaptive form of Hamiltonian Monte Carlo sampling. Penalized maximum likelihood estimates are calculated using optimization methods such as the limited memory Broyden-Fletcher-Goldfarb-Shanno algorithm. Stan is also a platform for computing log densities and their gradients and Hessians, which can be used in alternative algorithms such as variational Bayes, expectation propagation, and marginal inference using approximate integration. To this end, Stan is set up so that the densities, gradients, and Hessians, along with intermediate quantities of the algorithm such as acceptance probabilities, are easily accessible. Stan can be called from the command line using the cmdstan package, through R using the rstan package, and through Python using the pystan package. All three interfaces support sampling and optimization-based inference with diagnostics and posterior analysis. rstan and pystan also provide access to log probabilities, gradients, Hessians, parameter transforms, and specialized plotting.},
   keywords = {Algorithmic differentiation,Bayesian inference,Probabilistic program,Stan},
   file = {/Users/js5013/Zotero/storage/CWGL97AZ/v76i01.pdf}
+}
+
+@article{Carrasco2021,
+  title = {Internal Calibration of {{{\emph{Gaia}}}} {{BP}}/{{RP}} Low-Resolution Spectra},
+  author = {Carrasco, J. M. and Weiler, M. and Jordi, C. and Fabricius, C. and De Angeli, F. and Evans, D. W. and {van Leeuwen}, F. and Riello, M. and Montegriffo, P.},
+  year = {2021},
+  month = aug,
+  journal = {Astronomy \& Astrophysics},
+  volume = {652},
+  pages = {A86},
+  issn = {0004-6361, 1432-0746},
+  doi = {10.1051/0004-6361/202141249},
+  url = {https://www.aanda.org/10.1051/0004-6361/202141249},
+  urldate = {2023-02-06},
+  abstract = {Context. The full third Gaia data release will provide, for the first time, the calibrated spectra obtained with the blue and red Gaia slitless spectrophotometers (BP and RP, respectively). Gaia is a very complex mission and cannot be considered as a single instrument, but rather as many instruments. The two lines of sight with wide fields of view introduce strong variations of the observations across the large focal plane with more than one hundred different detectors. The main challenge when facing Gaia spectral calibration is that no lamp spectra or flat fields are available during the mission. Also, the significant size of the line spread function with respect to the dispersion of the prisms produces alien photons contaminating neighbouring positions of the spectra. This makes the calibration special and different from standard approaches.},
+  langid = {english},
+  file = {/Users/js5013/Zotero/storage/FZM7EKU7/Carrasco et al. - 2021 - Internal calibration of Gaia BPRP low-reso.pdf}
 }
 
 @article{Carter2020,
@@ -2727,7 +2768,7 @@
   url = {http://dx.doi.org/10.3847/1538-4357/aa6db3},
   abstract = {We measure carbon and nitrogen abundances to \$\textbackslash lesssim\$ 0.1 dex for 450,000 giant stars from their low-resolution (R\$\textbackslash sim\$1800) LAMOST DR2 survey spectra. We use these [C/M] and [N/M] measurements, together with empirical relations based on the APOKASC sample, to infer stellar masses and implied ages for 230,000 of these objects to 0.08 dex and 0.2 dex respectively. We use The Cannon, a data-driven approach to spectral modeling, to construct a predictive model for LAMOST spectra. Our reference set comprises 8125 stars observed in common between the APOGEE and LAMOST surveys, taking seven APOGEE DR12 labels (parameters) as ground truth: Teff, logg, [M/H], [\$\textbackslash alpha\$/M], [C/M], [N/M], and Ak. We add seven colors to the Cannon model, based on the g, r, i, J, H, K, W1, and W2 magnitudes from APASS, 2MASS \& WISE, which improves our constraints on Teff and logg by up to 20\% and on Ak by up to 70\%. Cross-validation of the model demonstrates that, for high-SNR objects, our inferred labels agree with the APOGEE values to within 50 K in temperature, 0.04 magnitudes in Ak, and {$<$} 0.1 dex in logg, [M/H], [C/M], [N/M], and [\$\textbackslash alpha\$/M]. We apply the model to 450,000 giants in LAMOST DR2 that have not been observed by APOGEE. This demonstrates that precise individual abundances can be measured from low-resolution spectra, and represents the largest catalog of [C/M], [N/M], masses and ages to date. As as result, we greatly increase the number and sky coverage of stars with mass and age estimates.},
   keywords = {abundances,data analysis,fits fi le,fundamental parameters,methods,methods: data analysis;methods: statistical;stars:,spectroscopic,stars,statistical,supporting material,surveys,techniques},
-  file = {/Users/js5013/Zotero/storage/AW3WNFDJ/Ho_2017_ApJ_841_40.pdf;/Users/js5013/Zotero/storage/S42HKNCG/Ho_2017_ApJ_841_40.pdf}
+  file = {/Users/js5013/Zotero/storage/S42HKNCG/Ho_2017_ApJ_841_40.pdf}
 }
 
 @article{Ho2017a,
@@ -3499,6 +3540,25 @@
   file = {/Users/js5013/Zotero/storage/873FF384/stw1304.pdf}
 }
 
+@misc{Lemos2023,
+  title = {Sampling-{{Based Accuracy Testing}} of {{Posterior Estimators}} for {{General Inference}}},
+  author = {Lemos, Pablo and Coogan, Adam and Hezaveh, Yashar and {Perreault-Levasseur}, Laurence},
+  year = {2023},
+  month = feb,
+  number = {arXiv:2302.03026},
+  eprint = {2302.03026},
+  eprinttype = {arxiv},
+  primaryclass = {astro-ph, stat},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2302.03026},
+  urldate = {2023-02-08},
+  abstract = {Parameter inference, i.e. inferring the posterior distribution of the parameters of a statistical model given some data, is a central problem to many scientific disciplines. Posterior inference with generative models is an alternative to methods such as Markov Chain Monte Carlo, both for likelihood-based and simulation-based inference. However, assessing the accuracy of posteriors encoded in generative models is not straightforward. In this paper, we introduce `distance to random point' (DRP) coverage testing as a method to estimate coverage probabilities of generative posterior estimators. Our method differs from previously-existing coverage-based methods, which require posterior evaluations. We prove that our approach is necessary and sufficient to show that a posterior estimator is optimal. We demonstrate the method on a variety of synthetic examples, and show that DRP can be used to test the results of posterior inference analyses in high-dimensional spaces. We also show that our method can detect non-optimal inferences in cases where existing methods fail.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Astrophysics - Instrumentation and Methods for Astrophysics,Computer Science - Machine Learning,Statistics - Machine Learning,Statistics - Methodology},
+  file = {/Users/js5013/Zotero/storage/X47RJI3G/Lemos et al. - 2023 - Sampling-Based Accuracy Testing of Posterior Estim.pdf}
+}
+
 @article{Leuker2020,
   title = {What Makes a Market Transaction Morally Repugnant?},
   author = {Leuker, Christina and Samartzidis, Lasare and Hertwig, Ralph},
@@ -3645,6 +3705,26 @@
   archiveprefix = {arXiv},
   keywords = {Computer Science - Computer Vision and Pattern Recognition},
   file = {/Users/js5013/Zotero/storage/NEHUMP9U/2104.14951.pdf}
+}
+
+@misc{Liang2023,
+  title = {Autoencoding {{Galaxy Spectra II}}: {{Redshift Invariance}} and {{Outlier Detection}}},
+  shorttitle = {Autoencoding {{Galaxy Spectra II}}},
+  author = {Liang, Yan and Melchior, Peter and Lu, Sicong and Goulding, Andy and Ward, Charlotte},
+  year = {2023},
+  month = feb,
+  number = {arXiv:2302.02496},
+  eprint = {2302.02496},
+  eprinttype = {arxiv},
+  primaryclass = {astro-ph},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2302.02496},
+  urldate = {2023-02-09},
+  abstract = {We present an unsupervised outlier detection method for galaxy spectra based on the spectrum autoencoder architecture spender, which reliably captures spectral features and provides highly realistic reconstructions for SDSS galaxy spectra. We interpret the sample density in the autoencoder latent space as a probability distribution, and identify outliers as low-probability objects with a normalizing flow. However, we found that the latent-space position is not, as expected from the architecture, redshift invariant, which introduces stochasticity into the latent space and the outlier detection method. We solve this problem by adding two novel loss terms during training, which explicitly link latentspace distances to data-space distances, preserving locality in the autoencoding process. Minimizing the additional losses leads to a redshift-invariant, non-degenerate latent space distribution with clear separations between common and anomalous data. We inspect the spectra with the lowest probability and find them to include blends with foreground stars, extremely reddened galaxies, galaxy pairs and triples, and stars that are misclassified as galaxies. We release the newly trained spender model and the latent-space probability for the entire SDSS-I galaxy sample to aid further investigations.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Astrophysics - Astrophysics of Galaxies,Astrophysics - Instrumentation and Methods for Astrophysics},
+  file = {/Users/js5013/Zotero/storage/WUIRF5C7/Liang et al. - 2023 - Autoencoding Galaxy Spectra II Redshift Invarianc.pdf}
 }
 
 @article{Lindegren2020,
@@ -4057,6 +4137,26 @@
   langid = {english},
   keywords = {Astrophysics - Cosmology and Nongalactic Astrophysics},
   file = {/Users/js5013/Zotero/storage/UIBN97C2/McQuinn - 2016 - The Evolution of the Intergalactic Medium.pdf}
+}
+
+@misc{Melchior2022,
+  title = {Autoencoding {{Galaxy Spectra I}}: {{Architecture}}},
+  shorttitle = {Autoencoding {{Galaxy Spectra I}}},
+  author = {Melchior, Peter and Liang, Yan and Hahn, ChangHoon and Goulding, Andy},
+  year = {2022},
+  month = nov,
+  number = {arXiv:2211.07890},
+  eprint = {2211.07890},
+  eprinttype = {arxiv},
+  primaryclass = {astro-ph},
+  publisher = {{arXiv}},
+  url = {http://arxiv.org/abs/2211.07890},
+  urldate = {2023-01-30},
+  abstract = {We introduce the neural network architecture spender as a core differentiable building block for analyzing, representing, and creating galaxy spectra. It combines a convolutional encoder, which pays attention to up to 256 spectral features and compresses them into a low-dimensional latent space, with a decoder that generates a restframe representation, whose spectral range and resolution exceeds that of the observing instrument. The decoder is followed by explicit redshift, resampling, and convolution transformations to match the observations. The architecture takes galaxy spectra at arbitrary redshifts and is robust to glitches like residuals of the skyline subtraction, so that spectra from a large survey can be ingested directly without additional preprocessing. We demonstrate the performance of spender by training on the entire spectroscopic galaxy sample of SDSS-II; show its ability to create highly accurate reconstructions with substantially reduced noise; perform deconvolution and oversampling for a super-resolution model that resolves the [O II] doublet; introduce a novel method to interpret attention weights as proxies for important spectral features; and infer the main degrees of freedom represented in the latent space. We conclude with a discussion of future improvements and applications.},
+  archiveprefix = {arXiv},
+  langid = {english},
+  keywords = {Astrophysics - Astrophysics of Galaxies,Astrophysics - Instrumentation and Methods for Astrophysics},
+  file = {/Users/js5013/Zotero/storage/HFWLLBQ2/Melchior et al. - 2022 - Autoencoding Galaxy Spectra I Architecture.pdf}
 }
 
 @article{Mena2019,
