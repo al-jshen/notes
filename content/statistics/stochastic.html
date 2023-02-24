@@ -387,6 +387,26 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditional-expectation">
+   Conditional Expectation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measure-theory">
+   Measure Theory
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sigma-algebra">
+     <span class="math notranslate nohighlight">
+      \(\sigma\)
+     </span>
+     -Algebra
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#resources">
    Resources
   </a>
@@ -428,6 +448,26 @@ title="Print to PDF"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conditional-expectation">
+   Conditional Expectation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#measure-theory">
+   Measure Theory
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sigma-algebra">
+     <span class="math notranslate nohighlight">
+      \(\sigma\)
+     </span>
+     -Algebra
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#resources">
    Resources
   </a>
@@ -447,14 +487,14 @@ title="Print to PDF"
 <section id="stochastic-processes">
 <h2>Stochastic Processes<a class="headerlink" href="#stochastic-processes" title="Permalink to this headline">#</a></h2>
 <p>A stochastic process is a collection of random variables, given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0d1565e2-3a88-48a8-a1fc-0eef006bacdd">
-<span class="eqno">(8)<a class="headerlink" href="#equation-0d1565e2-3a88-48a8-a1fc-0eef006bacdd" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-15b7f16c-6750-46dc-a12f-464d2b6280cd">
+<span class="eqno">(8)<a class="headerlink" href="#equation-15b7f16c-6750-46dc-a12f-464d2b6280cd" title="Permalink to this equation">#</a></span>\[\begin{align}
 X = \{X_t(\omega) \mid t \in T, \omega \in \Omega\},
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(T\)</span> is the <strong>index set</strong> and <span class="math notranslate nohighlight">\(\Omega\)</span> is the <strong>sample space</strong>. Each time/index-dependent random variable <span class="math notranslate nohighlight">\(X_t(\omega)\)</span> may also be written as <span class="math notranslate nohighlight">\(X(t, \omega)\)</span> to make clear that it is a function of two variables <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span>.</p>
 <p>For a fixed point <span class="math notranslate nohighlight">\(t \in T\)</span>, you have a random variable <span class="math notranslate nohighlight">\(X_t = X_t(\omega)\)</span>. For a fixed point <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>, you take a single point for every <span class="math notranslate nohighlight">\(X_t\)</span> in the stochastic process, and then you have a sample function (also called a sample path or a trajectory)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-730edd15-c2e5-4c77-befe-2e6660171571">
-<span class="eqno">(9)<a class="headerlink" href="#equation-730edd15-c2e5-4c77-befe-2e6660171571" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-75641f59-d7ee-4359-afeb-42eefbd22d5a">
+<span class="eqno">(9)<a class="headerlink" href="#equation-75641f59-d7ee-4359-afeb-42eefbd22d5a" title="Permalink to this equation">#</a></span>\[\begin{align}
 X(\cdot, \omega): T \rightarrow S
 \end{align}\]</div>
 <p>that maps points from the index set <span class="math notranslate nohighlight">\(T\)</span> (e.g., time) to the sample space <span class="math notranslate nohighlight">\(S\)</span> (e.g., <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>).</p>
@@ -464,19 +504,19 @@ X(\cdot, \omega): T \rightarrow S
 </div>
 <!-- prettier-ignore -->
 <p>A stochastic process <span class="math notranslate nohighlight">\(X\)</span> is called <strong>stationary</strong> all <span class="math notranslate nohighlight">\(X_t\)</span> have the same distribution. That is,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-10f0fd07-55cb-4242-9ce2-11bc5a9d5b0a">
-<span class="eqno">(10)<a class="headerlink" href="#equation-10f0fd07-55cb-4242-9ce2-11bc5a9d5b0a" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-46c02d26-40a5-45de-a11d-5c14c1ebda08">
+<span class="eqno">(10)<a class="headerlink" href="#equation-46c02d26-40a5-45de-a11d-5c14c1ebda08" title="Permalink to this equation">#</a></span>\[\begin{align}
 X_i \overset{d}{=} X_j \text{ for all } i, j \in T.
 \end{align}\]</div>
 <p>Similarly, <span class="math notranslate nohighlight">\(X\)</span> has <strong>stationary increments</strong> if</p>
-<div class="amsmath math notranslate nohighlight" id="equation-56023dda-8cd5-41b3-9573-5c5e83454d0e">
-<span class="eqno">(11)<a class="headerlink" href="#equation-56023dda-8cd5-41b3-9573-5c5e83454d0e" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e9b6e5c9-5009-45f3-acb5-80d3dfc3fab9">
+<span class="eqno">(11)<a class="headerlink" href="#equation-e9b6e5c9-5009-45f3-acb5-80d3dfc3fab9" title="Permalink to this equation">#</a></span>\[\begin{align}
 X_i - X_j \overset{d}{=} X_{i+h}, X_{j+h} \text{ for all } i, j \in T \text{ and $h$, with } i+h, j+h \in T.
 \end{align}\]</div>
 <!-- prettier-ignore -->
 <p>A stochastic process <span class="math notranslate nohighlight">\(X\)</span> has <strong>independent increments</strong> (and is called <strong>homogeneous</strong>) if for all <span class="math notranslate nohighlight">\(i \in T\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-6395ec7a-f388-4b7c-9d83-cc434203edf9">
-<span class="eqno">(12)<a class="headerlink" href="#equation-6395ec7a-f388-4b7c-9d83-cc434203edf9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-cd20f54f-077e-4001-8460-21d18961905e">
+<span class="eqno">(12)<a class="headerlink" href="#equation-cd20f54f-077e-4001-8460-21d18961905e" title="Permalink to this equation">#</a></span>\[\begin{align}
 X_2 - X_1, \ldots, X_n - X_{n - 1}
 \end{align}\]</div>
 <p>are independent random variables.</p>
@@ -495,8 +535,8 @@ X_2 - X_1, \ldots, X_n - X_{n - 1}
 <p class="sidebar-title"></p>
 <p>Self-similar processes are nowhere differentiable.</p>
 </aside>
-<div class="amsmath math notranslate nohighlight" id="equation-751d3b43-cd3f-4e2f-b28e-e445f8834b02">
-<span class="eqno">(13)<a class="headerlink" href="#equation-751d3b43-cd3f-4e2f-b28e-e445f8834b02" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-222b88df-72b1-4347-82a0-408270064c48">
+<span class="eqno">(13)<a class="headerlink" href="#equation-222b88df-72b1-4347-82a0-408270064c48" title="Permalink to this equation">#</a></span>\[\begin{align}
 \forall a \ge 0, \exists \gamma \ge 0 \text{ s.t. } (X\_{at}, t \ge 0) \overset{d}{=} (a^\gamma X_t, t \ge 0)
 \end{align}\]</div>
 </section>
@@ -524,8 +564,8 @@ X_2 - X_1, \ldots, X_n - X_{n - 1}
 <p>A Wiener process is 0.5-self-similar, which also implies that it has sample paths that are nowhere differentiable. This property means that to simulate Brownian motion on some interval <span class="math notranslate nohighlight">\([0, T]\)</span>, you can simulate Brownian motion <span class="math notranslate nohighlight">\(B_t\)</span> on <span class="math notranslate nohighlight">\([0, 1]\)</span> and then stretch it out with <span class="math notranslate nohighlight">\(W_t = \sqrt{T} B_{t / T}\)</span> for <span class="math notranslate nohighlight">\(t \in [0, T]\)</span>.</p>
 <!-- prettier-ignore -->
 <p>Brownian motion sample paths have infinite (unbounded) 2-variation. This means that for some finite interval <span class="math notranslate nohighlight">\([0, T]\)</span>, taking the supremum over all possible partitions of that interval <span class="math notranslate nohighlight">\(\tau = t_0 &lt; \ldots &lt; t_n = T\)</span>, we have</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b57f9356-748c-442d-a3c4-39aa669bad03">
-<span class="eqno">(14)<a class="headerlink" href="#equation-b57f9356-748c-442d-a3c4-39aa669bad03" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-93437284-e915-4859-85b8-c75c8e212752">
+<span class="eqno">(14)<a class="headerlink" href="#equation-93437284-e915-4859-85b8-c75c8e212752" title="Permalink to this equation">#</a></span>\[\begin{align}
   \underset{\tau}{\mathrm{sup}} \sum_{i=1}^{n} \left| W_{t_i} - W_{t_{i - 1}}\right| = \infty.
 \end{align}\]</div>
 <aside class="margin sidebar">
@@ -552,6 +592,51 @@ X_2 - X_1, \ldots, X_n - X_{n - 1}
 <p class="admonition-title">Note</p>
 <p>For a standard normal random variable <span class="math notranslate nohighlight">\(Z\)</span>, we have <span class="math notranslate nohighlight">\(\mathbb{E}[e^{\lambda Z}] = e^{\lambda^2 / 2}\)</span> for <span class="math notranslate nohighlight">\(\lambda \in \mathbb{R}\)</span>.</p>
 </div>
+</section>
+</section>
+<section id="conditional-expectation">
+<h2>Conditional Expectation<a class="headerlink" href="#conditional-expectation" title="Permalink to this headline">#</a></h2>
+<!-- prettier-ignore -->
+<p>The <strong>conditional expectation of <span class="math notranslate nohighlight">\(X\)</span> given <span class="math notranslate nohighlight">\(B\)</span></strong> is given by</p>
+<div class="amsmath math notranslate nohighlight" id="equation-59110a95-1fce-49ef-8000-e926488cfb29">
+<span class="eqno">(15)<a class="headerlink" href="#equation-59110a95-1fce-49ef-8000-e926488cfb29" title="Permalink to this equation">#</a></span>\[\begin{align}
+\mathbb{E}[X \mid B] &amp;= \frac{\mathbb{E}[X I_B]}{P(B)} \\
+&amp;= \frac{1}{P(B)} \int_{-\infty}^{\infty} x I_B f_X(x) dx \\
+&amp;= \frac{1}{P(B)} \int_B x f_X(x) dx.
+\end{align}\]</div>
+<p>The interpretation here is that you are taking the expectation of the random variable <span class="math notranslate nohighlight">\(X\)</span>, but restricting yourself to the cases of <span class="math notranslate nohighlight">\(X\)</span> where <span class="math notranslate nohighlight">\(B\)</span> has occurred. This is why you need to normalize by <span class="math notranslate nohighlight">\(P(B)\)</span> and also why there is an extra indicator function factor (because you only care about the cases of <span class="math notranslate nohighlight">\(X\)</span> which overlap with <span class="math notranslate nohighlight">\(B\)</span>).</p>
+<p>The <strong>conditional expectation of <span class="math notranslate nohighlight">\(X\)</span> given <span class="math notranslate nohighlight">\(Y\)</span></strong>, where <span class="math notranslate nohighlight">\(Y\)</span> is a discrete random variable, is itself a discrete random variable, defined as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-2490548f-10cd-48f5-8150-c37a3ea87161">
+<span class="eqno">(16)<a class="headerlink" href="#equation-2490548f-10cd-48f5-8150-c37a3ea87161" title="Permalink to this equation">#</a></span>\[\begin{align}
+\mathbb{E}[X \mid Y](\omega) = \mathbb{E}[X \mid Y = y_i],~\text{with } \omega \in \{\omega : Y(\omega) = y_i \}
+\end{align}\]</div>
+<p>It has the following properties:</p>
+<ul class="simple">
+<li><p>linearity: <span class="math notranslate nohighlight">\(\mathbb{E}[c_1 X_1 + c_2 X_2 \mid Y] = c_1 \mathbb{E}[X_1 \mid Y] + c_2 \mathbb{E}[X_2 \mid Y]\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mathbb{E}[X] = \mathbb{E}[\mathbb{E}[X \mid Y]]\)</span></p></li>
+<li><p>if <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are independent: <span class="math notranslate nohighlight">\(\mathbb{E}[X \mid Y] = \mathbb{E}[X]\)</span></p></li>
+</ul>
+</section>
+<section id="measure-theory">
+<h2>Measure Theory<a class="headerlink" href="#measure-theory" title="Permalink to this headline">#</a></h2>
+<section id="sigma-algebra">
+<h3><span class="math notranslate nohighlight">\(\sigma\)</span>-Algebra<a class="headerlink" href="#sigma-algebra" title="Permalink to this headline">#</a></h3>
+<!-- prettier-ignore -->
+<p>A <strong><span class="math notranslate nohighlight">\(\sigma\)</span>-field</strong> or <strong><span class="math notranslate nohighlight">\(\sigma\)</span>-algebra</strong> on the set <span class="math notranslate nohighlight">\(\Omega\)</span> is a collection of subsets of <span class="math notranslate nohighlight">\(\mathbb{P}(\Omega)\)</span>, called the <strong>measurable sets</strong>, with the following properties:</p>
+<ul class="simple">
+<li><p>it is not empty: <span class="math notranslate nohighlight">\(\emptyset, \Omega \in \mathcal{F}\)</span></p></li>
+<li><p>it is closed under complement: <span class="math notranslate nohighlight">\(A \in \mathcal{F} \implies A^c \in \mathcal{F}\)</span></p></li>
+<li><p>it is closed under countable unions and intersections: for <span class="math notranslate nohighlight">\(A_i \in \mathcal{F}, i \in \mathbb{N}\)</span>, we have <span class="math notranslate nohighlight">\(\cup_{i=1}^{\infty} A_i \in \mathcal{F}\)</span> and <span class="math notranslate nohighlight">\(\cap_{i=1}^{\infty} A_i \in \mathcal{F}\)</span></p></li>
+</ul>
+<!-- prettier-ignore -->
+<p>For a given (general) subset <span class="math notranslate nohighlight">\(M \subseteq \mathbb{P}(\Omega)\)</span>, there is a smallest <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra that contains the set <span class="math notranslate nohighlight">\(M\)</span>. We call this the <strong><span class="math notranslate nohighlight">\(\sigma\)</span>-algebra generated by <span class="math notranslate nohighlight">\(M\)</span></strong>, and it is defined as</p>
+<div class="amsmath math notranslate nohighlight" id="equation-f59be4b2-a216-4da5-9751-33ff0a169120">
+<span class="eqno">(17)<a class="headerlink" href="#equation-f59be4b2-a216-4da5-9751-33ff0a169120" title="Permalink to this equation">#</a></span>\[\begin{align}
+\sigma(M) = \bigcap_{\substack{{M \subseteq \mathcal{F}}\\{\mathcal{F}~\text{$\sigma$-algebra}}}} \mathcal{F}.
+\end{align}\]</div>
+<p>An important <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is the <strong>Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra</strong>, which is the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra generated by all open sets. The elements it contains are called <strong>Borel sets</strong>, which are the sets that can be formed from open sets through unions, intersections, and (relative) complements.</p>
+<p>For a random variable <span class="math notranslate nohighlight">\(X\)</span>, the <strong><span class="math notranslate nohighlight">\(\sigma\)</span>-algebra generated by the random variable <span class="math notranslate nohighlight">\(X\)</span></strong> contains all of the inverse images <span class="math notranslate nohighlight">\(X^{-1}(B)\)</span> of all the Borel sets <span class="math notranslate nohighlight">\(B \subset \mathbb{R}\)</span>. That is, it contains the set of all points <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span> where <span class="math notranslate nohighlight">\(X(\omega) \in B\)</span> for some Borel set <span class="math notranslate nohighlight">\(B \subset \mathbb{R}\)</span>.</p>
+<p>For a stochastic process <span class="math notranslate nohighlight">\(X = (X_t, t \in T, \omega \in \Omega)\)</span>, the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra <span class="math notranslate nohighlight">\(\sigma(X)\)</span> is the smallest <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra containing all sets of the form <span class="math notranslate nohighlight">\({\omega: X_t(\omega) \in C}\)</span> for any Borel sets <span class="math notranslate nohighlight">\(C\)</span>. For a “nice” function <span class="math notranslate nohighlight">\(f\)</span> acting on <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(\sigma(f(X)) \subset \sigma(X)\)</span>. That is, <span class="math notranslate nohighlight">\(f\)</span> does not provide any new information about the structure of <span class="math notranslate nohighlight">\(X\)</span>.</p>
 </section>
 </section>
 <section id="resources">
