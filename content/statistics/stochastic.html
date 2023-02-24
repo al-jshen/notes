@@ -462,14 +462,14 @@ title="Print to PDF"
 <section id="stochastic-processes">
 <h2>Stochastic Processes<a class="headerlink" href="#stochastic-processes" title="Permalink to this headline">#</a></h2>
 <p>A stochastic process is a collection of random variables, given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-3e0d21af-d906-4a09-a697-e56731d7598c">
-<span class="eqno">(9)<a class="headerlink" href="#equation-3e0d21af-d906-4a09-a697-e56731d7598c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ef1ceba4-6dd0-403b-92d3-e3ddc89fb2f8">
+<span class="eqno">(9)<a class="headerlink" href="#equation-ef1ceba4-6dd0-403b-92d3-e3ddc89fb2f8" title="Permalink to this equation">#</a></span>\[\begin{align}
 X = \{X_t(\omega) \mid t \in T, \omega \in \Omega\},
 \end{align}\]</div>
 <p>where <span class="math notranslate nohighlight">\(T\)</span> is the <strong>index set</strong> and <span class="math notranslate nohighlight">\(\Omega\)</span> is the <strong>sample space</strong>. Each time/index-dependent random variable <span class="math notranslate nohighlight">\(X_t(\omega)\)</span> may also be written as <span class="math notranslate nohighlight">\(X(t, \omega)\)</span> to make clear that it is a function of two variables <span class="math notranslate nohighlight">\(t\)</span> and <span class="math notranslate nohighlight">\(\omega\)</span>.</p>
 <p>For a fixed point <span class="math notranslate nohighlight">\(t \in T\)</span>, you have a random variable <span class="math notranslate nohighlight">\(X_t = X_t(\omega)\)</span>. For a fixed point <span class="math notranslate nohighlight">\(\omega \in \Omega\)</span>, you take a single point for every <span class="math notranslate nohighlight">\(X_t\)</span> in the stochastic process, and then you have a sample function (also called a sample path or a trajectory)</p>
-<div class="amsmath math notranslate nohighlight" id="equation-deb48d06-2106-4765-86b4-0b7c8f55a9cc">
-<span class="eqno">(10)<a class="headerlink" href="#equation-deb48d06-2106-4765-86b4-0b7c8f55a9cc" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1d320b55-1be1-47bc-a297-07bb671bc55f">
+<span class="eqno">(10)<a class="headerlink" href="#equation-1d320b55-1be1-47bc-a297-07bb671bc55f" title="Permalink to this equation">#</a></span>\[\begin{align}
 X(\cdot, \omega): T \rightarrow S
 \end{align}\]</div>
 <p>that maps points from the index set <span class="math notranslate nohighlight">\(T\)</span> (e.g., time) to the sample space <span class="math notranslate nohighlight">\(S\)</span> (e.g., <span class="math notranslate nohighlight">\(\mathbb{R}^n\)</span>).</p>
@@ -479,19 +479,19 @@ X(\cdot, \omega): T \rightarrow S
 </div>
 <!-- prettier-ignore -->
 <p>A stochastic process <span class="math notranslate nohighlight">\(X\)</span> is called <strong>stationary</strong> all <span class="math notranslate nohighlight">\(X_t\)</span> have the same distribution. That is,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-ed61a679-d092-4a56-9873-8d18677c19bd">
-<span class="eqno">(11)<a class="headerlink" href="#equation-ed61a679-d092-4a56-9873-8d18677c19bd" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-03633361-8d32-43fd-97f9-6f41981ad630">
+<span class="eqno">(11)<a class="headerlink" href="#equation-03633361-8d32-43fd-97f9-6f41981ad630" title="Permalink to this equation">#</a></span>\[\begin{align}
 X_i \overset{d}{=} X_j \text{ for all } i, j \in T.
 \end{align}\]</div>
 <p>Similarly, <span class="math notranslate nohighlight">\(X\)</span> has <strong>stationary increments</strong> if</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9739bd2f-fc36-43fc-b425-83d85a2348ae">
-<span class="eqno">(12)<a class="headerlink" href="#equation-9739bd2f-fc36-43fc-b425-83d85a2348ae" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b3bb31b5-5ba9-42a3-8160-bcae45016803">
+<span class="eqno">(12)<a class="headerlink" href="#equation-b3bb31b5-5ba9-42a3-8160-bcae45016803" title="Permalink to this equation">#</a></span>\[\begin{align}
 X_i - X_j \overset{d}{=} X_{i+h}, X_{j+h} \text{ for all } i, j \in T \text{ and $h$, with } i+h, j+h \in T.
 \end{align}\]</div>
 <!-- prettier-ignore -->
 <p>A stochastic process <span class="math notranslate nohighlight">\(X\)</span> has <strong>independent increments</strong> (and is called <strong>homogeneous</strong>) if for all <span class="math notranslate nohighlight">\(i \in T\)</span>,</p>
-<div class="amsmath math notranslate nohighlight" id="equation-0608d812-d47c-4932-884d-accdc94fcd19">
-<span class="eqno">(13)<a class="headerlink" href="#equation-0608d812-d47c-4932-884d-accdc94fcd19" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-000f851d-8bf6-4aba-bb2c-105004ca0aeb">
+<span class="eqno">(13)<a class="headerlink" href="#equation-000f851d-8bf6-4aba-bb2c-105004ca0aeb" title="Permalink to this equation">#</a></span>\[\begin{align}
 X_2 - X_1, \ldots, X_n - X_{n - 1}
 \end{align}\]</div>
 <p>are independent random variables.</p>
@@ -510,8 +510,8 @@ X_2 - X_1, \ldots, X_n - X_{n - 1}
 </aside>
 <!-- prettier-ignore -->
 <p>A stochastic process is said to be <strong>self-similar of index <span class="math notranslate nohighlight">\(\gamma\)</span></strong> if it satisfies the following condition:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5a1e4216-a87f-4b05-8cb3-60ee516c31da">
-<span class="eqno">(14)<a class="headerlink" href="#equation-5a1e4216-a87f-4b05-8cb3-60ee516c31da" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-d99f5499-1774-4ddd-90bf-d9f79413d318">
+<span class="eqno">(14)<a class="headerlink" href="#equation-d99f5499-1774-4ddd-90bf-d9f79413d318" title="Permalink to this equation">#</a></span>\[\begin{align}
 \forall a \ge 0, \exists \gamma \ge 0 \text{ s.t. } (X_{at}, t \ge 0) \overset{d}{=} (a^\gamma X_t, t \ge 0)
 \end{align}\]</div>
 </section>
@@ -539,8 +539,8 @@ X_2 - X_1, \ldots, X_n - X_{n - 1}
 <p>A Wiener process is 0.5-self-similar, which also implies that it has sample paths that are nowhere differentiable. This property means that to simulate Brownian motion on some interval <span class="math notranslate nohighlight">\([0, T]\)</span>, you can simulate Brownian motion <span class="math notranslate nohighlight">\(B_t\)</span> on <span class="math notranslate nohighlight">\([0, 1]\)</span> and then stretch it out with <span class="math notranslate nohighlight">\(W_t = \sqrt{T} B_{t / T}\)</span> for <span class="math notranslate nohighlight">\(t \in [0, T]\)</span>.</p>
 <!-- prettier-ignore -->
 <p>Brownian motion sample paths have infinite (unbounded) 2-variation. This means that for some finite interval <span class="math notranslate nohighlight">\([0, T]\)</span>, taking the supremum over all possible partitions of that interval <span class="math notranslate nohighlight">\(\tau = t_0 &lt; \ldots &lt; t_n = T\)</span>, we have</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a4392bde-8cce-4725-82ed-829e4b36c3f3">
-<span class="eqno">(15)<a class="headerlink" href="#equation-a4392bde-8cce-4725-82ed-829e4b36c3f3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-fbca7074-34c5-4388-9298-cfe2d1972a1d">
+<span class="eqno">(15)<a class="headerlink" href="#equation-fbca7074-34c5-4388-9298-cfe2d1972a1d" title="Permalink to this equation">#</a></span>\[\begin{align}
   \underset{\tau}{\mathrm{sup}} \sum_{i=1}^{n} \left| W_{t_i} - W_{t_{i - 1}}\right| = \infty.
 \end{align}\]</div>
 <section id="variants">
@@ -573,16 +573,16 @@ X_2 - X_1, \ldots, X_n - X_{n - 1}
 <h2>Conditional Expectation<a class="headerlink" href="#conditional-expectation" title="Permalink to this headline">#</a></h2>
 <!-- prettier-ignore -->
 <p>The <strong>conditional expectation of <span class="math notranslate nohighlight">\(X\)</span> given <span class="math notranslate nohighlight">\(B\)</span></strong> is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d72859a3-0a24-4078-8494-0c2e3b13b98f">
-<span class="eqno">(16)<a class="headerlink" href="#equation-d72859a3-0a24-4078-8494-0c2e3b13b98f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-90a2bdbe-acf0-47fb-9060-204e2816a101">
+<span class="eqno">(16)<a class="headerlink" href="#equation-90a2bdbe-acf0-47fb-9060-204e2816a101" title="Permalink to this equation">#</a></span>\[\begin{align}
 \mathbb{E}[X \mid B] &amp;= \frac{\mathbb{E}[X I_B]}{P(B)} \\
 &amp;= \frac{1}{P(B)} \int_{-\infty}^{\infty} x I_B f_X(x) dx \\
 &amp;= \frac{1}{P(B)} \int_B x f_X(x) dx.
 \end{align}\]</div>
 <p>The interpretation here is that you are taking the expectation of the random variable <span class="math notranslate nohighlight">\(X\)</span>, but restricting yourself to the cases of <span class="math notranslate nohighlight">\(X\)</span> where <span class="math notranslate nohighlight">\(B\)</span> has occurred. This is why you need to normalize by <span class="math notranslate nohighlight">\(P(B)\)</span> and also why there is an extra indicator function factor (because you only care about the cases of <span class="math notranslate nohighlight">\(X\)</span> which overlap with <span class="math notranslate nohighlight">\(B\)</span>).</p>
 <p>The <strong>conditional expectation of <span class="math notranslate nohighlight">\(X\)</span> given <span class="math notranslate nohighlight">\(Y\)</span></strong>, where <span class="math notranslate nohighlight">\(Y\)</span> is a discrete random variable, is itself a discrete random variable, defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e9e375b5-12a1-4157-b1cd-0f30fa891148">
-<span class="eqno">(17)<a class="headerlink" href="#equation-e9e375b5-12a1-4157-b1cd-0f30fa891148" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ef335e25-b857-4e8a-a438-0ebe9ca1641e">
+<span class="eqno">(17)<a class="headerlink" href="#equation-ef335e25-b857-4e8a-a438-0ebe9ca1641e" title="Permalink to this equation">#</a></span>\[\begin{align}
 \mathbb{E}[X \mid Y](\omega) = \mathbb{E}[X \mid Y = y_i],~\text{with } \omega \in \{\omega : Y(\omega) = y_i \}
 \end{align}\]</div>
 <p>It has the following properties:</p>
