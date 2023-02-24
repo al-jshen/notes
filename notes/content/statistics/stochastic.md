@@ -42,25 +42,24 @@ A stochastic process $(X_t, t \in [0, \infty))$ is a (homogeneous) Poisson proce
 - $X_t \sim \mathrm{Poisson}(\lambda t) \text{ for } t > 0$
 ```
 
-<!-- prettier-ignore -->
-A stochastic process is said to be **self-similar of index $\gamma$** if it satisfies the following condition:
-
 ```{margin}
 Self-similar processes are nowhere differentiable.
 ```
 
+<!-- prettier-ignore -->
+A stochastic process is said to be **self-similar of index $\gamma$** if it satisfies the following condition:
 \begin{align}
-\forall a \ge 0, \exists \gamma \ge 0 \text{ s.t. } (X\_{at}, t \ge 0) \overset{d}{=} (a^\gamma X_t, t \ge 0)
+\forall a \ge 0, \exists \gamma \ge 0 \text{ s.t. } (X_{at}, t \ge 0) \overset{d}{=} (a^\gamma X_t, t \ge 0)
 \end{align}
 
 ## Brownian Motion
 
-<!-- prettier-ignore -->
-A stochastic process $W = (W_t, t \in [0, \infty])$ is called a **Wiener process** or **Brownian motion** if it satisfies the following conditions:
-
 ```{margin}
 Note that $W$ is a Gaussian process.
 ```
+
+<!-- prettier-ignore -->
+A stochastic process $W = (W_t, t \in [0, \infty])$ is called a **Wiener process** or **Brownian motion** if it satisfies the following conditions:
 
 - it has stationary, independent increments
 - $W_0 = 0$
@@ -82,21 +81,21 @@ Brownian motion sample paths have infinite (unbounded) 2-variation. This means t
   \underset{\tau}{\mathrm{sup}} \sum_{i=1}^{n} \left| W_{t_i} - W_{t_{i - 1}}\right| = \infty.
 \end{align}
 
+### Variants
+
 ```{margin}
 Remember that a Wiener process can be stretched out arbitrarily, so this actually generalizes to any interval $[0, T]$.
 ```
 
-### Variants
-
 Brownian Bridge
 : a Wiener process $(W_t, t \in [0, 1])$ with the extra condition that $W(1) = 0$
 
+```{margin}
+A linear drift Brownian motion is also a Gaussian process since we are just rescaling and shifting W, which is itself Gaussian.
+```
+
 Brownian motion with linear drift
 : $X_t = \mu t + \sigma W_t$ for $t \ge 0$
-
-```{margin}
-This is also a Gaussian process since we are just rescaling and shifting the W, which is itself Gaussian.
-```
 
 Geometric Brownian Motion
 : $X_t = \exp{(\mu t + \sigma W_t)}$ for $t \ge 0$
