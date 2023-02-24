@@ -164,6 +164,11 @@ const thebe_selector_output = ".output, .cell_output"
   </label>
   <ul>
    <li class="toctree-l2">
+    <a class="reference internal" href="../statistics/measure_theory.html">
+     Measure Theory
+    </a>
+   </li>
+   <li class="toctree-l2">
     <a class="reference internal" href="../statistics/stochastic.html">
      Stochastic Calculus
     </a>
@@ -448,8 +453,8 @@ title="Print to PDF"
 <section id="mean-field-approximation">
 <h2>Mean-field approximation<a class="headerlink" href="#mean-field-approximation" title="Permalink to this headline">#</a></h2>
 <p>Makes the assumption that latent variables are mutually independent, so that we can factorize the likelihood as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-94c0f800-9cef-4d5d-81fe-987cefff5be7">
-<span class="eqno">(2)<a class="headerlink" href="#equation-94c0f800-9cef-4d5d-81fe-987cefff5be7" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c3f26a60-75a1-417f-955e-7485042baaba">
+<span class="eqno">(2)<a class="headerlink" href="#equation-c3f26a60-75a1-417f-955e-7485042baaba" title="Permalink to this equation">#</a></span>\[\begin{align}
 q(z) = \prod_i q_i(z_i)
 \end{align}\]</div>
 <ul class="simple">
@@ -463,8 +468,8 @@ q(z) = \prod_i q_i(z_i)
 <ul>
 <li><p>learn a flexible, bijective transformation from a simple base distribution that you can sample from and have an exact likelihood for to your target distribution</p></li>
 <li><p>for some invertible mapping <span class="math notranslate nohighlight">\(f\)</span>, random variable <span class="math notranslate nohighlight">\(z\)</span> with base distribution <span class="math notranslate nohighlight">\(z \sim p_z(z)\)</span>, and some sample <span class="math notranslate nohighlight">\(x\)</span> from the target distrbution <span class="math notranslate nohighlight">\(x \sim \pi(x)\)</span> such that <span class="math notranslate nohighlight">\(x = f(z)\)</span> and <span class="math notranslate nohighlight">\(z = f^{-1}(x)\)</span>, we have</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f6eb5cba-57e6-484b-b89d-de22ef3583bb">
-<span class="eqno">(3)<a class="headerlink" href="#equation-f6eb5cba-57e6-484b-b89d-de22ef3583bb" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-19498196-6d28-424d-8052-fcfd80e4dedc">
+<span class="eqno">(3)<a class="headerlink" href="#equation-19498196-6d28-424d-8052-fcfd80e4dedc" title="Permalink to this equation">#</a></span>\[\begin{align}
   \pi(x) \approx p_x(x) = p_z(f^{-1}(x)) \left|\textrm{det}(\frac{\partial f^{-1}(x)}{\partial x})\right| = p_z(z) \left|\textrm{det}(\frac{\partial f(z)}{\partial z})\right|^{-1}
   \end{align}\]</div>
 </li>
