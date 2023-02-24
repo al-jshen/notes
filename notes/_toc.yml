@@ -13,6 +13,7 @@ chapters:
   - file: content/astrophysics/comments.md
   - file: content/statistics/intro.md
     sections:
+      - file: content/statistics/measure_theory.md
       - file: content/statistics/stochastic.md
   - file: content/notebooks/index
     sections:
