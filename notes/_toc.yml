@@ -10,7 +10,11 @@ chapters:
       - file: content/inference/vi
       - file: content/inference/inla
   - file: content/algorithms/intro
-  - file: content/astrophysics/comments.md
+  - file: content/astrophysics/intro.md
+    sections:
+      - file: content/astrophysics/comments.md
+      - file: content/astrophysics/stars.md
+      - file: content/astrophysics/proposals.md
   - file: content/statistics/intro.md
     sections:
       - file: content/statistics/measure_theory.md
