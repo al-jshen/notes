@@ -1,0 +1,625 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Stars &#8212; notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/proof.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/astrophysics/stars';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Writing proposals" href="proposals.html" />
+    <link rel="prev" title="Astrophysics" href="comments.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Overview
+                </a>
+            </li>
+        </ul>
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../inference/intro.html">Inference/sampling</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../inference/mcmc.html">Markov chain Monte Carlo</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inference/vi.html">Variational inference</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../inference/inla.html">INLA (integrated nested Laplace approximation)</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../algorithms/intro.html">Algorithms</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Astrophysics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="comments.html">Astrophysics</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Stars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="proposals.html">Writing proposals</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../statistics/intro.html">Statistics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/measure_theory.html">Measure Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/stochastic.html">Stochastic Calculus</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/index.html">Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../notebooks/bayesboot.html">Bayesian Bootstrapping</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../talks/index.html">Talks</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.com/al-jshen/notes" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.com/al-jshen/notes/issues/new?title=Issue%20on%20page%20%2Fcontent/astrophysics/stars.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/content/astrophysics/stars.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Stars</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timescales">Timescales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polytropes">Polytropes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convection">Convection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fusion">Fusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opacity">Opacity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulas">Formulas</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="stars">
+<h1>Stars<a class="headerlink" href="#stars" title="Permalink to this heading">#</a></h1>
+<section id="timescales">
+<h2>Timescales<a class="headerlink" href="#timescales" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>nuclear &gt;&gt; Kelvin-Helmholtz &gt;&gt; diffusion &gt;&gt; dynamical &gt;&gt; collision</p></li>
+<li><p>nuclear (lifetime with current mass (i.e., fuel) and current luminosity): <span class="math notranslate nohighlight">\(t_{nuc} = \frac{aM_\odot c^2}{L_\odot} \approx 10^{11}~{\rm yr}\)</span>, where <span class="math notranslate nohighlight">\(a\)</span> is the energy fraction released during fusion</p></li>
+<li><p>Kelvin-Helmholtz (time to radiate away all gravitational energy): <span class="math notranslate nohighlight">\(t_{KH} = \frac{GM_\odot^2 / R_\odot}{L_\odot} \approx 10^{7}~{\rm yr}\)</span></p></li>
+<li><p>diffusion (time for photon to random walk out of the star): <span class="math notranslate nohighlight">\(t_{diff} = N t_{\gamma} \approx 10^{4}~{\rm yr}\)</span></p></li>
+<li><p>dynamical (time for kinetic events to occur (e.g., response time to perturbations, time taken for sound wave to travel across star)): <span class="math notranslate nohighlight">\(t_{dyn} = R / v_{esc} = \sqrt{R^3 / 2GM} \approx 1600~{\rm s}\)</span></p></li>
+<li><p>collision (time between photon collisions): <span class="math notranslate nohighlight">\(t_{\gamma} = \frac{\lambda}{c} \approx 10^{-10}~{\rm s}\)</span>, where <span class="math notranslate nohighlight">\(\lambda\)</span> is the mean free path</p></li>
+</ul>
+</section>
+<section id="polytropes">
+<h2>Polytropes<a class="headerlink" href="#polytropes" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>approximate stellar structure with self-gravitating spherically symmetric blob of gas</p></li>
+<li><p>parameterized by polytropic index <span class="math notranslate nohighlight">\(n\)</span> or <span class="math notranslate nohighlight">\(\gamma = 1 + 1/n\)</span></p></li>
+<li><p>polytropes are solutions to the Lane-Emden equations, which are parameterized by length/radius <span class="math notranslate nohighlight">\(\xi\)</span> and temperature <span class="math notranslate nohighlight">\(\theta\)</span></p></li>
+</ul>
+<p>Relations:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P = K\rho^{\gamma}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\rho = \rho_c \theta^n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P = P_c \theta^{n + 1}\)</span></p></li>
+</ul>
+<p>Lane Emden: <span class="math notranslate nohighlight">\(\frac{1}{\xi^2} \frac{\rm d}{{\rm d}\xi} \left(\xi^2 \frac{{\rm d}\theta}{{\rm d}\xi} \right) = -\theta^{n}\)</span>, with boundary conditions <span class="math notranslate nohighlight">\(\theta = 1\)</span>, <span class="math notranslate nohighlight">\({\rm d}\theta / {\rm d}\xi = 0\)</span> at the center (<span class="math notranslate nohighlight">\(\xi = 0\)</span>)</p>
+<p>Common cases:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(n = 0\)</span>: rocky planet with constant density</p></li>
+<li><p><span class="math notranslate nohighlight">\(n = 1.5\)</span>: convective stars, gas giants (e.g., Jupiter), brown dwarfs, non-relativistic degenerate matter (e.g., low-mass white dwarfs)</p></li>
+<li><p><span class="math notranslate nohighlight">\(n = 3\)</span>: main sequence stars, relativistic degenerate matter (e.g., high-mass white dwarfs)</p></li>
+<li><p><span class="math notranslate nohighlight">\(n = 5\)</span>: infinite radius</p></li>
+</ul>
+</section>
+<section id="convection">
+<h2>Convection<a class="headerlink" href="#convection" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>occurs when heat flux is high</p></li>
+<li><p>formal requirement for instability to convection is that the temperature gradient is steeper than adiabatic: <span class="math notranslate nohighlight">\(\Delta &gt; \Delta_{\rm ad}\)</span> (superadiabatic), which means that the Brunt-Väisälä frequency <span class="math notranslate nohighlight">\(N\)</span> satisfies <span class="math notranslate nohighlight">\(N^2 &lt; 0\)</span></p></li>
+<li><p>very efficient, so in most convective parts of the star <span class="math notranslate nohighlight">\(\Delta \approx \Delta_{\rm ad}\)</span> (temperature gradient is close to adiabatic, which means that <span class="math notranslate nohighlight">\(F_{conv} \rightarrow 0\)</span>, so flux due to convection is/becomes small)</p></li>
+</ul>
+</section>
+<section id="fusion">
+<h2>Fusion<a class="headerlink" href="#fusion" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>in cooler stars, mostly pp-chain (<span class="math notranslate nohighlight">\(\varepsilon \propto T^4\)</span>), and in hotter stars, CNO cycle (<span class="math notranslate nohighlight">\(\varepsilon \propto T^{20}\)</span>)</p></li>
+<li><p>slowest reaction in the pp chain is the first one</p></li>
+<li><p>Gamow peak has roughly Gaussian shape and is the effective energy at which reactions occur</p>
+<ul>
+<li><p>mean/peak is given by <span class="math notranslate nohighlight">\(E_0 = 1.22\,(Z_1^2 Z_2^2 T_6^2 (\mu / m_p))^{1/3}~{\rm keV}\)</span>, with <span class="math notranslate nohighlight">\(Z_1^2 Z_2^2 (\mu / m_p) = 1/2\)</span> for the pp chain</p></li>
+<li><p>width is given by <span class="math notranslate nohighlight">\(\Delta = 4/\sqrt{3}\,(E_0 kT)^{1/2}\)</span></p></li>
+</ul>
+</li>
+<li><p>energy released in fusion reaction is the difference between the binding energies of the reactants and the products (time efficiency, which for hydrogen to helium is 0.7%)</p></li>
+<li><p>nuclear mass given by semi-empirical mass formula</p></li>
+<li><p>nuclei with larger binding energies per nucleon are more stable; the most stable nuclei are all around the iron peak (<span class="math notranslate nohighlight">\(^{56}\text{Fe}\)</span>, <span class="math notranslate nohighlight">\(^{56}\text{Ni}\)</span>, <span class="math notranslate nohighlight">\(^{62}\text{Ni}\)</span>)</p></li>
+</ul>
+</section>
+<section id="opacity">
+<h2>Opacity<a class="headerlink" href="#opacity" title="Permalink to this heading">#</a></h2>
+<!-- prettier-ignore -->
+<ul class="simple">
+<li><p>types of opacity:</p>
+<ul>
+<li><p>free-free (inverse Bremsstrahlung): electron passes near an ion and absorbs a photon of any wavelength</p></li>
+<li><p>bound-free: photon is absorbed/used to eject an electron from a bound state of an atom, only works if photon has more energy than the ionization potential, and only exists in states with bound (i.e., unionized) systems (typically <span class="math notranslate nohighlight">\(T &lt; 10^{6}~{\rm K}\)</span>)</p></li>
+<li><p>bound-bound (spectral lines): absorption of a photon that causes an electron to jump energy levels, requires photon to be in a very narrow wavelength range for any particular spectral line, but is important because some atoms can have a large number of (closely spaced) lines that absorb lots of photons</p></li>
+<li><p>Thomson (from Thomson scattering): non-relativistic, inelastic collision of low energy (<span class="math notranslate nohighlight">\(h\nu \ll m_e c^2\)</span>, which is typically the case for blackbodies at <span class="math notranslate nohighlight">\(T &lt; 10^{8}~{\rm K}\)</span>) photon and electron, which causes the electron to oscillate (but not recoil, because photon was low energy) and emit a new photon with the same wavelength</p></li>
+<li><p>negative hydrogen ion: electron passes near a neutral hydrogen atom and they turn into a <span class="math notranslate nohighlight">\(H^{-}\)</span> ion, which requires availability of free electrons either due to ionized hydrogen (unlikely) or free electrons due to ionized metals (Na, K, Cs, Ca are very easy to ionize), but <span class="math notranslate nohighlight">\(H^{-}\)</span> itself becomes ionized away at <span class="math notranslate nohighlight">\(T \sim 10^{4}~{\rm K}\)</span>, so this is important only in cool stars</p></li>
+</ul>
+</li>
+<li><p>Rosseland mean opacity (free-free, bound-free, and bound-bound) can approximated using Kramers formula: <span class="math notranslate nohighlight">\(\kappa_{K} = 4\times 10^{25}\,(1+X)\,(Z+0.0001)\,(\rho / T^{3.5})~{\rm cm^{2}\,g^{-1}}\)</span></p>
+<ul>
+<li><p>free-free opacity most effective at high densities and low temperatures (e.g., in low mass stars)</p></li>
+</ul>
+</li>
+<li><p>Thomson opacity given by <span class="math notranslate nohighlight">\(\kappa_{Th} = 0.2\,(1 + X)~{\rm cm^{2}\,g^{-1}}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H^{-}\)</span> opacity given by <span class="math notranslate nohighlight">\(\kappa_{H^{-}} = 2.5\times 10^{-31}\,(Z / 0.02)\,\rho^{0.5}\,T^{9}~{\rm cm^{2}\,g^{-1}}\)</span></p></li>
+</ul>
+<section id="resources">
+<h3>Resources<a class="headerlink" href="#resources" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>https://www.bartol.udel.edu/~owocki/phys633/14-opacity.pdf</p></li>
+</ul>
+</section>
+</section>
+<section id="formulas">
+<h2>Formulas<a class="headerlink" href="#formulas" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(F = -\left(\frac{4acT^3}{3\kappa \rho}\right) \frac{{\rm d}T}{{\rm d}r}\)</span></p></li>
+</ul>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./content/astrophysics"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="comments.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Astrophysics</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="proposals.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Writing proposals</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#timescales">Timescales</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#polytropes">Polytropes</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#convection">Convection</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#fusion">Fusion</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#opacity">Opacity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#resources">Resources</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#formulas">Formulas</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Jeff Shen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022-2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
