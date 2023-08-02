@@ -61,8 +61,10 @@ Common cases:
 - Thomson opacity given by $\kappa_{Th} = 0.2\,(1 + X)~{\rm cm^{2}\,g^{-1}}$
 - $H^{-}$ opacity given by $\kappa_{H^{-}} = 2.5\times 10^{-31}\,(Z / 0.02)\,\rho^{0.5}\,T^{9}~{\rm cm^{2}\,g^{-1}}$
 
--
-
 ### Resources
 
 - https://www.bartol.udel.edu/~owocki/phys633/14-opacity.pdf
+
+## Formulas
+
+- $F = -\left(\frac{4acT^3}{3\kappa \rho}\right) \frac{{\rm d}T}{{\rm d}r}$
