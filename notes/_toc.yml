@@ -24,6 +24,7 @@ chapters:
     sections:
       - file: content/ml/theory.md
       - file: content/ml/attention.md
+      - file: content/ml/view_synthesis.md
   - file: content/notebooks/index
     sections:
       - file: content/notebooks/bayesboot
