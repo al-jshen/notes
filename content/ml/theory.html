@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
-    <title>Statistics &#8212; notes</title>
+    <title>Theory &#8212; notes</title>
   
   
   
@@ -63,11 +63,13 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/statistics/intro';</script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/ml/theory';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Measure Theory" href="measure_theory.html" />
-    <link rel="prev" title="Writing proposals" href="../astrophysics/proposals.html" />
+    <link rel="next" title="Attention" href="attention.html" />
+    <link rel="prev" title="Machine Learning" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -185,14 +187,14 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../astrophysics/proposals.html">Writing proposals</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">Statistics</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="measure_theory.html">Measure Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="stochastic.html">Stochastic Calculus</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../statistics/intro.html">Statistics</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/measure_theory.html">Measure Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../statistics/stochastic.html">Stochastic Calculus</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../ml/intro.html">Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ml/theory.html">Theory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../ml/attention.html">Attention</a></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Machine Learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Theory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="attention.html">Attention</a></li>
 
 </ul>
 </li>
@@ -274,7 +276,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/al-jshen/notes/issues/new?title=Issue%20on%20page%20%2Fcontent/statistics/intro.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/al-jshen/notes/issues/new?title=Issue%20on%20page%20%2Fcontent/ml/theory.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -304,7 +306,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/content/statistics/intro.md" target="_blank"
+      <li><a href="../../_sources/content/ml/theory.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -388,7 +390,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Statistics</h1>
+    <h1>Theory</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -398,7 +400,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#misc">Misc</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-and-harnessing-adversarial-examples-goodfellow2015">Explaining and Harnessing Adversarial Examples <span class="xref cite cite-p">Goodfellow2015</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-and-scalable-predictive-uncertainty-estimation-using-deep-ensembles-lakshminarayanan2017">Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles <span class="xref cite cite-p">Lakshminarayanan2017</span></a></li>
 </ul>
             </nav>
         </div>
@@ -410,19 +413,44 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="statistics">
-<h1>Statistics<a class="headerlink" href="#statistics" title="Permalink to this heading">#</a></h1>
-<p>Any general statistics goes here.</p>
-<section id="misc">
-<h2>Misc<a class="headerlink" href="#misc" title="Permalink to this heading">#</a></h2>
-<aside class="margin sidebar">
-<p class="sidebar-title"></p>
-<p>The diagonal restriction is similar to mean-field VI.</p>
-</aside>
-<p>Naive Bayes classification is like Quadratic Discriminant Analysis (a multivariate Gaussian fit to multiple classes, with the class label being determined by which posterior is largest) but with the Gaussians restricted to be diagonal.</p>
+  <section class="tex2jax_ignore mathjax_ignore" id="theory">
+<h1>Theory<a class="headerlink" href="#theory" title="Permalink to this heading">#</a></h1>
+<section id="explaining-and-harnessing-adversarial-examples-goodfellow2015">
+<h2>Explaining and Harnessing Adversarial Examples <span id="id1">[<a class="reference internal" href="#id199" title="Ian J. Goodfellow, Jonathon Shlens, and Christian Szegedy. Explaining and Harnessing Adversarial Examples. March 2015. URL: http://arxiv.org/abs/1412.6572 (visited on 2023-12-27), arXiv:1412.6572.">Goodfellow <em>et al.</em>, 2015</a>]</span><a class="headerlink" href="#explaining-and-harnessing-adversarial-examples-goodfellow2015" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>NNs are susceptible to adversarial examples (AEs), which are inputs that are almost identical to the original inputs but cause the NN to misclassify the input</p></li>
+<li><p>susceptibility means that using Euclidean distance as a proxy for perceptual similarity is not a good idea</p></li>
+<li><p>linear models which are easy to optimize/designed to be linear (e.g., ReLU, LSTMs, and sigmoid networks which are tuned to spent most of their time in the non-saturating linear regime) are most susceptible to adversarial attacks</p></li>
+<li><p>fast gradient sign method generates adversarial examples given an input <span class="math notranslate nohighlight">\(\mathbf{x}\)</span>, target <span class="math notranslate nohighlight">\(y\)</span>, loss function <span class="math notranslate nohighlight">\(\ell(\theta, \mathbf{x}, y)\)</span> as <span class="math notranslate nohighlight">\(\mathbf{x'} = \mathbf{x} + \epsilon \text{sign}(\nabla_{\mathbf{x}} \ell(\theta, \mathbf{x}, y))\)</span> which is a linear perturbation in the direction that most increases the loss</p></li>
+<li><p>can do <strong>adversarial training</strong> by augmenting the training set with adversarial examples <span class="math notranslate nohighlight">\((\mathbf{x'}, y)\)</span> which smooths predictive distributions by decreasing the loss in some <span class="math notranslate nohighlight">\(\epsilon\)</span>-neighbourhood of <span class="math notranslate nohighlight">\(\mathbf{x}\)</span></p></li>
+<li><p>only networks with a non-linearity can be made robust to adversarial examples</p></li>
+</ul>
 </section>
-<div class="toctree-wrapper compound">
+<section id="simple-and-scalable-predictive-uncertainty-estimation-using-deep-ensembles-lakshminarayanan2017">
+<h2>Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles <span id="id2">[<a class="reference internal" href="#id281" title="Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell. Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles. November 2017. URL: http://arxiv.org/abs/1612.01474 (visited on 2023-12-27), arXiv:1612.01474.">Lakshminarayanan <em>et al.</em>, 2017</a>]</span><a class="headerlink" href="#simple-and-scalable-predictive-uncertainty-estimation-using-deep-ensembles-lakshminarayanan2017" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>deep ensembles</strong> are a collection of independently trained NNs with the same architecture and loss function but different initializations</p></li>
+<li><p>for regression, make each NN predict the mean and variance of a Gaussian, then optimize negative log-likelihood</p></li>
+<li><p>train a bunch of NNs with different initializations, then combine as a uniformly-weighted mixture model</p></li>
+</ul>
+<!-- prettier-ignore -->
+<div class="amsmath math notranslate nohighlight" id="equation-36847dad-a8a6-47a9-b4a8-9f82d3b66637">
+<span class="eqno">(30)<a class="headerlink" href="#equation-36847dad-a8a6-47a9-b4a8-9f82d3b66637" title="Permalink to this equation">#</a></span>\[\begin{align}
+    \mu_{*}({\mathbf{x}}) &amp;= \frac{1}{N} \sum_{n=1}^N \mu_{\theta_n}(\mathbf{x}) \\
+    \sigma_{*}^{2}(\mathbf{x}) &amp;= \frac{1}{N} \sum_{n=1}^N [\sigma_{\theta_n}^2(\mathbf{x}) + \mu_{\theta_n}^2(\mathbf{x}) - \mu_*^2(\mathbf{x})]
+\end{align}\]</div>
+<div class="docutils container" id="id3">
+<div class="citation" id="id199" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">GSS15</a><span class="fn-bracket">]</span></span>
+<p>Ian J. Goodfellow, Jonathon Shlens, and Christian Szegedy. Explaining and Harnessing Adversarial Examples. March 2015. URL: <a class="reference external" href="http://arxiv.org/abs/1412.6572">http://arxiv.org/abs/1412.6572</a> (visited on 2023-12-27), <a class="reference external" href="https://arxiv.org/abs/1412.6572">arXiv:1412.6572</a>.</p>
 </div>
+<div class="citation" id="id281" role="doc-biblioentry">
+<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">LPB17</a><span class="fn-bracket">]</span></span>
+<p>Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell. Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles. November 2017. URL: <a class="reference external" href="http://arxiv.org/abs/1612.01474">http://arxiv.org/abs/1612.01474</a> (visited on 2023-12-27), <a class="reference external" href="https://arxiv.org/abs/1612.01474">arXiv:1612.01474</a>.</p>
+</div>
+</div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -438,7 +466,7 @@ document.write(`
         },
         kernelOptions: {
             name: "python3",
-            path: "./content/statistics"
+            path: "./content/ml"
         },
         predefinedOutput: true
     }
@@ -456,20 +484,20 @@ document.write(`
                   
 <div class="prev-next-area">
     <a class="left-prev"
-       href="../astrophysics/proposals.html"
+       href="intro.html"
        title="previous page">
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Writing proposals</p>
+        <p class="prev-next-title">Machine Learning</p>
       </div>
     </a>
     <a class="right-next"
-       href="measure_theory.html"
+       href="attention.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Measure Theory</p>
+        <p class="prev-next-title">Attention</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -488,7 +516,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#misc">Misc</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#explaining-and-harnessing-adversarial-examples-goodfellow2015">Explaining and Harnessing Adversarial Examples <span class="xref cite cite-p">Goodfellow2015</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-and-scalable-predictive-uncertainty-estimation-using-deep-ensembles-lakshminarayanan2017">Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles <span class="xref cite cite-p">Lakshminarayanan2017</span></a></li>
 </ul>
   </nav></div>
 
