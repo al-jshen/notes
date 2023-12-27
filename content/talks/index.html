@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -62,6 +63,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'content/talks/index';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -76,6 +79,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -129,9 +141,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../intro.html">
+  
   
   
   
@@ -141,8 +155,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="notes - Home"/>`);</script>
   
   
 </a></div>
@@ -168,6 +182,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../astrophysics/intro.html">Astrophysics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../astrophysics/comments.html">Astrophysics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../astrophysics/stars.html">Stars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../astrophysics/cosmology.html">Cosmology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../astrophysics/proposals.html">Writing proposals</a></li>
 </ul>
 </li>
@@ -335,20 +350,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -376,6 +393,8 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nov-2022-charles-margossian-columbia">9 Nov 2022 - Charles Margossian @ Columbia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sept-5-2023-ting-li-ias">Sept. 5, 2023: Ting Li @ IAS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sept-12-2023-will-farr-ias">Sept. 12, 2023: Will Farr @ IAS</a></li>
 </ul>
             </nav>
         </div>
@@ -425,6 +444,26 @@ document.write(`
 </li>
 <li><p>benefit of running many chains is to achieve target precision more quickly (not just achieve precision that is as small as possible)</p></li>
 </ul>
+</section>
+<section id="sept-5-2023-ting-li-ias">
+<h2>Sept. 5, 2023: Ting Li &#64; IAS<a class="headerlink" href="#sept-5-2023-ting-li-ias" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>stellar streams science: is DM cold or warm? what is the shape of the MW potential? what is the mass of the MW? where do metal poor stars come from? can use to infer existence/flyby of DM subhalos</p></li>
+<li><p>to determine distance of GC, scan (metal-poor) isochrone in distance and find distance with maximum overdensity of stars (e.g., Drlica-Wagner, Shipp+ 2018 DESI)</p></li>
+<li><p>S5: DES photometry + Gaia DR2 PMs + low-res spectrograph on Anglo-Australian Telescope + high-res spectrograph on Magellan</p></li>
+<li><p>Phoenix stream: more metal poor than any known GC, tells you about metallicity floor</p></li>
+<li><p>infall of LMC -&gt; MW halo not in dynamical equilibrium. fit data to determine mass of MW, including effects of LMC (Koposov+23 Orphan-Chenab stream).</p></li>
+</ul>
+</section>
+<section id="sept-12-2023-will-farr-ias">
+<h2>Sept. 12, 2023: Will Farr &#64; IAS<a class="headerlink" href="#sept-12-2023-will-farr-ias" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>for GW, distances are easy (energies are all typically <span class="math notranslate nohighlight">\(c^5/G ~ 10^{59}~{\rm erg\,s^{-1}}\)</span>) but redshifts are hard (<span class="math notranslate nohighlight">\(m_{obs} = m(1+z)\)</span>, if you can measure <span class="math notranslate nohighlight">\(m\)</span> then you can measure <span class="math notranslate nohighlight">\(z\)</span>)</p></li>
+<li><p>BH mass function is not smooth, large bumps at 10 and 35 solar masses</p></li>
+<li><p>at low core masses, heavier core -&gt; heavier BH, but at ~40 solar masses, core gets hot enough for pair instability (premature thermonuclear detonation) which kills the BH and prevents it from getting to even higher masses</p></li>
+<li><p>can “hear” the shape of a drum if it has a smooth boundary but not if it doesn’t</p></li>
+<li><p>BH ringdown frequency uniquely determined by Kerr mass and spin, can validate GR, precision will get higher and higher with more and more data/BHs</p></li>
+</ul>
 <span class="target" id="id1"></span></section>
 </section>
 
@@ -453,11 +492,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="../notebooks/bayesboot.html"
@@ -468,10 +506,7 @@ document.write(`
         <p class="prev-next-title">Bayesian Bootstrapping</p>
       </div>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -487,6 +522,8 @@ document.write(`
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nov-2022-charles-margossian-columbia">9 Nov 2022 - Charles Margossian @ Columbia</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sept-5-2023-ting-li-ias">Sept. 5, 2023: Ting Li @ IAS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sept-12-2023-will-farr-ias">Sept. 12, 2023: Will Farr @ IAS</a></li>
 </ul>
   </nav></div>
 
@@ -508,6 +545,7 @@ By Jeff Shen
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022-2023.
@@ -534,8 +572,8 @@ By Jeff Shen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

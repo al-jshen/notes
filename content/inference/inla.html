@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -79,6 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -132,9 +142,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../intro.html">
+  
   
   
   
@@ -144,8 +156,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="notes - Home"/>`);</script>
   
   
 </a></div>
@@ -171,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../astrophysics/intro.html">Astrophysics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../astrophysics/comments.html">Astrophysics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../astrophysics/stars.html">Stars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../astrophysics/cosmology.html">Cosmology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../astrophysics/proposals.html">Writing proposals</a></li>
 </ul>
 </li>
@@ -338,20 +351,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -406,27 +421,27 @@ document.write(`
 </ul>
 <!-- prettier-ignore -->
 <p>The setup of a LGM consists of three parts:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f5a28996-0b01-4840-be5f-a505e5c87586">
-<span class="eqno">(4)<a class="headerlink" href="#equation-f5a28996-0b01-4840-be5f-a505e5c87586" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-4fda59c1-0b94-4b13-9bec-00c4fe480ab1">
+<span class="eqno">(4)<a class="headerlink" href="#equation-4fda59c1-0b94-4b13-9bec-00c4fe480ab1" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\textrm{Hyperparameters} &amp;\quad &amp;\boldsymbol{\theta} \sim \pi_\theta(\boldsymbol{\theta}),\,\boldsymbol{theta}=(\boldsymbol{\theta_1, \theta_2}) \\
 &amp;\textrm{Latent Gaussian field} &amp;\quad &amp;\boldsymbol{x} | \boldsymbol{\theta_2} \sim \mathcal{N}(\boldsymbol{\mu(\theta_2}), \boldsymbol{Q(\theta_2)}^{-1}) \\
 &amp;\textrm{Observations} &amp;\quad &amp;\boldsymbol{y} | \boldsymbol{x, \theta_1} \sim \prod_{i=1}^{N} \pi_y(y_i | x_i, \boldsymbol{\theta_1}),\,i=1, \ldots, n \\
 \end{align}\]</div>
 <!-- prettier-ignore -->
 <p>The joint posterior for the latent field and the hyperparameters is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4925fe03-6ac7-4d11-8706-07d5231e0b74">
-<span class="eqno">(5)<a class="headerlink" href="#equation-4925fe03-6ac7-4d11-8706-07d5231e0b74" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c284dea4-607c-4b8a-beb4-e0f34be0284b">
+<span class="eqno">(5)<a class="headerlink" href="#equation-c284dea4-607c-4b8a-beb4-e0f34be0284b" title="Permalink to this equation">#</a></span>\[\begin{align}
 \pi({\boldsymbol{x, \theta} | \boldsymbol{y}}) \propto \pi(\boldsymbol{y} | \boldsymbol{x, \theta}) \pi(\boldsymbol{x, \theta}) \propto \prod_{i=1}^N \pi(y_i | x_i, \boldsymbol{\theta}) \pi(\boldsymbol{x} | \boldsymbol{\theta}) \pi(\boldsymbol{\theta}).
 \end{align}\]</div>
 <!-- prettier-ignore -->
 <p>INLA calculates the posterior marginals. For the hyperparameters, this is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-483ae33c-76f6-4082-be97-0d05f6198bf1">
-<span class="eqno">(6)<a class="headerlink" href="#equation-483ae33c-76f6-4082-be97-0d05f6198bf1" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c054a96e-82fd-42cd-8c2d-b2d8c5280dbf">
+<span class="eqno">(6)<a class="headerlink" href="#equation-c054a96e-82fd-42cd-8c2d-b2d8c5280dbf" title="Permalink to this equation">#</a></span>\[\begin{align}
   \pi(\theta_j | \boldsymbol{y}) = \int \pi(\boldsymbol{\theta} | \boldsymbol{y}) d\boldsymbol{\theta}_{-j}, \; j=1, \ldots, m
 \end{align}\]</div>
 <p>and for the latent field <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span>, this is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-952664f6-af76-4ecb-83b5-cd566609a721">
-<span class="eqno">(7)<a class="headerlink" href="#equation-952664f6-af76-4ecb-83b5-cd566609a721" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b605b877-542f-42cc-b7b9-c7bc4aaaa2b9">
+<span class="eqno">(7)<a class="headerlink" href="#equation-b605b877-542f-42cc-b7b9-c7bc4aaaa2b9" title="Permalink to this equation">#</a></span>\[\begin{align}
   \pi(x_i | \boldsymbol{y}) = \int \pi(x_i | \boldsymbol{y, \theta}) \pi(\boldsymbol{\theta} | \boldsymbol{y}) d\boldsymbol{\theta},\,i=1,\ldots,n.
 \end{align}\]</div>
 <p>Note that you need to calculate the posterior marginals of the hyperparameters before you can calcuate the posterior marginals of the latent field (nested!).</p>
@@ -469,11 +484,10 @@ document.write(`
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="vi.html"
@@ -493,10 +507,7 @@ document.write(`
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -535,6 +546,7 @@ By Jeff Shen
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022-2023.
@@ -561,8 +573,8 @@ By Jeff Shen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>

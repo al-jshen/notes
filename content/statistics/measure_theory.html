@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 
 
-<html lang="en" >
+<html lang="en" data-content_root="" >
 
   <head>
     <meta charset="utf-8" />
@@ -19,12 +19,12 @@
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=5b4479735964841361fd" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=5b4479735964841361fd" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=5b4479735964841361fd" rel="stylesheet" />
   <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
@@ -39,8 +39,9 @@
     <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd" />
+  <script src="../../_static/vendor/fontawesome/6.1.2/js/all.min.js?digest=5b4479735964841361fd"></script>
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -79,6 +80,15 @@ const thebe_selector_output = ".output, .cell_output"
   
   
   <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
   
   <input type="checkbox"
           class="sidebar-toggle"
@@ -132,9 +142,11 @@ const thebe_selector_output = ".output, .cell_output"
   
     <div class="sidebar-primary-items__start sidebar-primary__section">
         <div class="sidebar-primary-item">
+
   
 
 <a class="navbar-brand logo" href="../../intro.html">
+  
   
   
   
@@ -144,8 +156,8 @@ const thebe_selector_output = ".output, .cell_output"
       
     
     
-    <img src="../../_static/logo.svg" class="logo__image only-light" alt="Logo image"/>
-    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+    <img src="../../_static/logo.svg" class="logo__image only-light" alt="notes - Home"/>
+    <script>document.write(`<img src="../../_static/logo.svg" class="logo__image only-dark" alt="notes - Home"/>`);</script>
   
   
 </a></div>
@@ -171,6 +183,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l1 has-children"><a class="reference internal" href="../astrophysics/intro.html">Astrophysics</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../astrophysics/comments.html">Astrophysics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../astrophysics/stars.html">Stars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../astrophysics/cosmology.html">Cosmology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../astrophysics/proposals.html">Writing proposals</a></li>
 </ul>
 </li>
@@ -338,20 +351,22 @@ const thebe_selector_output = ".output, .cell_output"
 </button>
 
 
+
 <script>
 document.write(`
-  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
-    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
-    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
   </button>
 `);
 </script>
 
+
 <script>
 document.write(`
   <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <i class="fa-solid fa-magnifying-glass"></i>
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
@@ -413,8 +428,8 @@ document.write(`
 </section>
 </div><!-- prettier-ignore -->
 <p>For a given (general) subset <span class="math notranslate nohighlight">\(M \subseteq \mathcal{P}(\Omega)\)</span>, there is a smallest <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra that contains the set <span class="math notranslate nohighlight">\(M\)</span>. We call this the <strong><span class="math notranslate nohighlight">\(\sigma\)</span>-algebra generated by <span class="math notranslate nohighlight">\(M\)</span></strong>, and it is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7d522347-8f23-43cd-99f7-8ba9de8ab721">
-<span class="eqno">(9)<a class="headerlink" href="#equation-7d522347-8f23-43cd-99f7-8ba9de8ab721" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-35bd7bea-9c0d-4424-a2b6-26af2515a767">
+<span class="eqno">(9)<a class="headerlink" href="#equation-35bd7bea-9c0d-4424-a2b6-26af2515a767" title="Permalink to this equation">#</a></span>\[\begin{align}
 \sigma(M) = \bigcap_{\substack{{M \subseteq \mathcal{A}}\\{\mathcal{A}~\text{$\sigma$-algebra}}}} \mathcal{A}.
 \end{align}\]</div>
 <p>An important <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra is the <strong>Borel <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra</strong>, which is the <span class="math notranslate nohighlight">\(\sigma\)</span>-algebra generated by all open sets (or equivalently, all closed sets). The elements it contains are called <strong>Borel sets</strong>, which are the sets that can be formed from open (closed) sets through unions, intersections, and (relative) complements.</p>
@@ -448,8 +463,8 @@ document.write(`
 <p class="admonition-title"><span>Example </span> (ReLU is almost-everywhere differentiable)</p>
 <section class="example-content" id="proof-content">
 <p>The ReLU function is given by a function <span class="math notranslate nohighlight">\(f: \mathbb{R} \rightarrow \mathbb{R}\)</span> defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-e412a507-f12d-4233-a3db-37249e38e442">
-<span class="eqno">(10)<a class="headerlink" href="#equation-e412a507-f12d-4233-a3db-37249e38e442" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-25f9d2f5-55e9-48b8-82f1-b19bd350139e">
+<span class="eqno">(10)<a class="headerlink" href="#equation-25f9d2f5-55e9-48b8-82f1-b19bd350139e" title="Permalink to this equation">#</a></span>\[\begin{align}
 f(x) = \rm{max}(0, x) =
 \begin{cases}
 x &amp; \text{if } x &gt; 0 \\
@@ -457,8 +472,8 @@ x &amp; \text{if } x &gt; 0 \\
 \end{cases}
 \end{align}\]</div>
 <p>Its derivative is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-86159f4c-227a-4616-b52b-45e0151af628">
-<span class="eqno">(11)<a class="headerlink" href="#equation-86159f4c-227a-4616-b52b-45e0151af628" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e5aa7f13-af90-44ee-b9a8-7e69c1302552">
+<span class="eqno">(11)<a class="headerlink" href="#equation-e5aa7f13-af90-44ee-b9a8-7e69c1302552" title="Permalink to this equation">#</a></span>\[\begin{align}
 f'(x) =
 \begin{cases}
 1 &amp; \text{if } x &gt; 0 \\
@@ -472,8 +487,8 @@ f'(x) =
 <p class="admonition-title"><span>Definition </span> (Measurable map)</p>
 <section class="definition-content" id="proof-content">
 <p>For two measurable spaces <span class="math notranslate nohighlight">\((X_1, \mathcal{A}_1), (X_2, \mathcal{A}_2)\)</span>, we define a <strong>measurable map</strong> to be a map <span class="math notranslate nohighlight">\(f: X_1 \rightarrow X_2\)</span> satisfying the condition that</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f384bea3-4a85-438c-9dc6-a037afa78e11">
-<span class="eqno">(12)<a class="headerlink" href="#equation-f384bea3-4a85-438c-9dc6-a037afa78e11" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f941b7e1-41f0-43b1-b6ff-9a89d1cfeded">
+<span class="eqno">(12)<a class="headerlink" href="#equation-f941b7e1-41f0-43b1-b6ff-9a89d1cfeded" title="Permalink to this equation">#</a></span>\[\begin{align}
 \forall A_2 \in \mathcal{A}_2, f^{-1}(A_2) \in \mathcal{A}_1.
 \end{align}\]</div>
 </section>
@@ -488,8 +503,8 @@ f'(x) =
 <p class="admonition-title"><span>Example </span> (The Characteristic/Indicator Function 𝜒)</p>
 <section class="example-content" id="proof-content">
 <p>For two measurable spaces <span class="math notranslate nohighlight">\((\Omega, \mathcal{A}), (\mathbb{R}, \mathcal{B}(\mathbb{R}))\)</span>, the characteristic function is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-349e0f7f-d7c1-496d-ab06-ac5bb22330c4">
-<span class="eqno">(13)<a class="headerlink" href="#equation-349e0f7f-d7c1-496d-ab06-ac5bb22330c4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-8c3f921f-d509-43e2-823c-7d772ec2f7b2">
+<span class="eqno">(13)<a class="headerlink" href="#equation-8c3f921f-d509-43e2-823c-7d772ec2f7b2" title="Permalink to this equation">#</a></span>\[\begin{align}
 \chi_A: \Omega \rightarrow \mathbb{R}, \quad \chi_A(\omega) =
 \begin{cases}
 1 &amp; \text{if } x \in A \\
@@ -510,8 +525,8 @@ f'(x) =
 <h2>Lebesgue Integral<a class="headerlink" href="#lebesgue-integral" title="Permalink to this heading">#</a></h2>
 <!-- prettier-ignore -->
 <p>We can define a simple function as a function that can be represented as linear combinations of indicator functions over some subsets. That is, for <span class="math notranslate nohighlight">\(A_1, \ldots, A_n \in \mathcal{A}\)</span> and <span class="math notranslate nohighlight">\(c_1, \ldots, c_n \in \mathbb{R}\)</span>, a <strong>simple function</strong> is one of the form</p>
-<div class="amsmath math notranslate nohighlight" id="equation-f7c1c6ec-f785-4705-b43c-e9371877cb2f">
-<span class="eqno">(14)<a class="headerlink" href="#equation-f7c1c6ec-f785-4705-b43c-e9371877cb2f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2dcec008-22a8-412c-bcc9-368467491318">
+<span class="eqno">(14)<a class="headerlink" href="#equation-2dcec008-22a8-412c-bcc9-368467491318" title="Permalink to this equation">#</a></span>\[\begin{align}
 f(x) = \sum_{i = 1}^{n} c_i \cdot \chi_{A_{i}}(x).
 \end{align}\]</div>
 <p>Since additions of measurable functions are themselves measurable, these simple functions are also measurable.</p>
@@ -520,16 +535,16 @@ f(x) = \sum_{i = 1}^{n} c_i \cdot \chi_{A_{i}}(x).
 <p>The restriction <span class="math notranslate nohighlight">\(c_i \geq 0\)</span> is done to avoid the problem of subtracting infinite measures from other infinite measures (not defined). We then only need to add possibly infinite measures, which is fine.</p>
 </aside>
 <p>We can restrict the coefficients <span class="math notranslate nohighlight">\(c_i\)</span> to be non-negative, and then define the set of simple functions as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-7a8c11a4-5410-4b71-92d5-dc981ef3bf67">
-<span class="eqno">(15)<a class="headerlink" href="#equation-7a8c11a4-5410-4b71-92d5-dc981ef3bf67" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-b66d1ab8-2999-4d7a-8ce1-07793ee6e168">
+<span class="eqno">(15)<a class="headerlink" href="#equation-b66d1ab8-2999-4d7a-8ce1-07793ee6e168" title="Permalink to this equation">#</a></span>\[\begin{align}
 \mathcal{S}^{+} = \{f: X \rightarrow \mathbb{R} \mid f \text{ simple}, f \geq 0\}.
 \end{align}\]</div>
 <div class="proof definition admonition" id="definition-5">
 <p class="admonition-title"><span>Definition </span> (The Lebesgue integral for simple functions)</p>
 <section class="definition-content" id="proof-content">
 <p>The <strong>Lebesgue integral</strong> of a function <span class="math notranslate nohighlight">\(f\)</span> with respect to some measure <span class="math notranslate nohighlight">\(\mu\)</span> is given by</p>
-<div class="amsmath math notranslate nohighlight" id="equation-d6a4d6ef-516e-4d5d-aefd-b5a165c93a5f">
-<span class="eqno">(16)<a class="headerlink" href="#equation-d6a4d6ef-516e-4d5d-aefd-b5a165c93a5f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c01c29de-70d9-4385-9db7-25d339bba587">
+<span class="eqno">(16)<a class="headerlink" href="#equation-c01c29de-70d9-4385-9db7-25d339bba587" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int_X f(x) d\mu(x) = \int_X f d\mu = I(f) \\
 = \sum_{i = 1}^{n} c_i \mu(A_i) \quad \forall A_i \in \mathcal{A}.
 \end{align}\]</div>
@@ -542,8 +557,8 @@ f(x) = \sum_{i = 1}^{n} c_i \cdot \chi_{A_{i}}(x).
 </ul>
 <p>The Lebesgue integral can be extended to more complicated functions. The idea is that even if we have a function that takes on an infinite number of possible values, we can approximate it with simple functions, and take finer and finer subdivisions of our function. Each of these simple functions is Lebesgue integrable, so in the limit, the Lebesgue integral of all the subdivisions/approximations will be the Lebesgue integral of the original function.</p>
 <p>More formally, the general <strong>Lebesgue integral</strong> is defined as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-60472bcd-95e8-4293-9a9b-62f2596a418c">
-<span class="eqno">(17)<a class="headerlink" href="#equation-60472bcd-95e8-4293-9a9b-62f2596a418c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3d45de77-b4ae-4fce-8ed4-9029687459ea">
+<span class="eqno">(17)<a class="headerlink" href="#equation-3d45de77-b4ae-4fce-8ed4-9029687459ea" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int_X f d\mu = \mathrm{sup}\left\{\int_X s d\mu \mid s \in \mathcal{S}^{+}, 0 \leq s \leq f\right\}.
 \end{align}\]</div>
 <p>A function <span class="math notranslate nohighlight">\(f\)</span> is called <strong><span class="math notranslate nohighlight">\(\mu\)</span>-integrable</strong> if <span class="math notranslate nohighlight">\(\int_X f d\mu &lt; \infty\)</span>.</p>
@@ -554,21 +569,21 @@ f(x) = \sum_{i = 1}^{n} c_i \cdot \chi_{A_{i}}(x).
 <section class="theorem-content" id="proof-content">
 <p>Consider a measure space <span class="math notranslate nohighlight">\((X, \mathcal{A}, \mu)\)</span>, a sequence of functions <span class="math notranslate nohighlight">\(f_n: X \rightarrow [0, \infty]\)</span> which are measurable for all <span class="math notranslate nohighlight">\(n \in \mathbb{N}\)</span>, and a measurable function <span class="math notranslate nohighlight">\(f: X \rightarrow [0, \infty)\)</span>.</p>
 <p>If <span class="math notranslate nohighlight">\({f_n}\)</span> are monotonically increasing and they pointwise converge to <span class="math notranslate nohighlight">\(f\)</span> <span class="math notranslate nohighlight">\(\mu\)</span>-a.e., i.e.:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-a2debd1f-4dca-486f-ad1f-6c95bac54a27">
-<span class="eqno">(18)<a class="headerlink" href="#equation-a2debd1f-4dca-486f-ad1f-6c95bac54a27" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2824278d-ae20-4dcb-8808-9ecf85c882b0">
+<span class="eqno">(18)<a class="headerlink" href="#equation-2824278d-ae20-4dcb-8808-9ecf85c882b0" title="Permalink to this equation">#</a></span>\[\begin{align}
 f_1 \leq f_2 \leq f_3 \leq \ldots \quad &amp;\mu \text{-a.e.} \\
 \text{and } \lim_{n \to \infty} f_n(x) = f(x) \quad &amp;\mu \text{-a.e. with } x \in X,
 \end{align}\]</div>
 <p>then</p>
-<div class="amsmath math notranslate nohighlight" id="equation-9725ada6-80b6-4286-8c43-6de3d5345342">
-<span class="eqno">(19)<a class="headerlink" href="#equation-9725ada6-80b6-4286-8c43-6de3d5345342" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-52785fb2-b95f-41d6-a0e1-97acd814270b">
+<span class="eqno">(19)<a class="headerlink" href="#equation-52785fb2-b95f-41d6-a0e1-97acd814270b" title="Permalink to this equation">#</a></span>\[\begin{align}
 \lim_{n \to \infty} \int_X f_n d\mu = \int_X \lim_{n \to \infty} f_n d\mu.
 \end{align}\]</div>
 </section>
 </div><!-- prettier-ignore -->
 <p>One immediate application of the monotone convergence theorem is to a sequence of measurable, non-negative functions <span class="math notranslate nohighlight">\((f_n)_{n \in \mathbb{N}}\)</span>. The partial sums <span class="math notranslate nohighlight">\(\sum_{n=1}^{\infty} f_n: X \rightarrow [0, \infty]\)</span> form a monotonically increasing sequence of measurable functions, so</p>
-<div class="amsmath math notranslate nohighlight" id="equation-5e6494ec-70f6-40a5-ac69-253789fe9b8f">
-<span class="eqno">(20)<a class="headerlink" href="#equation-5e6494ec-70f6-40a5-ac69-253789fe9b8f" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-1cddcef0-6e67-42c0-b08d-58312b514416">
+<span class="eqno">(20)<a class="headerlink" href="#equation-1cddcef0-6e67-42c0-b08d-58312b514416" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int_X \sum_{n=1}^{\infty} f_n d\mu = \sum_{n=1}^{\infty} \int_X f_n d\mu.
 \end{align}\]</div>
 </section>
@@ -608,11 +623,10 @@ f_1 \leq f_2 \leq f_3 \leq \ldots \quad &amp;\mu \text{-a.e.} \\
 
               
               
-                <footer class="bd-footer-article">
+              
+              
+                <footer class="prev-next-footer">
                   
-<div class="footer-article-items footer-article__inner">
-  
-    <div class="footer-article-item"><!-- Previous / next buttons -->
 <div class="prev-next-area">
     <a class="left-prev"
        href="intro.html"
@@ -632,10 +646,7 @@ f_1 \leq f_2 \leq f_3 \leq \ldots \quad &amp;\mu \text{-a.e.} \\
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
-</div></div>
-  
 </div>
-
                 </footer>
               
             </div>
@@ -678,6 +689,7 @@ By Jeff Shen
   
   <div class="footer-item">
     
+
   <p class="copyright">
     
       © Copyright 2022-2023.
@@ -704,8 +716,8 @@ By Jeff Shen
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=5b4479735964841361fd"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=5b4479735964841361fd"></script>
 
   <footer class="bd-footer">
   </footer>
