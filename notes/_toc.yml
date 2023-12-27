@@ -14,6 +14,7 @@ chapters:
     sections:
       - file: content/astrophysics/comments.md
       - file: content/astrophysics/stars.md
+      - file: content/astrophysics/cosmology.md
       - file: content/astrophysics/proposals.md
   - file: content/statistics/intro.md
     sections:

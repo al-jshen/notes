@@ -23,6 +23,22 @@
   - larger K (and using fewer superchains/initializations) has higher variance before reaching stationarity
 - benefit of running many chains is to achieve target precision more quickly (not just achieve precision that is as small as possible)
 
+## Sept. 5, 2023: Ting Li @ IAS
+
+- stellar streams science: is DM cold or warm? what is the shape of the MW potential? what is the mass of the MW? where do metal poor stars come from? can use to infer existence/flyby of DM subhalos
+- to determine distance of GC, scan (metal-poor) isochrone in distance and find distance with maximum overdensity of stars (e.g., Drlica-Wagner, Shipp+ 2018 DESI)
+- S5: DES photometry + Gaia DR2 PMs + low-res spectrograph on Anglo-Australian Telescope + high-res spectrograph on Magellan
+- Phoenix stream: more metal poor than any known GC, tells you about metallicity floor
+- infall of LMC -> MW halo not in dynamical equilibrium. fit data to determine mass of MW, including effects of LMC (Koposov+23 Orphan-Chenab stream).
+
+## Sept. 12, 2023: Will Farr @ IAS
+
+- for GW, distances are easy (energies are all typically $c^5/G ~ 10^{59}~{\rm erg\,s^{-1}}$) but redshifts are hard ($m_{obs} = m(1+z)$, if you can measure $m$ then you can measure $z$)
+- BH mass function is not smooth, large bumps at 10 and 35 solar masses
+- at low core masses, heavier core -> heavier BH, but at ~40 solar masses, core gets hot enough for pair instability (premature thermonuclear detonation) which kills the BH and prevents it from getting to even higher masses
+- can "hear" the shape of a drum if it has a smooth boundary but not if it doesn't
+- BH ringdown frequency uniquely determined by Kerr mass and spin, can validate GR, precision will get higher and higher with more and more data/BHs
+
 ```{bibliography}
   :filter: docname in docnames
 ```
