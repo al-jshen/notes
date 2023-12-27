@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Theory &#8212; notes</title>
   
@@ -196,6 +196,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="attention.html">Attention</a></li>
 
+
+<li class="toctree-l2"><a class="reference internal" href="view_synthesis.html">View Synthesis</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/index.html">Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -416,7 +418,7 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="theory">
 <h1>Theory<a class="headerlink" href="#theory" title="Permalink to this heading">#</a></h1>
 <section id="explaining-and-harnessing-adversarial-examples-goodfellow2015">
-<h2>Explaining and Harnessing Adversarial Examples <span id="id1">[<a class="reference internal" href="#id199" title="Ian J. Goodfellow, Jonathon Shlens, and Christian Szegedy. Explaining and Harnessing Adversarial Examples. March 2015. URL: http://arxiv.org/abs/1412.6572 (visited on 2023-12-27), arXiv:1412.6572.">Goodfellow <em>et al.</em>, 2015</a>]</span><a class="headerlink" href="#explaining-and-harnessing-adversarial-examples-goodfellow2015" title="Permalink to this heading">#</a></h2>
+<h2>Explaining and Harnessing Adversarial Examples <span id="id1">[<a class="reference internal" href="#id202" title="Ian J. Goodfellow, Jonathon Shlens, and Christian Szegedy. Explaining and Harnessing Adversarial Examples. March 2015. URL: http://arxiv.org/abs/1412.6572 (visited on 2023-12-27), arXiv:1412.6572.">Goodfellow <em>et al.</em>, 2015</a>]</span><a class="headerlink" href="#explaining-and-harnessing-adversarial-examples-goodfellow2015" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>NNs are susceptible to adversarial examples (AEs), which are inputs that are almost identical to the original inputs but cause the NN to misclassify the input</p></li>
 <li><p>susceptibility means that using Euclidean distance as a proxy for perceptual similarity is not a good idea</p></li>
@@ -427,28 +429,27 @@ document.write(`
 </ul>
 </section>
 <section id="simple-and-scalable-predictive-uncertainty-estimation-using-deep-ensembles-lakshminarayanan2017">
-<h2>Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles <span id="id2">[<a class="reference internal" href="#id281" title="Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell. Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles. November 2017. URL: http://arxiv.org/abs/1612.01474 (visited on 2023-12-27), arXiv:1612.01474.">Lakshminarayanan <em>et al.</em>, 2017</a>]</span><a class="headerlink" href="#simple-and-scalable-predictive-uncertainty-estimation-using-deep-ensembles-lakshminarayanan2017" title="Permalink to this heading">#</a></h2>
+<h2>Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles <span id="id2">[<a class="reference internal" href="#id286" title="Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell. Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles. November 2017. URL: http://arxiv.org/abs/1612.01474 (visited on 2023-12-27), arXiv:1612.01474.">Lakshminarayanan <em>et al.</em>, 2017</a>]</span><a class="headerlink" href="#simple-and-scalable-predictive-uncertainty-estimation-using-deep-ensembles-lakshminarayanan2017" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>deep ensembles</strong> are a collection of independently trained NNs with the same architecture and loss function but different initializations</p></li>
 <li><p>for regression, make each NN predict the mean and variance of a Gaussian, then optimize negative log-likelihood</p></li>
 <li><p>train a bunch of NNs with different initializations, then combine as a uniformly-weighted mixture model</p></li>
 </ul>
 <!-- prettier-ignore -->
-<div class="amsmath math notranslate nohighlight" id="equation-36847dad-a8a6-47a9-b4a8-9f82d3b66637">
-<span class="eqno">(30)<a class="headerlink" href="#equation-36847dad-a8a6-47a9-b4a8-9f82d3b66637" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bef6b950-480a-42e8-955e-cdc1258f9d35">
+<span class="eqno">(30)<a class="headerlink" href="#equation-bef6b950-480a-42e8-955e-cdc1258f9d35" title="Permalink to this equation">#</a></span>\[\begin{align}
     \mu_{*}({\mathbf{x}}) &amp;= \frac{1}{N} \sum_{n=1}^N \mu_{\theta_n}(\mathbf{x}) \\
     \sigma_{*}^{2}(\mathbf{x}) &amp;= \frac{1}{N} \sum_{n=1}^N [\sigma_{\theta_n}^2(\mathbf{x}) + \mu_{\theta_n}^2(\mathbf{x}) - \mu_*^2(\mathbf{x})]
 \end{align}\]</div>
 <div class="docutils container" id="id3">
-<div class="citation" id="id199" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">GSS15</a><span class="fn-bracket">]</span></span>
-<p>Ian J. Goodfellow, Jonathon Shlens, and Christian Szegedy. Explaining and Harnessing Adversarial Examples. March 2015. URL: <a class="reference external" href="http://arxiv.org/abs/1412.6572">http://arxiv.org/abs/1412.6572</a> (visited on 2023-12-27), <a class="reference external" href="https://arxiv.org/abs/1412.6572">arXiv:1412.6572</a>.</p>
-</div>
-<div class="citation" id="id281" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">LPB17</a><span class="fn-bracket">]</span></span>
-<p>Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell. Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles. November 2017. URL: <a class="reference external" href="http://arxiv.org/abs/1612.01474">http://arxiv.org/abs/1612.01474</a> (visited on 2023-12-27), <a class="reference external" href="https://arxiv.org/abs/1612.01474">arXiv:1612.01474</a>.</p>
-</div>
-</div>
+<dl class="citation">
+<dt class="label" id="id202"><span class="brackets"><a class="fn-backref" href="#id1">GSS15</a></span></dt>
+<dd><p>Ian J. Goodfellow, Jonathon Shlens, and Christian Szegedy. Explaining and Harnessing Adversarial Examples. March 2015. URL: <a class="reference external" href="http://arxiv.org/abs/1412.6572">http://arxiv.org/abs/1412.6572</a> (visited on 2023-12-27), <a class="reference external" href="https://arxiv.org/abs/1412.6572">arXiv:1412.6572</a>.</p>
+</dd>
+<dt class="label" id="id286"><span class="brackets"><a class="fn-backref" href="#id2">LPB17</a></span></dt>
+<dd><p>Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell. Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles. November 2017. URL: <a class="reference external" href="http://arxiv.org/abs/1612.01474">http://arxiv.org/abs/1612.01474</a> (visited on 2023-12-27), <a class="reference external" href="https://arxiv.org/abs/1612.01474">arXiv:1612.01474</a>.</p>
+</dd>
+</dl>
 </div>
 </section>
 </section>

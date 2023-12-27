@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Variational inference &#8212; notes</title>
   
@@ -196,6 +196,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../ml/theory.html">Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ml/attention.html">Attention</a></li>
 
+
+<li class="toctree-l2"><a class="reference internal" href="../ml/view_synthesis.html">View Synthesis</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/index.html">Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -425,8 +427,8 @@ document.write(`
 <section id="mean-field-approximation">
 <h2>Mean-field approximation<a class="headerlink" href="#mean-field-approximation" title="Permalink to this heading">#</a></h2>
 <p>Makes the assumption that latent variables are mutually independent, so that we can factorize the likelihood as</p>
-<div class="amsmath math notranslate nohighlight" id="equation-764d7698-19f7-454a-96d4-4fa4aed96256">
-<span class="eqno">(2)<a class="headerlink" href="#equation-764d7698-19f7-454a-96d4-4fa4aed96256" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-bff0499e-10a3-46ff-93ce-4ff1a16c21d5">
+<span class="eqno">(2)<a class="headerlink" href="#equation-bff0499e-10a3-46ff-93ce-4ff1a16c21d5" title="Permalink to this equation">#</a></span>\[\begin{align}
 q(z) = \prod_i q_i(z_i)
 \end{align}\]</div>
 <ul class="simple">
@@ -440,8 +442,8 @@ q(z) = \prod_i q_i(z_i)
 <ul>
 <li><p>learn a flexible, bijective transformation from a simple base distribution that you can sample from and have an exact likelihood for to your target distribution</p></li>
 <li><p>for some invertible mapping <span class="math notranslate nohighlight">\(f\)</span>, random variable <span class="math notranslate nohighlight">\(z\)</span> with base distribution <span class="math notranslate nohighlight">\(z \sim p_z(z)\)</span>, and some sample <span class="math notranslate nohighlight">\(x\)</span> from the target distrbution <span class="math notranslate nohighlight">\(x \sim \pi(x)\)</span> such that <span class="math notranslate nohighlight">\(x = f(z)\)</span> and <span class="math notranslate nohighlight">\(z = f^{-1}(x)\)</span>, we have</p>
-<div class="amsmath math notranslate nohighlight" id="equation-32509ec9-19b4-4bff-b663-ba663f542efa">
-<span class="eqno">(3)<a class="headerlink" href="#equation-32509ec9-19b4-4bff-b663-ba663f542efa" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-3013bdd7-03ba-4541-8fb8-4f2107c4986e">
+<span class="eqno">(3)<a class="headerlink" href="#equation-3013bdd7-03ba-4541-8fb8-4f2107c4986e" title="Permalink to this equation">#</a></span>\[\begin{align}
   \pi(x) \approx p_x(x) = p_z(f^{-1}(x)) \left|\textrm{det}(\frac{\partial f^{-1}(x)}{\partial x})\right| = p_z(z) \left|\textrm{det}(\frac{\partial f(z)}{\partial z})\right|^{-1}
   \end{align}\]</div>
 </li>

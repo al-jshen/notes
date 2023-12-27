@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>Algorithms &#8212; notes</title>
   
@@ -196,6 +196,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../ml/theory.html">Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../ml/attention.html">Attention</a></li>
 
+
+<li class="toctree-l2"><a class="reference internal" href="../ml/view_synthesis.html">View Synthesis</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/index.html">Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -435,7 +437,7 @@ document.write(`
 </li>
 <li><p>HNSW use the layer structure of probability skip lists, and in each layer there is a NSW</p></li>
 <li><p><img alt="hnsw" src="../../_images/hnsw.png" /></p></li>
-<li><p>paper: <span id="id1">Malkov and Yashunin [<a class="reference internal" href="#id322" title="Yu A. Malkov and D. A. Yashunin. Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs. IEEE Transactions on Pattern Analysis and Machine Intelligence, 42(4):824–836, April 2020. URL: https://ieeexplore.ieee.org/document/8594636/ (visited on 2022-11-09), doi:10.1109/TPAMI.2018.2889473.">2020</a>]</span>, FAISS: <span id="id2">Johnson <em>et al.</em> [<a class="reference internal" href="#id252" title="Jeff Johnson, Matthijs Douze, and Hervé Jégou. Billion-scale similarity search with GPUs. February 2017. URL: http://arxiv.org/abs/1702.08734 (visited on 2022-11-09), arXiv:1702.08734.">2017</a>]</span>, <a class="reference external" href="https://www.pinecone.io/learn/hnsw">https://www.pinecone.io/learn/hnsw</a></p></li>
+<li><p>paper: <span id="id1">Malkov and Yashunin [<a class="reference internal" href="#id328" title="Yu A. Malkov and D. A. Yashunin. Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs. IEEE Transactions on Pattern Analysis and Machine Intelligence, 42(4):824–836, April 2020. URL: https://ieeexplore.ieee.org/document/8594636/ (visited on 2022-11-09), doi:10.1109/TPAMI.2018.2889473.">2020</a>]</span>, FAISS: <span id="id2">Johnson <em>et al.</em> [<a class="reference internal" href="#id255" title="Jeff Johnson, Matthijs Douze, and Hervé Jégou. Billion-scale similarity search with GPUs. February 2017. URL: http://arxiv.org/abs/1702.08734 (visited on 2022-11-09), arXiv:1702.08734.">2017</a>]</span>, <a class="reference external" href="https://www.pinecone.io/learn/hnsw">https://www.pinecone.io/learn/hnsw</a></p></li>
 </ul>
 </section>
 <section id="dynamic-time-warping-dtw">
@@ -453,22 +455,21 @@ document.write(`
 <h2>Quasi-Monte Carlo<a class="headerlink" href="#quasi-monte-carlo" title="Permalink to this heading">#</a></h2>
 <!-- prettier-ignore -->
 <p>Monte Carlo aims to approximate the integral of a function <span class="math notranslate nohighlight">\(f\)</span> by averaging over the function evaluated at some set of pseudorandom points <span class="math notranslate nohighlight">\(x_1, \ldots, x_N\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-40591c76-cc67-4f00-8354-624a5acf8af2">
-<span class="eqno">(8)<a class="headerlink" href="#equation-40591c76-cc67-4f00-8354-624a5acf8af2" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-ce24b495-3187-49b4-b1e5-d6c8c60a9a37">
+<span class="eqno">(8)<a class="headerlink" href="#equation-ce24b495-3187-49b4-b1e5-d6c8c60a9a37" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int_{[0,1]^D} f(u) du \approx \frac{1}{N} \sum_{i=1}^{N} f(x_i).
 \end{align}\]</div>
 <p>Quasi-Monte Carlo instead uses a quasi-random sequence (<a class="reference external" href="https://en.wikipedia.org/wiki/Low-discrepancy_sequence#Construction_of_low-discrepancy_sequences">see here for some examples</a>) of points, which have low discrepency, meaning that the proportion of points falling into some arbitrary set <span class="math notranslate nohighlight">\(A\)</span> is close to proportional to the measure of <span class="math notranslate nohighlight">\(A\)</span>.</p>
 <p>Monte Carlo integration error converges as <span class="math notranslate nohighlight">\(1/\sqrt{N}\)</span>, whereas Quasi-Monte Carlo integration error converges as <span class="math notranslate nohighlight">\(1/N\)</span>.</p>
 <div class="docutils container" id="id3">
-<div class="citation" id="id252" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id2">JDJegou17</a><span class="fn-bracket">]</span></span>
-<p>Jeff Johnson, Matthijs Douze, and Hervé Jégou. Billion-scale similarity search with GPUs. February 2017. URL: <a class="reference external" href="http://arxiv.org/abs/1702.08734">http://arxiv.org/abs/1702.08734</a> (visited on 2022-11-09), <a class="reference external" href="https://arxiv.org/abs/1702.08734">arXiv:1702.08734</a>.</p>
-</div>
-<div class="citation" id="id322" role="doc-biblioentry">
-<span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">MY20</a><span class="fn-bracket">]</span></span>
-<p>Yu A. Malkov and D. A. Yashunin. Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs. <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em>, 42(4):824–836, April 2020. URL: <a class="reference external" href="https://ieeexplore.ieee.org/document/8594636/">https://ieeexplore.ieee.org/document/8594636/</a> (visited on 2022-11-09), <a class="reference external" href="https://doi.org/10.1109/TPAMI.2018.2889473">doi:10.1109/TPAMI.2018.2889473</a>.</p>
-</div>
-</div>
+<dl class="citation">
+<dt class="label" id="id255"><span class="brackets"><a class="fn-backref" href="#id2">JDJegou17</a></span></dt>
+<dd><p>Jeff Johnson, Matthijs Douze, and Hervé Jégou. Billion-scale similarity search with GPUs. February 2017. URL: <a class="reference external" href="http://arxiv.org/abs/1702.08734">http://arxiv.org/abs/1702.08734</a> (visited on 2022-11-09), <a class="reference external" href="https://arxiv.org/abs/1702.08734">arXiv:1702.08734</a>.</p>
+</dd>
+<dt class="label" id="id328"><span class="brackets"><a class="fn-backref" href="#id1">MY20</a></span></dt>
+<dd><p>Yu A. Malkov and D. A. Yashunin. Efficient and Robust Approximate Nearest Neighbor Search Using Hierarchical Navigable Small World Graphs. <em>IEEE Transactions on Pattern Analysis and Machine Intelligence</em>, 42(4):824–836, April 2020. URL: <a class="reference external" href="https://ieeexplore.ieee.org/document/8594636/">https://ieeexplore.ieee.org/document/8594636/</a> (visited on 2022-11-09), <a class="reference external" href="https://doi.org/10.1109/TPAMI.2018.2889473">doi:10.1109/TPAMI.2018.2889473</a>.</p>
+</dd>
+</dl>
 </div>
 </section>
 </section>
