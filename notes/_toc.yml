@@ -20,7 +20,12 @@ chapters:
     sections:
       - file: content/statistics/measure_theory.md
       - file: content/statistics/stochastic.md
+  - file: content/ml/intro.md
+    sections:
+      - file: content/ml/theory.md
+      - file: content/ml/attention.md
   - file: content/notebooks/index
     sections:
       - file: content/notebooks/bayesboot
+      - file: content/notebooks/neural_pde.ipynb
   - file: content/talks/index
