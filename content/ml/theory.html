@@ -429,15 +429,15 @@ document.write(`
 </ul>
 </section>
 <section id="simple-and-scalable-predictive-uncertainty-estimation-using-deep-ensembles-lakshminarayanan2017">
-<h2>Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles <span id="id2">[<a class="reference internal" href="#id286" title="Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell. Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles. November 2017. URL: http://arxiv.org/abs/1612.01474 (visited on 2023-12-27), arXiv:1612.01474.">Lakshminarayanan <em>et al.</em>, 2017</a>]</span><a class="headerlink" href="#simple-and-scalable-predictive-uncertainty-estimation-using-deep-ensembles-lakshminarayanan2017" title="Permalink to this heading">#</a></h2>
+<h2>Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles <span id="id2">[<a class="reference internal" href="#id287" title="Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell. Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles. November 2017. URL: http://arxiv.org/abs/1612.01474 (visited on 2023-12-27), arXiv:1612.01474.">Lakshminarayanan <em>et al.</em>, 2017</a>]</span><a class="headerlink" href="#simple-and-scalable-predictive-uncertainty-estimation-using-deep-ensembles-lakshminarayanan2017" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>deep ensembles</strong> are a collection of independently trained NNs with the same architecture and loss function but different initializations</p></li>
 <li><p>for regression, make each NN predict the mean and variance of a Gaussian, then optimize negative log-likelihood</p></li>
 <li><p>train a bunch of NNs with different initializations, then combine as a uniformly-weighted mixture model</p></li>
 </ul>
 <!-- prettier-ignore -->
-<div class="amsmath math notranslate nohighlight" id="equation-bef6b950-480a-42e8-955e-cdc1258f9d35">
-<span class="eqno">(30)<a class="headerlink" href="#equation-bef6b950-480a-42e8-955e-cdc1258f9d35" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a1f1a797-16ea-40ab-8bb5-201007716942">
+<span class="eqno">(30)<a class="headerlink" href="#equation-a1f1a797-16ea-40ab-8bb5-201007716942" title="Permalink to this equation">#</a></span>\[\begin{align}
     \mu_{*}({\mathbf{x}}) &amp;= \frac{1}{N} \sum_{n=1}^N \mu_{\theta_n}(\mathbf{x}) \\
     \sigma_{*}^{2}(\mathbf{x}) &amp;= \frac{1}{N} \sum_{n=1}^N [\sigma_{\theta_n}^2(\mathbf{x}) + \mu_{\theta_n}^2(\mathbf{x}) - \mu_*^2(\mathbf{x})]
 \end{align}\]</div>
@@ -446,7 +446,7 @@ document.write(`
 <dt class="label" id="id202"><span class="brackets"><a class="fn-backref" href="#id1">GSS15</a></span></dt>
 <dd><p>Ian J. Goodfellow, Jonathon Shlens, and Christian Szegedy. Explaining and Harnessing Adversarial Examples. March 2015. URL: <a class="reference external" href="http://arxiv.org/abs/1412.6572">http://arxiv.org/abs/1412.6572</a> (visited on 2023-12-27), <a class="reference external" href="https://arxiv.org/abs/1412.6572">arXiv:1412.6572</a>.</p>
 </dd>
-<dt class="label" id="id286"><span class="brackets"><a class="fn-backref" href="#id2">LPB17</a></span></dt>
+<dt class="label" id="id287"><span class="brackets"><a class="fn-backref" href="#id2">LPB17</a></span></dt>
 <dd><p>Balaji Lakshminarayanan, Alexander Pritzel, and Charles Blundell. Simple and Scalable Predictive Uncertainty Estimation using Deep Ensembles. November 2017. URL: <a class="reference external" href="http://arxiv.org/abs/1612.01474">http://arxiv.org/abs/1612.01474</a> (visited on 2023-12-27), <a class="reference external" href="https://arxiv.org/abs/1612.01474">arXiv:1612.01474</a>.</p>
 </dd>
 </dl>

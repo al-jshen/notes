@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>View Synthesis &#8212; notes</title>
+    <title>Scaling &#8212; notes</title>
   
   
   
@@ -63,11 +63,9 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <script>DOCUMENTATION_OPTIONS.pagename = 'content/ml/view_synthesis';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'content/ml/scaling';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Notebooks" href="../notebooks/index.html" />
-    <link rel="prev" title="Attention" href="attention.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -169,7 +167,7 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
 <li class="toctree-l1 has-children"><a class="reference internal" href="../inference/intro.html">Inference/sampling</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../inference/mcmc.html">Markov chain Monte Carlo</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../inference/vi.html">Variational inference</a></li>
@@ -190,12 +188,12 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../statistics/stochastic.html">Stochastic Calculus</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">Machine Learning</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="intro.html">Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="theory.html">Theory</a></li>
 <li class="toctree-l2"><a class="reference internal" href="attention.html">Attention</a></li>
 
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">View Synthesis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="view_synthesis.html">View Synthesis</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../notebooks/index.html">Notebooks</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -276,7 +274,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="https://github.com/al-jshen/notes/issues/new?title=Issue%20on%20page%20%2Fcontent/ml/view_synthesis.html&body=Your%20issue%20content%20here." target="_blank"
+      <li><a href="https://github.com/al-jshen/notes/issues/new?title=Issue%20on%20page%20%2Fcontent/ml/scaling.html&body=Your%20issue%20content%20here." target="_blank"
    class="btn btn-sm btn-source-issues-button dropdown-item"
    title="Open an issue"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -306,7 +304,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="../../_sources/content/ml/view_synthesis.md" target="_blank"
+      <li><a href="../../_sources/content/ml/scaling.md" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -390,7 +388,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>View Synthesis</h1>
+    <h1>Scaling</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -400,9 +398,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nerf-mildenhall2022">NeRF <span class="xref cite cite-p">Mildenhall2022</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-gaussian-splatting-kerbl2023-charatan2023">3D Gaussian Splatting <span class="xref cite cite-p">Kerbl2023,Charatan2023</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#depth-estimation-ranftl2021">Depth Estimation <span class="xref cite cite-p">Ranftl2021</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#techniques-for-scaling-transformers">Techniques for scaling Transformers</a></li>
 </ul>
             </nav>
         </div>
@@ -414,29 +410,17 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article" role="main">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="view-synthesis">
-<h1>View Synthesis<a class="headerlink" href="#view-synthesis" title="Permalink to this heading">#</a></h1>
-<section id="nerf-mildenhall2022">
-<h2>NeRF <span id="id1">[<a class="reference internal" href="#id350" title="Ben Mildenhall, Pratul P. Srinivasan, Matthew Tancik, Jonathan T. Barron, Ravi Ramamoorthi, and Ren Ng. NeRF: representing scenes as neural radiance fields for view synthesis. Communications of the ACM, 65(1):99–106, January 2022. URL: https://dl.acm.org/doi/10.1145/3503250 (visited on 2023-12-27), doi:10.1145/3503250.">Mildenhall <em>et al.</em>, 2022</a>]</span><a class="headerlink" href="#nerf-mildenhall2022" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="d-gaussian-splatting-kerbl2023-charatan2023">
-<h2>3D Gaussian Splatting <span id="id2">[<a class="reference internal" href="#id85" title="David Charatan, Sizhe Li, Andrea Tagliasacchi, and Vincent Sitzmann. pixelSplat: 3D Gaussian Splats from Image Pairs for Scalable Generalizable 3D Reconstruction. December 2023. URL: http://arxiv.org/abs/2312.12337 (visited on 2023-12-27), arXiv:2312.12337.">Charatan <em>et al.</em>, 2023</a>, <a class="reference internal" href="#id266" title="Bernhard Kerbl, Georgios Kopanas, Thomas Leimkühler, and George Drettakis. 3D Gaussian Splatting for Real-Time Radiance Field Rendering. August 2023. URL: http://arxiv.org/abs/2308.04079 (visited on 2023-12-27), arXiv:2308.04079.">Kerbl <em>et al.</em>, 2023</a>]</span><a class="headerlink" href="#d-gaussian-splatting-kerbl2023-charatan2023" title="Permalink to this heading">#</a></h2>
-</section>
-<section id="depth-estimation-ranftl2021">
-<h2>Depth Estimation <span id="id3">[<a class="reference internal" href="#id404" title="René Ranftl, Alexey Bochkovskiy, and Vladlen Koltun. Vision Transformers for Dense Prediction. March 2021. URL: http://arxiv.org/abs/2103.13413 (visited on 2023-12-27), arXiv:2103.13413.">Ranftl <em>et al.</em>, 2021</a>]</span><a class="headerlink" href="#depth-estimation-ranftl2021" title="Permalink to this heading">#</a></h2>
-<div class="docutils container" id="id4">
+  <section class="tex2jax_ignore mathjax_ignore" id="scaling">
+<h1>Scaling<a class="headerlink" href="#scaling" title="Permalink to this heading">#</a></h1>
+<section id="techniques-for-scaling-transformers">
+<h2>Techniques for scaling Transformers<a class="headerlink" href="#techniques-for-scaling-transformers" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p>depth-up scaling <span id="id1">[<a class="reference internal" href="#id269" title="Dahyun Kim, Chanjun Park, Sanghoon Kim, Wonsung Lee, Wonho Song, Yunsu Kim, Hyeonwoo Kim, Yungi Kim, Hyeonju Lee, Jihoo Kim, Changbae Ahn, Seonghoon Yang, Sukyung Lee, Hyunbyung Park, Gyoungjin Gim, Mikyoung Cha, Hwalsuk Lee, and Sunghun Kim. SOLAR 10.7B: Scaling Large Language Models with Simple yet Effective Depth Up-Scaling. December 2023. URL: http://arxiv.org/abs/2312.15166 (visited on 2023-12-27), arXiv:2312.15166.">Kim <em>et al.</em>, 2023</a>]</span>: take two pre-trained models and stack them together by sticking together the first few layers of the first model and the last few layers of the second model</p></li>
+</ul>
+<div class="docutils container" id="id2">
 <dl class="citation">
-<dt class="label" id="id85"><span class="brackets"><a class="fn-backref" href="#id2">CLTS23</a></span></dt>
-<dd><p>David Charatan, Sizhe Li, Andrea Tagliasacchi, and Vincent Sitzmann. pixelSplat: 3D Gaussian Splats from Image Pairs for Scalable Generalizable 3D Reconstruction. December 2023. URL: <a class="reference external" href="http://arxiv.org/abs/2312.12337">http://arxiv.org/abs/2312.12337</a> (visited on 2023-12-27), <a class="reference external" href="https://arxiv.org/abs/2312.12337">arXiv:2312.12337</a>.</p>
-</dd>
-<dt class="label" id="id266"><span class="brackets"><a class="fn-backref" href="#id2">KKLeimkuhlerD23</a></span></dt>
-<dd><p>Bernhard Kerbl, Georgios Kopanas, Thomas Leimkühler, and George Drettakis. 3D Gaussian Splatting for Real-Time Radiance Field Rendering. August 2023. URL: <a class="reference external" href="http://arxiv.org/abs/2308.04079">http://arxiv.org/abs/2308.04079</a> (visited on 2023-12-27), <a class="reference external" href="https://arxiv.org/abs/2308.04079">arXiv:2308.04079</a>.</p>
-</dd>
-<dt class="label" id="id350"><span class="brackets"><a class="fn-backref" href="#id1">MST+22</a></span></dt>
-<dd><p>Ben Mildenhall, Pratul P. Srinivasan, Matthew Tancik, Jonathan T. Barron, Ravi Ramamoorthi, and Ren Ng. NeRF: representing scenes as neural radiance fields for view synthesis. <em>Communications of the ACM</em>, 65(1):99–106, January 2022. URL: <a class="reference external" href="https://dl.acm.org/doi/10.1145/3503250">https://dl.acm.org/doi/10.1145/3503250</a> (visited on 2023-12-27), <a class="reference external" href="https://doi.org/10.1145/3503250">doi:10.1145/3503250</a>.</p>
-</dd>
-<dt class="label" id="id404"><span class="brackets"><a class="fn-backref" href="#id3">RBK21</a></span></dt>
-<dd><p>René Ranftl, Alexey Bochkovskiy, and Vladlen Koltun. Vision Transformers for Dense Prediction. March 2021. URL: <a class="reference external" href="http://arxiv.org/abs/2103.13413">http://arxiv.org/abs/2103.13413</a> (visited on 2023-12-27), <a class="reference external" href="https://arxiv.org/abs/2103.13413">arXiv:2103.13413</a>.</p>
+<dt class="label" id="id269"><span class="brackets"><a class="fn-backref" href="#id1">KPK+23</a></span></dt>
+<dd><p>Dahyun Kim, Chanjun Park, Sanghoon Kim, Wonsung Lee, Wonho Song, Yunsu Kim, Hyeonwoo Kim, Yungi Kim, Hyeonju Lee, Jihoo Kim, Changbae Ahn, Seonghoon Yang, Sukyung Lee, Hyunbyung Park, Gyoungjin Gim, Mikyoung Cha, Hwalsuk Lee, and Sunghun Kim. SOLAR 10.7B: Scaling Large Language Models with Simple yet Effective Depth Up-Scaling. December 2023. URL: <a class="reference external" href="http://arxiv.org/abs/2312.15166">http://arxiv.org/abs/2312.15166</a> (visited on 2023-12-27), <a class="reference external" href="https://arxiv.org/abs/2312.15166">arXiv:2312.15166</a>.</p>
 </dd>
 </dl>
 </div>
@@ -473,24 +457,6 @@ document.write(`
                 <footer class="prev-next-footer">
                   
 <div class="prev-next-area">
-    <a class="left-prev"
-       href="attention.html"
-       title="previous page">
-      <i class="fa-solid fa-angle-left"></i>
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title">Attention</p>
-      </div>
-    </a>
-    <a class="right-next"
-       href="../notebooks/index.html"
-       title="next page">
-      <div class="prev-next-info">
-        <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Notebooks</p>
-      </div>
-      <i class="fa-solid fa-angle-right"></i>
-    </a>
 </div>
                 </footer>
               
@@ -506,9 +472,7 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#nerf-mildenhall2022">NeRF <span class="xref cite cite-p">Mildenhall2022</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#d-gaussian-splatting-kerbl2023-charatan2023">3D Gaussian Splatting <span class="xref cite cite-p">Kerbl2023,Charatan2023</span></a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#depth-estimation-ranftl2021">Depth Estimation <span class="xref cite cite-p">Ranftl2021</span></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#techniques-for-scaling-transformers">Techniques for scaling Transformers</a></li>
 </ul>
   </nav></div>
 
