@@ -455,8 +455,8 @@ document.write(`
 <h2>Quasi-Monte Carlo<a class="headerlink" href="#quasi-monte-carlo" title="Permalink to this heading">#</a></h2>
 <!-- prettier-ignore -->
 <p>Monte Carlo aims to approximate the integral of a function <span class="math notranslate nohighlight">\(f\)</span> by averaging over the function evaluated at some set of pseudorandom points <span class="math notranslate nohighlight">\(x_1, \ldots, x_N\)</span>:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-25989f65-da9e-4121-89a4-2227691da101">
-<span class="eqno">(8)<a class="headerlink" href="#equation-25989f65-da9e-4121-89a4-2227691da101" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-787ffb3e-8dd0-4b77-91ae-4a0a8d75a4fa">
+<span class="eqno">(8)<a class="headerlink" href="#equation-787ffb3e-8dd0-4b77-91ae-4a0a8d75a4fa" title="Permalink to this equation">#</a></span>\[\begin{align}
 \int_{[0,1]^D} f(u) du \approx \frac{1}{N} \sum_{i=1}^{N} f(x_i).
 \end{align}\]</div>
 <p>Quasi-Monte Carlo instead uses a quasi-random sequence (<a class="reference external" href="https://en.wikipedia.org/wiki/Low-discrepancy_sequence#Construction_of_low-discrepancy_sequences">see here for some examples</a>) of points, which have low discrepency, meaning that the proportion of points falling into some arbitrary set <span class="math notranslate nohighlight">\(A\)</span> is close to proportional to the measure of <span class="math notranslate nohighlight">\(A\)</span>.</p>

@@ -434,8 +434,8 @@ document.write(`
 <h2>Attention is all you need <span id="id1">[<a class="reference internal" href="#id510" title="Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, and Illia Polosukhin. Attention Is All You Need. 2017. URL: http://arxiv.org/abs/1706.03762 (visited on 2023-10-14), arXiv:1706.03762.">Vaswani <em>et al.</em>, 2017</a>]</span><a class="headerlink" href="#attention-is-all-you-need-vaswani2017" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>attention is a mechanism that allows a model to focus on relevant parts of the input</p>
-<div class="amsmath math notranslate nohighlight" id="equation-b7b6fdd6-41de-4b5c-ae35-ec0243e586a4">
-<span class="eqno">(31)<a class="headerlink" href="#equation-b7b6fdd6-41de-4b5c-ae35-ec0243e586a4" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-c5454854-e7ce-402c-9c63-5da456a8f63f">
+<span class="eqno">(31)<a class="headerlink" href="#equation-c5454854-e7ce-402c-9c63-5da456a8f63f" title="Permalink to this equation">#</a></span>\[\begin{align}
   \text{Attention}(Q, K, V) = \text{softmax}(\frac{QK^T}{\sqrt{d_k}})V
   \end{align}\]</div>
 </li>
@@ -451,23 +451,23 @@ document.write(`
 <h2>Attention variants<a class="headerlink" href="#attention-variants" title="Permalink to this heading">#</a></h2>
 <ul>
 <li><p>ReAttention <span id="id2">[<a class="reference internal" href="#id543" title="Daquan Zhou, Bingyi Kang, Xiaojie Jin, Linjie Yang, Xiaochen Lian, Zihang Jiang, Qibin Hou, and Jiashi Feng. DeepViT: Towards Deeper Vision Transformer. April 2021. URL: http://arxiv.org/abs/2103.11886 (visited on 2023-12-21), arXiv:2103.11886.">Zhou <em>et al.</em>, 2021</a>]</span>: mix the attention head outputs with a linear layer (after softmax) before multiplying with values, which solves the problem of attention collapse, which is when (deep) ViTs learn attention maps that are similar to each other and so do not scale well with depth</p>
-<div class="amsmath math notranslate nohighlight" id="equation-21e82b68-af4e-4454-943b-fe1598729980">
-<span class="eqno">(32)<a class="headerlink" href="#equation-21e82b68-af4e-4454-943b-fe1598729980" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-f335a53c-7359-4c8b-95a0-dfb337be8a14">
+<span class="eqno">(32)<a class="headerlink" href="#equation-f335a53c-7359-4c8b-95a0-dfb337be8a14" title="Permalink to this equation">#</a></span>\[\begin{align}
   \text{ReAttention}(Q, K, V) = \text{Norm}(\theta^T(\text{softmax}(\frac{QK^T}{\sqrt{d_k}})))V
   \end{align}\]</div>
 </li>
 <li><p>Parallel attention <span id="id3">[<a class="reference internal" href="#id501" title="Hugo Touvron, Matthieu Cord, Alaaeldin El-Nouby, Jakob Verbeek, and Hervé Jégou. Three Things Everyone Should Know About Vision Transformers. In Shai Avidan, Gabriel Brostow, Moustapha Cissé, Giovanni Maria Farinella, and Tal Hassner, editors, Computer Vision – ECCV 2022, volume 13684, pages 497–515. Springer Nature Switzerland, Cham, 2022. URL: https://link.springer.com/10.1007/978-3-031-20053-3_29 (visited on 2023-11-10), doi:10.1007/978-3-031-20053-3_29.">Touvron <em>et al.</em>, 2022</a>]</span>: instead of stacking Transformer layers sequentially, you can run multiple (two is the recommendation) of them in parallel</p>
 <!-- prettier-ignore -->
-<div class="amsmath math notranslate nohighlight" id="equation-6bfbb4a9-9143-4d84-8231-f86029e36ffc">
-<span class="eqno">(33)<a class="headerlink" href="#equation-6bfbb4a9-9143-4d84-8231-f86029e36ffc" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2cf8849a-4d52-417b-89c5-b2964e04df1a">
+<span class="eqno">(33)<a class="headerlink" href="#equation-2cf8849a-4d52-417b-89c5-b2964e04df1a" title="Permalink to this equation">#</a></span>\[\begin{align}
   \mathbf{x'} &amp;= \text{MHA}_1(\mathbf{x}) + \text{MHA}_2(\mathbf{x})+ \mathbf{x} \\
   \mathbf{x''} &amp;= \text{MLP}_1(\mathbf{x'}) + \text{MLP}_2(\mathbf{x'})+ \mathbf{x'} \\
   \end{align}\]</div>
 </li>
 <li><p>LayerScale <span id="id4">[<a class="reference internal" href="#id500" title="Hugo Touvron, Matthieu Cord, Alexandre Sablayrolles, Gabriel Synnaeve, and Hervé Jégou. Going deeper with Image Transformers. April 2021. URL: http://arxiv.org/abs/2103.17239 (visited on 2023-12-27), arXiv:2103.17239.">Touvron <em>et al.</em>, 2021</a>]</span>: apply diagonal weight matrices <span class="math notranslate nohighlight">\(W_{MHA}\)</span> and <span class="math notranslate nohighlight">\(W_{MLP}\)</span> to the output of the MHA and MLP layers in a transformer block (or, do a per-channel multiplication of the outputs before adding the residual connection), which improves training dynamics and allows for continued improvement when adding more layers to a ViT</p>
 <!-- prettier-ignore -->
-<div class="amsmath math notranslate nohighlight" id="equation-0505e105-4d5b-40b2-93c5-2a95629dc9a3">
-<span class="eqno">(34)<a class="headerlink" href="#equation-0505e105-4d5b-40b2-93c5-2a95629dc9a3" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-95fa66d8-54a4-4e4f-b798-a322e68997e5">
+<span class="eqno">(34)<a class="headerlink" href="#equation-95fa66d8-54a4-4e4f-b798-a322e68997e5" title="Permalink to this equation">#</a></span>\[\begin{align}
   \mathbf{x'} &amp;= \mathbf{W}_{MHA} \, \text{MHA}(\mathbf{x}) + \mathbf{x} \\
   \mathbf{x''} &amp;= \mathbf{W}_{MLP} \, \text{MLP}(\mathbf{x'}) + \mathbf{x'} \\
   \end{align}\]</div>
@@ -476,16 +476,16 @@ document.write(`
 <img alt="branchformer" src="../../_images/branchformer.png" /></p></li>
 <li><p>Macaron net <span id="id6">[<a class="reference internal" href="#id324" title="Yiping Lu, Zhuohan Li, Di He, Zhiqing Sun, Bin Dong, Tao Qin, Liwei Wang, and Tie-Yan Liu. Understanding and Improving Transformer From a Multi-Particle Dynamic System Point of View. June 2019. URL: http://arxiv.org/abs/1906.02762 (visited on 2023-12-27), arXiv:1906.02762.">Lu <em>et al.</em>, 2019</a>]</span>: instead of MHA and then MLP, do half an MLP, then MHA, then the other half of the MLP, which improves performance</p>
 <!-- prettier-ignore -->
-<div class="amsmath math notranslate nohighlight" id="equation-5c86c101-55c4-4dc9-bdc2-e15e27c6d406">
-<span class="eqno">(35)<a class="headerlink" href="#equation-5c86c101-55c4-4dc9-bdc2-e15e27c6d406" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-0e911f71-8026-4510-8163-d6f868b2ea93">
+<span class="eqno">(35)<a class="headerlink" href="#equation-0e911f71-8026-4510-8163-d6f868b2ea93" title="Permalink to this equation">#</a></span>\[\begin{align}
   \mathbf{x'} &amp;= \frac{1}{2}\text{MLP}_1(\mathbf{x}) + \mathbf{x} \\
   \mathbf{x''} &amp;= \text{MHA}(\mathbf{x'}) + \mathbf{x'} \\
   \mathbf{x'''} &amp;= \frac{1}{2}\text{MLP}_2(\mathbf{x''}) + \mathbf{x''} \\
   \end{align}\]</div>
 </li>
 <li><p>E-Branchformer <span id="id7">[<a class="reference internal" href="#id277" title="Kwangyoun Kim, Felix Wu, Yifan Peng, Jing Pan, Prashant Sridhar, Kyu J. Han, and Shinji Watanabe. E-Branchformer: Branchformer with Enhanced merging for speech recognition. October 2022. URL: http://arxiv.org/abs/2210.00077 (visited on 2023-12-27), arXiv:2210.00077.">Kim <em>et al.</em>, 2022</a>]</span>: merge global (MHA) and local (cgMLP) branches by concatenating them and then applying a depth-wise convolution with a residual connection before projecting back down</p>
-<div class="amsmath math notranslate nohighlight" id="equation-71e6b12d-17c7-4dc8-99a9-8c5c96ccaac5">
-<span class="eqno">(36)<a class="headerlink" href="#equation-71e6b12d-17c7-4dc8-99a9-8c5c96ccaac5" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-36783376-cc29-425e-be4f-c90f3e030e2b">
+<span class="eqno">(36)<a class="headerlink" href="#equation-36783376-cc29-425e-be4f-c90f3e030e2b" title="Permalink to this equation">#</a></span>\[\begin{align}
   \mathbf{x'} &amp;= \text{Concat}(\text{MHA}(\mathbf{x}), \text{cgMLP}(\mathbf{x})) \\
   \mathbf{x''} &amp;= \text{DwConv}(\mathbf{x'}) + \mathbf{x'} \\
   \mathbf{x'''} &amp;= \mathbf{W} \, \mathbf{x''}

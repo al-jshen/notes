@@ -430,27 +430,27 @@ document.write(`
 </ul>
 <!-- prettier-ignore -->
 <p>The setup of a LGM consists of three parts:</p>
-<div class="amsmath math notranslate nohighlight" id="equation-42205207-6011-4bdf-86af-208bb7aa33c6">
-<span class="eqno">(4)<a class="headerlink" href="#equation-42205207-6011-4bdf-86af-208bb7aa33c6" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-66bf97b7-4296-4371-825a-07b419a82822">
+<span class="eqno">(4)<a class="headerlink" href="#equation-66bf97b7-4296-4371-825a-07b419a82822" title="Permalink to this equation">#</a></span>\[\begin{align}
 &amp;\textrm{Hyperparameters} &amp;\quad &amp;\boldsymbol{\theta} \sim \pi_\theta(\boldsymbol{\theta}),\,\boldsymbol{theta}=(\boldsymbol{\theta_1, \theta_2}) \\
 &amp;\textrm{Latent Gaussian field} &amp;\quad &amp;\boldsymbol{x} | \boldsymbol{\theta_2} \sim \mathcal{N}(\boldsymbol{\mu(\theta_2}), \boldsymbol{Q(\theta_2)}^{-1}) \\
 &amp;\textrm{Observations} &amp;\quad &amp;\boldsymbol{y} | \boldsymbol{x, \theta_1} \sim \prod_{i=1}^{N} \pi_y(y_i | x_i, \boldsymbol{\theta_1}),\,i=1, \ldots, n \\
 \end{align}\]</div>
 <!-- prettier-ignore -->
 <p>The joint posterior for the latent field and the hyperparameters is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-4499ffc1-7bdb-4d8c-9122-a30b0070792c">
-<span class="eqno">(5)<a class="headerlink" href="#equation-4499ffc1-7bdb-4d8c-9122-a30b0070792c" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-e561ef93-9b4d-4ef3-a89e-cb06224a6d3c">
+<span class="eqno">(5)<a class="headerlink" href="#equation-e561ef93-9b4d-4ef3-a89e-cb06224a6d3c" title="Permalink to this equation">#</a></span>\[\begin{align}
 \pi({\boldsymbol{x, \theta} | \boldsymbol{y}}) \propto \pi(\boldsymbol{y} | \boldsymbol{x, \theta}) \pi(\boldsymbol{x, \theta}) \propto \prod_{i=1}^N \pi(y_i | x_i, \boldsymbol{\theta}) \pi(\boldsymbol{x} | \boldsymbol{\theta}) \pi(\boldsymbol{\theta}).
 \end{align}\]</div>
 <!-- prettier-ignore -->
 <p>INLA calculates the posterior marginals. For the hyperparameters, this is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-79cb578e-670b-4ac8-ac09-397527fe62c9">
-<span class="eqno">(6)<a class="headerlink" href="#equation-79cb578e-670b-4ac8-ac09-397527fe62c9" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-a806f2ce-75de-47b0-ab0c-f0487a34a5ab">
+<span class="eqno">(6)<a class="headerlink" href="#equation-a806f2ce-75de-47b0-ab0c-f0487a34a5ab" title="Permalink to this equation">#</a></span>\[\begin{align}
   \pi(\theta_j | \boldsymbol{y}) = \int \pi(\boldsymbol{\theta} | \boldsymbol{y}) d\boldsymbol{\theta}_{-j}, \; j=1, \ldots, m
 \end{align}\]</div>
 <p>and for the latent field <span class="math notranslate nohighlight">\(\boldsymbol{x}\)</span>, this is</p>
-<div class="amsmath math notranslate nohighlight" id="equation-35bbc8d1-ca7a-40e9-a44d-fbd4f4382567">
-<span class="eqno">(7)<a class="headerlink" href="#equation-35bbc8d1-ca7a-40e9-a44d-fbd4f4382567" title="Permalink to this equation">#</a></span>\[\begin{align}
+<div class="amsmath math notranslate nohighlight" id="equation-2cbdb43c-1439-48d1-9153-0213d6191f26">
+<span class="eqno">(7)<a class="headerlink" href="#equation-2cbdb43c-1439-48d1-9153-0213d6191f26" title="Permalink to this equation">#</a></span>\[\begin{align}
   \pi(x_i | \boldsymbol{y}) = \int \pi(x_i | \boldsymbol{y, \theta}) \pi(\boldsymbol{\theta} | \boldsymbol{y}) d\boldsymbol{\theta},\,i=1,\ldots,n.
 \end{align}\]</div>
 <p>Note that you need to calculate the posterior marginals of the hyperparameters before you can calcuate the posterior marginals of the latent field (nested!).</p>
